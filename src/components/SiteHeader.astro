@@ -1,0 +1,77 @@
+---
+const { home = false } = Astro.props;
+const prefix = home ? '' : '/';
+---
+
+<header class="portfolio-header" id="top">
+  <a class="portfolio-brand" href={home ? '#top' : '/'} aria-label={home ? 'NPC Dandelion — наверх' : 'NPC Dandelion — главная'}>
+    <img class="leaf-desktop" src="/assets/figma/leaf-desktop.svg" alt="" width="47.8125" height="56.25" />
+    <img class="leaf-mobile" src="/assets/figma/leaf-mobile.svg" alt="" width="30" height="35.2941" />
+    <span class="portfolio-brand-rule" aria-hidden="true"></span>
+    <span class="portfolio-brand-label"><span>ГРАФИЧЕСКИЙ</span>{' '}<span>ДИЗАЙНЕР</span></span>
+  </a>
+  <nav class="portfolio-navigation" aria-label="Основная навигация">
+    <a href={`${prefix}#projects`}>ПРОЕКТЫ</a>
+    <a href={`${prefix}#about`}>ОБО МНЕ</a>
+    <a href={`${prefix}#contacts`}>КОНТАКТЫ</a>
+  </nav>
+  <a class="portfolio-contact" href="https://t.me/npc_dandelion" aria-label="Связаться в Telegram: @npc_dandelion" target="_blank" rel="noopener noreferrer">
+    <span>СВЯЗАТЬСЯ</span><img src="/assets/figma/arrow.svg" alt="" width="21.0938" height="12.6562" />
+  </a>
+</header>
+
+<style>
+  .portfolio-header {
+    min-height: 101.25px;
+    display: flex;
+    align-items: center;
+    gap: clamp(28px, 4.2vw, 60.46875px);
+    position: relative;
+    z-index: 3;
+    color: #efedeb;
+    font-weight: 400;
+  }
+  .portfolio-brand { display: flex; align-items: center; flex-shrink: 0; margin-left: -8.4375px; }
+  .portfolio-brand img { flex-shrink: 0; max-width: none; }
+  .leaf-mobile { display: none; }
+  .portfolio-brand-rule { width: .703125px; height: 43.59375px; background: #b0afad; margin: 0 24.609375px 0 23.90625px; }
+  .portfolio-brand-label { font-size: 12.65625px; line-height: 18.28125px; letter-spacing: 1.3359px; color: #b0afad; white-space: nowrap; transform: translateY(-.703125px); }
+  .portfolio-navigation { display: flex; align-items: center; justify-content: space-between; width: 312.188px; flex-shrink: 0; margin-left: auto; gap: 24px; }
+  .portfolio-navigation a { display: flex; align-items: center; min-height: 44px; font-size: 12.65625px; line-height: 19.6875px; letter-spacing: .7734px; white-space: nowrap; }
+  .portfolio-navigation { transform: translateY(-1.40625px); }
+  .portfolio-navigation a:nth-child(1) { width: 73.125px; }
+  .portfolio-navigation a:nth-child(2) { width: 71.71875px; }
+  .portfolio-navigation a:nth-child(3) { width: 87.1875px; }
+  .portfolio-contact { display: inline-flex; align-items: center; justify-content: flex-start; gap: 2.8125px; padding-left: 33.1875px; width: 191.25px; height: 46.40625px; flex-shrink: 0; margin-right: -1.40625px; transform: translateY(-2.109375px); border: .984375px solid #b0afad; border-radius: 25.3125px; font-size: 12.65625px; line-height: 16.875px; letter-spacing: .84375px; transition: background .2s; }
+  .portfolio-contact > span { width: 98.4375px; flex-shrink: 0; }
+  .portfolio-contact img { flex-shrink: 0; max-width: none; }
+  .portfolio-navigation a:hover { color: #d6a5b9; }
+  .portfolio-contact:hover { background: #ffffff0d; }
+  @media (max-width: 1200px) and (min-width: 1051px) {
+    .portfolio-brand-label { font-size: 10px; letter-spacing: 1px; }
+    .portfolio-navigation { width: auto; gap: 24px; }
+    .portfolio-navigation a { font-size: 11px; }
+    .portfolio-contact { width: 166px; padding-left: 20px; gap: 16px; }
+    .portfolio-contact > span { width: auto; }
+  }
+  @media (max-width: 1050px) {
+    .portfolio-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 16px; min-height: 132px; padding: 20px 0 12px; }
+    .portfolio-brand { margin: 0; gap: 12px; }
+    .leaf-desktop, .portfolio-brand-rule { display: none; }
+    .portfolio-brand .leaf-mobile { display: block; }
+    .portfolio-brand-label { font-size: 9px; line-height: 15px; letter-spacing: 1px; transform: none; }
+    .portfolio-brand-label > span { display: block; }
+    .portfolio-contact { grid-column: 2; grid-row: 1; width: 124px; height: 44px; font-size: 11px; line-height: 16px; padding: 0; justify-content: center; margin: 0; transform: none; }
+    .portfolio-contact > span { width: auto; }
+    .portfolio-contact img { display: none; }
+    .portfolio-navigation { grid-column: 1 / -1; grid-row: 2; width: 100%; margin: 0; gap: 16px; transform: none; }
+    .portfolio-navigation a:nth-child(n) { width: auto; }
+    .portfolio-navigation a { font-size: 11px; line-height: 16px; letter-spacing: 0; }
+  }
+  @media (max-width: 359px) {
+    .portfolio-header { column-gap: 10px; }
+    .portfolio-contact { width: 112px; font-size: 10px; }
+    .portfolio-brand { gap: 8px; }
+    .portfolio-brand-label { font-size: 8px; letter-spacing: .7px; }
+  }
+</style>

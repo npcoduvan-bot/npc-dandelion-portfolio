@@ -1,0 +1,78 @@
+<section class="home-hero" aria-labelledby="hero-title">
+  <div class="hero-stage">
+    <img class="smoke" src="/assets/figma/hero-smoke-desktop.png" alt="" width="1122" height="1402" fetchpriority="high" />
+    <div class="fade fade-left" aria-hidden="true"></div>
+    <div class="fade fade-right" aria-hidden="true"></div>
+    <div class="fade fade-bottom" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1 id="hero-title" aria-label="THIS WORKS.">
+        <span class="title-this">THIS</span>
+        <span class="title-works">WORKS<img class="dot-desktop" src="/assets/figma/dot-desktop.svg" alt="" width="14" height="14" /><img class="dot-mobile" src="/assets/figma/dot-mobile.svg" alt="" width="8" height="8" /></span>
+      </h1>
+      <p class="directions"><span>Брендинг · Полиграфия</span><span class="directions-separator"> · </span><span>Иллюстрации · UX/UI</span></p>
+      <a class="view-work" href="#projects"><span>СМОТРЕТЬ РАБОТЫ</span><img src="/assets/figma/arrow.svg" alt="" width="21.0938" height="12.6562" /></a>
+    </div>
+    <p class="hero-manifest"><span>ИДЕИ</span><span class="manifest-separator"> · </span><span>ЛЮДИ</span><span class="manifest-separator"> · </span><span>ПРОСТРАНСТВА</span></p>
+  </div>
+</section>
+
+<style>
+  .home-hero { container-type: inline-size; width: calc(100% + 2 * var(--home-gutter)); margin-inline: calc(-1 * var(--home-gutter)); background: #090909; }
+  .hero-stage { position: relative; overflow: hidden; height: 38.96484375cqw; }
+  .hero-stage::after { content: ''; position: absolute; bottom: 0; left: 5.078125%; right: 5.078125%; height: 1.125px; background: #2b2b2b; }
+  .smoke { position: absolute; left: 29.30556%; top: 0; width: 65.625%; height: 50.13889cqw; object-fit: cover; max-width: none; opacity: .84; pointer-events: none; }
+  .fade { position: absolute; pointer-events: none; }
+  .fade-left { left: 5.41667%; top: 0; width: 45.90278%; height: 39.02778cqw; background: linear-gradient(90deg, #090909, #09090900); }
+  .fade-right { left: 58.33333%; top: 0; width: 35.90278%; height: 39.02778cqw; background: linear-gradient(90deg, #09090900, #090909); }
+  .fade-bottom { left: 45.50781%; bottom: 0; width: 44.23828%; height: 2.14844cqw; background: linear-gradient(#09090900, #090909); }
+  .hero-content { position: relative; z-index: 1; padding-top: 6.44097cqw; margin-left: 5.34722%; width: 49.51389%; }
+  h1 { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 400; font-synthesis: none; font-optical-sizing: none; font-size: 8.0078125cqw; line-height: 7.6171875cqw; color: #efedeb; margin: 0; }
+  h1 > span { display: block; height: 7.77778cqw; white-space: nowrap; position: relative; }
+  .title-this { letter-spacing: -.09765625cqw; }
+  .title-works { letter-spacing: -.234375cqw; }
+  .dot-desktop { position: absolute; left: 29.02778cqw; top: 5.76389cqw; max-width: none; }
+  .dot-mobile { display: none; }
+  .directions { margin: 3.95833cqw 0 0; padding-top: .97222cqw; position: relative; font-size: 1.31836cqw; line-height: 1.953125cqw; font-weight: 300; color: #b0afad; white-space: nowrap; }
+  .directions::before { content: ''; position: absolute; top: 0; left: 0; width: 31.52778cqw; height: 1px; background: #b0afad; }
+  .view-work { display: flex; align-items: center; justify-content: space-between; padding: 0 2.30469cqw; width: 17.28516cqw; height: 3.22266cqw; margin: 3.15104cqw 0 0 -.2691cqw; border: .984375px solid #cab4bb; border-radius: 25.3125px; font-size: .878906cqw; line-height: 1.171875cqw; letter-spacing: .05859cqw; color: #efedeb; transition: background .2s; }
+  .view-work img { max-width: none; flex-shrink: 0; }
+  .view-work > * { transform: translateY(-1.6875px); }
+  .view-work:hover { background: #ffffff0d; }
+  .hero-manifest { position: absolute; right: 5%; top: 27.899306cqw; margin: 0; width: 9.16667%; font-size: .878906cqw; line-height: 1.7578125cqw; text-align: right; letter-spacing: .078125cqw; color: #b0afad; }
+  .hero-manifest > span { display: block; }
+  .hero-manifest .manifest-separator { display: none; }
+  .hero-manifest::before { content: ''; position: absolute; height: 8.984375cqw; width: .984375px; background: #efedeb; right: 0; bottom: calc(100% + 1.43403cqw); }
+  .hero-manifest::after { content: ''; position: absolute; width: 2.5390625cqw; height: .984375px; background: #efedeb; right: 0; top: calc(100% + 1.46267cqw); }
+  @media (max-width: 1050px) {
+    .hero-stage { height: 670px; }
+    .smoke { left: 0; top: 104px; width: 100%; height: auto; aspect-ratio: 390 / 487.3; object-fit: cover; }
+    .fade-left, .fade-right { display: none; }
+    .fade-bottom { left: 0; top: 100px; width: 100%; height: 510px; background: linear-gradient(180deg, #090909 0%, #09090900 22%, #09090900 45%, #090909 80%); }
+    .hero-content { padding-top: 22px; margin-inline: var(--home-gutter); width: auto; }
+    h1 { font-size: 83px; line-height: 83px; }
+    h1 > span { height: 83px; letter-spacing: 0; }
+    h1 > .title-works { height: 86px; line-height: 86px; }
+    .dot-desktop { display: none; }
+    .dot-mobile { display: block; position: absolute; left: 307px; top: 67px; max-width: none; }
+    .directions { margin-top: 283px; padding: 0; font-size: 14px; line-height: 23px; white-space: normal; }
+    .directions > span { display: block; }
+    .directions .directions-separator, .directions::before { display: none; }
+    .view-work { width: 100%; height: 50px; margin: 30px 0 0; justify-content: flex-start; gap: 30px; padding: 0 34px; font-size: 11px; line-height: 16px; letter-spacing: .84375px; }
+    .view-work > * { transform: translateY(-3.5px); }
+    .hero-manifest { left: var(--home-gutter); right: var(--home-gutter); top: 626px; width: auto; font-size: 10px; line-height: 16px; letter-spacing: 1.2px; text-align: left; }
+    .hero-manifest > span, .hero-manifest .manifest-separator { display: inline; }
+    .hero-manifest .manifest-separator { white-space: pre; }
+    .hero-manifest::before, .hero-manifest::after, .hero-stage::after { display: none; }
+  }
+  @media (min-width: 561px) and (max-width: 1050px) {
+    .smoke { left: 16%; top: 75px; width: 84%; height: 560px; object-fit: cover; }
+    .view-work { max-width: 342px; }
+  }
+  @media (max-width: 389px) {
+    h1 { font-size: calc((100cqw - 48px) * .24269); }
+    h1 > span { height: calc((100cqw - 48px) * 83 / 342); line-height: calc((100cqw - 48px) * 83 / 342); }
+    h1 > .title-works { height: calc((100cqw - 48px) * 86 / 342); line-height: calc((100cqw - 48px) * 86 / 342); }
+    .dot-mobile { left: calc((100cqw - 48px) * .89766); top: calc((100cqw - 48px) * 67 / 342); }
+    .directions { margin-top: calc(452px - (100cqw - 48px) * 169 / 342); }
+  }
+</style>

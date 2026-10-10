@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import HomeHero from '../components/HomeHero.astro';
 
 const cases = [
   { number: '01', title: 'NOIR COFFEE', kind: 'Брендинг · визуальная система', className: 'noir', image: '/assets/noir/mockup-900.webp', alt: 'Визитки NOIR COFFEE: белый логотип на чёрном фоне и мраморная графика', href: '/projects/noir-coffee/' },
@@ -22,48 +24,18 @@ const illustrations = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0a0a0b" />
+    <meta name="theme-color" content="#090909" />
     <meta name="description" content="NPC Dandelion — графический дизайн, айдентика, полиграфия, иллюстрация и оформление пространств." />
+    <link rel="preload" href="/fonts/portfolio/Bodoni-Moda-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <title>NPC Dandelion — графический дизайнер</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main">К содержимому</a>
     <div class="site-shell">
-      <header class="site-header" id="top">
-        <a class="brand" href="#top" aria-label="NPC Dandelion — наверх">
-          <img src="/assets/dandelion-leaf.png" alt="" width="40" height="42" />
-          <span class="brand-rule"></span>
-          <span class="brand-label">ГРАФИЧЕСКИЙ<br />ДИЗАЙНЕР</span>
-        </a>
-        <nav class="desktop-nav" aria-label="Основная навигация">
-          <a href="#projects">ПРОЕКТЫ</a>
-          <a href="#about">ОБО МНЕ</a>
-          <a href="#contacts">КОНТАКТЫ</a>
-        </nav>
-        <a class="contact-pill" href="https://t.me/npc_dandelion" aria-label="Связаться в Telegram: @npc_dandelion" target="_blank" rel="noopener noreferrer">СВЯЗАТЬСЯ <span aria-hidden="true">→</span></a>
-      </header>
-
-      <nav class="mobile-nav" aria-label="Разделы страницы">
-        <a href="#projects">ПРОЕКТЫ</a><a href="#about">ОБО МНЕ</a><a href="#contacts">КОНТАКТЫ</a>
-      </nav>
+      <SiteHeader home />
 
       <main id="main">
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero-art" aria-hidden="true"></div>
-          <div class="hero-side hero-side-left"><span>ИДЕИ<br />ЛЮДИ<br />ПРОСТРАНСТВА<br />В БОЛЬШЕЕ,<br />ЧЕМ ДИЗАЙН</span><i></i></div>
-          <div class="hero-copy">
-            <h1 id="hero-title">THIS<br />WORKS<span class="accent-dot">.</span></h1>
-            <p class="hero-lede">Дизайн, который соединяет<br />эстетику и смысл</p>
-          </div>
-          <div class="hero-side hero-side-right"><span>01</span><i></i><span>БОЛЬШЕ<br />ЧЕМ<br />ДИЗАЙН</span></div>
-          <div class="hero-bottom">
-            <p>Брендинг · Полиграфия · Иллюстрации · Социальные проекты</p>
-            <a class="outline-button" href="#projects">СМОТРЕТЬ РАБОТЫ <span aria-hidden="true">→</span></a>
-          </div>
-        </section>
+        <HomeHero />
 
         <section class="section projects" id="projects" aria-labelledby="projects-title">
           <div class="section-heading"><h2 id="projects-title">ВЫБРАННЫЕ РАБОТЫ</h2><span>Графический дизайн / 2026</span></div>

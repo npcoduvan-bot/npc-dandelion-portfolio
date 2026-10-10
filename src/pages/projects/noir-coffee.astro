@@ -1,5 +1,6 @@
 ---
 import '../../styles/global.css';
+import SiteHeader from '../../components/SiteHeader.astro';
 import '../../styles/noir-case.css';
 
 const garments = [
@@ -25,27 +26,11 @@ const pdf = '/downloads/NOIR-COFFEE.pdf';
     <meta property="og:url" content="https://npc-dandelion-portfolio.pages.dev/projects/noir-coffee/" />
     <meta property="og:image" content="https://npc-dandelion-portfolio.pages.dev/assets/noir/mockup-1800.webp" />
     <meta property="og:image:alt" content="Двусторонние визитки NOIR COFFEE на каменной поверхности" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body class="case-page">
     <a class="skip-link" href="#main">К содержимому</a>
     <div class="site-shell">
-      <header class="site-header" id="top">
-        <a class="brand" href="/" aria-label="NPC Dandelion — главная">
-          <img src="/assets/dandelion-leaf.png" alt="" width="40" height="42" />
-          <span class="brand-rule"></span>
-          <span class="brand-label">ГРАФИЧЕСКИЙ<br />ДИЗАЙНЕР</span>
-        </a>
-        <nav class="desktop-nav" aria-label="Основная навигация">
-          <a href="/#projects">ПРОЕКТЫ</a><a href="/#about">ОБО МНЕ</a><a href="/#contacts">КОНТАКТЫ</a>
-        </nav>
-        <a class="contact-pill" href="https://t.me/npc_dandelion" aria-label="Связаться в Telegram: @npc_dandelion" target="_blank" rel="noopener noreferrer">СВЯЗАТЬСЯ <span aria-hidden="true">↗</span></a>
-      </header>
-      <nav class="mobile-nav" aria-label="Разделы сайта">
-        <a href="/#projects">ПРОЕКТЫ</a><a href="/#about">ОБО МНЕ</a><a href="/#contacts">КОНТАКТЫ</a>
-      </nav>
+      <SiteHeader />
 
       <main id="main">
         <div class="case-toolbar">
