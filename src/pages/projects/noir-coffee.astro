@@ -1,0 +1,141 @@
+---
+import '../../styles/global.css';
+import '../../styles/noir-case.css';
+
+const garments = [
+  { image: 'shirt-front', title: 'Футболка / спереди', alt: 'Чёрная футболка с белыми пиктограммами кофе, месяца и музыки', width: 384 },
+  { image: 'shirt-back', title: 'Футболка / сзади', alt: 'Спинка чёрной футболки с белым месяцем и вертикальной надписью taste the moment', width: 384 },
+  { image: 'apron', title: 'Фартук / для бариста', alt: 'Чёрный фартук с белым логотипом NOIR COFFEE', width: 390 },
+];
+const pdf = '/downloads/NOIR-COFFEE.pdf';
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <meta name="description" content="NOIR COFFEE — айдентика кофейни с вечерним характером. Логотип, фирменные знаки, визитка и униформа в портфолио NPC Dandelion." />
+    <title>NOIR COFFEE — айдентика кофейни · NPC Dandelion</title>
+    <link rel="canonical" href="https://npc-dandelion-portfolio.pages.dev/projects/noir-coffee/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="NOIR COFFEE — кофе, музыка, вечер" />
+    <meta property="og:description" content="Три образа. Единая визуальная система. Кейс NPC Dandelion." />
+    <meta property="og:url" content="https://npc-dandelion-portfolio.pages.dev/projects/noir-coffee/" />
+    <meta property="og:image" content="https://npc-dandelion-portfolio.pages.dev/assets/noir/mockup-1800.webp" />
+    <meta property="og:image:alt" content="Двусторонние визитки NOIR COFFEE на каменной поверхности" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body class="case-page">
+    <a class="skip-link" href="#main">К содержимому</a>
+    <div class="site-shell">
+      <header class="site-header" id="top">
+        <a class="brand" href="/" aria-label="NPC Dandelion — главная">
+          <img src="/assets/dandelion-leaf.png" alt="" width="40" height="42" />
+          <span class="brand-rule"></span>
+          <span class="brand-label">ГРАФИЧЕСКИЙ<br />ДИЗАЙНЕР</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Основная навигация">
+          <a href="/#projects">ПРОЕКТЫ</a><a href="/#about">ОБО МНЕ</a><a href="/#contacts">КОНТАКТЫ</a>
+        </nav>
+        <a class="contact-pill" href="https://www.behance.net/npcoduvan" target="_blank" rel="noopener noreferrer">СВЯЗАТЬСЯ <span aria-hidden="true">↗</span></a>
+      </header>
+      <nav class="mobile-nav" aria-label="Разделы сайта">
+        <a href="/#projects">ПРОЕКТЫ</a><a href="/#about">ОБО МНЕ</a><a href="/#contacts">КОНТАКТЫ</a>
+      </nav>
+
+      <main id="main">
+        <div class="case-toolbar">
+          <a class="case-back" href="/#projects"><span aria-hidden="true">←</span> ВСЕ ПРОЕКТЫ</a>
+          <a class="case-download" href={pdf} download>СКАЧАТЬ КЕЙС <span>PDF · 8 МБ</span><span aria-hidden="true">↓</span></a>
+        </div>
+
+        <section class="case-hero" aria-labelledby="case-title">
+          <div class="case-hero-heading">
+            <p class="case-category"><span>БРЕНДИНГ</span><span>АЙДЕНТИКА</span></p>
+            <div><h1 id="case-title">NOIR COFFEE</h1><p class="case-subtitle">Кофейня с вечерним характером</p></div>
+          </div>
+          <figure class="case-cover">
+            <img src="/assets/noir/mockup-1800.webp" srcset="/assets/noir/mockup-900.webp 900w, /assets/noir/mockup-1800.webp 1536w" sizes="(max-width: 560px) calc(100vw - 30px), (max-width: 850px) calc(100vw - 42px), (max-width: 1544px) calc(100vw - 104px), 1440px" alt="Две стороны визитки NOIR COFFEE: белый логотип на чёрном фоне и мраморный оборот с адресом Воровского, 153" width="1536" height="1024" fetchpriority="high" />
+            <figcaption><span>Двусторонняя визитка / ИИ-визуализация</span><span aria-hidden="true">01</span></figcaption>
+          </figure>
+        </section>
+
+        <section class="case-section" aria-labelledby="about-case">
+          <div class="case-section-label"><span>01</span><h2 id="about-case">О ПРОЕКТЕ</h2></div>
+          <div class="case-about-grid">
+            <div><h3 class="case-display">Кофе.<br />Музыка.<br />Вечер.</h3><p class="case-credit">NPC ODUVAN / BRAND IDENTITY</p></div>
+            <div class="case-copy">
+              <p>NOIR COFFEE объединяет три образа: чашку кофе, лунный свет и музыку. Они задают характер айдентики и становятся основой фирменной графики.</p>
+              <p>Белый логотип на чёрном фоне создаёт ясный контраст. Мраморная фактура добавляет глубину, а тонкая ломаная линия связывает разные носители в одну систему.</p>
+              <dl class="case-scope"><dt>СОСТАВ ПРОЕКТА</dt><dd>Логотип / графика / визитка / униформа</dd></dl>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="logo-title">
+          <div class="case-section-label"><span>02</span><h2 id="logo-title">ЛОГОТИП И ПРАВИЛА</h2></div>
+          <div class="case-logo-grid">
+            <div class="case-logo-stage"><img src="/assets/noir/logo-dark.webp" width="1361" height="464" loading="lazy" alt="Основной логотип NOIR COFFEE: белое название в тонкой рамке с месяцем по центру" /></div>
+            <div class="case-copy case-logo-notes">
+              <h3 class="case-small-heading">ЗНАК И ОХРАННОЕ ПОЛЕ</h3>
+              <p>Месяц располагается над названием по центру. Его можно использовать отдельно или в центре композиции из трёх пиктограмм.</p>
+              <div class="case-clearspace"><span class="clearspace-x" aria-hidden="true">X</span><img src="/assets/noir/logo-dark.webp" width="1361" height="464" loading="lazy" alt="Схема свободного пространства вокруг логотипа" /></div>
+              <p class="case-note">Минимальный отступ X равен высоте букв в логотипе. Для отдельного месяца — 1/5 ширины знака.</p>
+            </div>
+          </div>
+          <div class="case-pair case-logo-versions">
+            <figure><div class="case-logo-stage case-logo-stage-light"><img src="/assets/noir/logo-light.webp" width="1361" height="464" loading="lazy" alt="Чёрный логотип NOIR COFFEE на белом фоне" /></div><figcaption>НА СВЕТЛОМ ФОНЕ</figcaption></figure>
+            <figure><div class="case-logo-stage"><img src="/assets/noir/logo-dark.webp" width="1361" height="464" loading="lazy" alt="Белый логотип NOIR COFFEE на чёрном фоне" /></div><figcaption>НА ТЁМНОМ ФОНЕ</figcaption></figure>
+          </div>
+          <p class="case-rule">Сохраняйте пропорции, охранное поле и контраст. Не меняйте начертание и положение знака.</p>
+        </section>
+
+        <section class="case-section" aria-labelledby="visual-title">
+          <div class="case-section-label"><span>03</span><h2 id="visual-title">ВИЗУАЛЬНАЯ СИСТЕМА</h2></div>
+          <div class="case-pair case-symbol-row">
+            <div class="case-symbols"><img src="/assets/noir/symbols.webp" width="1536" height="387" loading="lazy" alt="Три белые пиктограммы: чашка кофе, месяц, пластинка с музыкальной нотой" /></div>
+            <div class="case-copy"><h3 class="case-display case-display-small">Кофе / вечер / музыка</h3><p>Три образа, объединённые в систему пиктограмм. Они дополняют логотип и работают как самостоятельный принт.</p></div>
+          </div>
+          <div class="case-palette" aria-label="Цветовая палитра">
+            <figure><div class="swatch swatch-black"></div><figcaption>ЧЁРНЫЙ <span>#000000</span></figcaption></figure>
+            <figure><div class="swatch swatch-white"></div><figcaption>БЕЛЫЙ <span>#FFFFFF</span></figcaption></figure>
+            <figure><div class="swatch swatch-marble"></div><figcaption>МРАМОРНЫЙ АКЦЕНТ <span>#D2BFB2</span></figcaption></figure>
+          </div>
+          <div class="case-type-sample"><span class="case-small-heading">ТИПОГРАФИКА</span><span class="cruinn-sample" aria-label="Образец шрифта Cruinn">Кофе. Музыка. Вечер.</span><span class="case-note">Cruinn / Light · Regular</span></div>
+        </section>
+
+        <section class="case-section" aria-labelledby="print-title">
+          <div class="case-section-label"><span>04</span><h2 id="print-title">ПЕЧАТНЫЕ НОСИТЕЛИ</h2></div>
+          <h3 class="case-display case-display-small">Две стороны одной истории</h3>
+          <div class="case-pair case-business-cards">
+            <figure><div class="case-card-front"><img src="/assets/noir/logo-dark.webp" width="1361" height="464" loading="lazy" alt="Лицевая сторона визитки с белым логотипом NOIR COFFEE" /></div><figcaption>ЛИЦЕВАЯ СТОРОНА</figcaption></figure>
+            <figure><img class="case-card-back" src="/assets/noir/card-back.webp" width="1232" height="702" loading="lazy" alt="Оборот визитки: мраморная фактура, три пиктограммы и адрес Сочи, ул. Воровского, 153" /><figcaption>ОБОРОТНАЯ СТОРОНА</figcaption></figure>
+          </div>
+          <p class="case-note">Адрес на визитке: Сочи, ул. Воровского, 153.</p>
+        </section>
+
+        <section class="case-section" aria-labelledby="uniform-title">
+          <div class="case-section-label"><span>05</span><h2 id="uniform-title">БРЕНД В ЖИЗНИ</h2></div>
+          <div class="case-pair case-section-intro"><h3 class="case-display case-display-small">Фирменная униформа</h3><p class="case-copy">Логотип и пиктограммы объединяют одежду команды в общую визуальную систему.</p></div>
+          <div class="case-uniform-grid">
+            {garments.map((item) => <figure><img src={`/assets/noir/${item.image}.webp`} width={item.width} height="509" loading="lazy" alt={item.alt} /><figcaption>{item.title}</figcaption></figure>)}
+          </div>
+          <div class="case-cap-row"><figure><img src="/assets/noir/cap.webp" width="321" height="245" loading="lazy" alt="Чёрная кепка с белым вышитым месяцем" /><figcaption>Кепка / дополнительный элемент</figcaption></figure><p class="case-note">ИИ-визуализации униформы</p></div>
+        </section>
+
+        <section class="case-section case-ending" aria-labelledby="ending-title">
+          <p class="case-small-heading">NOIR COFFEE</p>
+          <h2 id="ending-title" class="case-display">Три образа.<br />Единая визуальная система.</h2>
+          <div class="case-end-actions"><a class="outline-button" href={pdf} download>ПОЛНЫЙ КЕЙС В PDF <span aria-hidden="true">↓</span></a><a class="case-back" href="/#projects">ВСЕ ПРОЕКТЫ <span aria-hidden="true">→</span></a></div>
+        </section>
+        <section class="case-contact" aria-labelledby="case-contact-title"><h2 id="case-contact-title">Есть идея? Обсудим.</h2><a class="contact-pill" href="https://www.behance.net/npcoduvan" target="_blank" rel="noopener noreferrer">СВЯЗАТЬСЯ <span aria-hidden="true">↗</span></a></section>
+      </main>
+      <footer class="site-footer"><span>© 2026 NPC Dandelion</span><a href="#top" aria-label="Наверх">↑</a><span>Идеи · Люди · Пространства</span></footer>
+      <p class="case-font-credit">Cruinn — Дмитрий Антонов / Blue Curve Designstudio</p>
+    </div>
+  </body>
+</html>

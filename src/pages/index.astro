@@ -2,7 +2,7 @@
 import '../styles/global.css';
 
 const cases = [
-  { number: '01', title: 'NOIR COFFEE', kind: 'Брендинг · визуальная система', className: 'noir', image: '/assets/noir-uniform.png', alt: 'Фирменная униформа NOIR COFFEE: футболки, фартук и кепка' },
+  { number: '01', title: 'NOIR COFFEE', kind: 'Брендинг · визуальная система', className: 'noir', image: '/assets/noir/mockup-900.webp', alt: 'Визитки NOIR COFFEE: белый логотип на чёрном фоне и мраморная графика', href: '/projects/noir-coffee/' },
   { number: '02', title: 'Розовая кофейня', kind: 'Интерьер · графика · печать', className: 'pink' },
   { number: '03', title: 'НКО', kind: 'Айдентика · полиграфия · событие', className: 'nko' },
   { number: '04', title: 'Вывески и пространства', kind: 'Средовой дизайн · навигация', className: 'signage' },
@@ -71,14 +71,14 @@ const illustrations = [
             {cases.map((item) => (
               <article class={`project-card ${item.className}`}>
                 <div class="project-visual">
-                  {item.image ? <img src={item.image} alt={item.alt} loading="lazy" /> : <span class="asset-note">Материалы кейса готовятся к публикации</span>}
+                  {item.image ? <img src={item.image} alt={item.alt} loading="lazy" width="900" height="600" /> : <span class="asset-note">Материалы кейса готовятся к публикации</span>}
                   {!item.image && <span class="project-watermark" aria-hidden="true">{item.number}</span>}
                 </div>
-                <div class="project-info"><div><h3>{item.title}</h3><p>{item.kind}</p></div><span class="project-number">{item.number}</span></div>
+                <div class="project-info"><div><h3>{item.href ? <a class="project-case-link" href={item.href}>{item.title}<span class="case-link-arrow" aria-hidden="true"> ↗</span></a> : item.title}</h3><p>{item.kind}</p></div><span class="project-number">{item.number}</span></div>
               </article>
             ))}
           </div>
-          <p class="project-footnote">Сейчас на сайте представлен доступный материал NOIR COFFEE. Остальные карточки сохраняют место для оригинальных работ.</p>
+          <p class="project-footnote">NOIR COFFEE — полный кейс: от логотипа до носителей. Остальные проекты готовятся к публикации.</p>
         </section>
 
         <section class="section illustrations" id="illustrations" aria-labelledby="illustrations-title">
