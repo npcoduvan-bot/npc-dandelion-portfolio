@@ -1,0 +1,116 @@
+.pink-case { --ink: #fff; --bg: #090909; --muted: #b0afad; --line: #303030; --pink-gutter: clamp(24px, 5vw, 72px); }
+.pink-case .site-shell { width: calc(100% - 2 * var(--pink-gutter)); max-width: 1296px; }
+.pink-case figure { margin: 0; min-width: 0; }
+.pink-case figure > img { width: 100%; height: auto; }
+.pink-case h1, .pink-case h2, .pink-case h3, .pink-case p { margin-top: 0; }
+.pink-case figcaption, .pink-note { color: var(--muted); font-weight: 300; font-size: 12px; line-height: 20px; }
+.pink-case figcaption { margin-top: 18px; }
+.pink-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px 0 64px; }
+.pink-toolbar a { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; letter-spacing: .06em; line-height: 20px; min-height: 44px; }
+.pink-toolbar a:hover, .pink-pdf-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+.pink-toolbar .pdf-size { color: var(--muted); font-size: 10px; }
+.pink-hero-heading { display: grid; grid-template-columns: 214fr 1082fr; gap: 0; padding-bottom: 64px; }
+.pink-category { color: var(--muted); font-size: 11px; line-height: 20px; letter-spacing: .6px; padding-top: 26px; }
+.pink-hero h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(65px, 6.95vw, 100px); line-height: 1.16; font-weight: 400; letter-spacing: -1.4px; margin-bottom: 20px; }
+.pink-subtitle { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 35px; line-height: 43px; margin-bottom: 0; }
+.pink-section { border-top: 1px solid var(--line); margin-top: 72px; padding-top: 25px; }
+.pink-section-label { display: flex; align-items: baseline; gap: 24px; margin-bottom: 54px; }
+.pink-section-label > span { color: var(--muted); font-size: 12px; line-height: 20px; }
+.pink-section-label h2 { font-size: 20px; line-height: 26px; font-weight: 400; letter-spacing: 1px; margin: 0; }
+.pink-display, .pink-heading { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; }
+.pink-display { font-size: 64px; line-height: 1.05; margin-bottom: 0; }
+.pink-heading { font-size: 50px; line-height: 1.22; margin-bottom: 35px; }
+.pink-intro, .pink-copy { font-weight: 300; font-size: 17px; line-height: 28px; color: var(--muted); }
+.pink-intro { max-width: 1110px; margin-bottom: 42px; }
+.pink-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.pink-about .pink-copy { font-size: 18px; line-height: 30px; padding-top: 6px; }
+.pink-case .pink-credit { font-size: 11px; line-height: 20px; color: var(--muted); margin: 64px 0 0; }
+.pink-scope { margin: 48px 0 0; }
+.pink-scope dt { font-size: 11px; letter-spacing: .7px; margin-bottom: 12px; }
+.pink-scope dd { margin: 0; font-size: 15px; line-height: 25px; }
+.pink-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.pink-process figure > img { aspect-ratio: 636 / 920; object-fit: cover; }
+.pink-case .pink-note { margin: 24px 0 0; }
+.pink-interiors { display: grid; grid-template-columns: 592fr 680fr; gap: 24px; align-items: start; }
+.pink-interior-tall { grid-row: span 2; }
+.pink-system-intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; margin-bottom: 35px; }
+.pink-system-intro .pink-heading, .pink-system-intro p { margin-bottom: 0; }
+.pink-system-intro p { padding-top: 6px; }
+.pink-palette { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.pink-palette figure > div { height: 126px; }
+.pink-palette figcaption { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; letter-spacing: .5px; }
+.pink-print-pair figure > img, .pink-print-pair .pink-artwork { height: auto; aspect-ratio: 636 / 830; background: #111; object-fit: contain; }
+.pink-artwork { display: flex; align-items: center; justify-content: center; }
+.pink-artwork img { width: 100%; height: 100%; object-fit: contain; }
+.pink-artwork:hover { outline: 1px solid #b0afad; outline-offset: 4px; }
+.pink-small-artwork { margin-top: 64px; }
+.pink-small-artwork .pink-artwork { background: #111; }
+.pink-card-originals .pink-artwork { aspect-ratio: 636 / 700; padding: 0 8%; }
+.pink-flyer-originals .pink-artwork { aspect-ratio: 636 / 742; padding: 0 8%; }
+.pink-eyebrow { font-size: 12px; line-height: 20px; letter-spacing: .7px; color: var(--muted); margin-bottom: 30px; }
+.pink-next { display: flex; align-items: center; justify-content: space-between; gap: 24px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 68px; line-height: 77px; }
+.pink-next picture { flex-shrink: 0; }
+.pink-next:hover { color: #d6a5b9; }
+.pink-end-actions { display: flex; align-items: center; gap: 36px; margin-top: 36px; }
+.pink-pdf-link { color: var(--muted); font-size: 13px; line-height: 24px; padding: 10px 0; }
+.pink-pdf-link span { margin-left: 10px; }
+.pink-case .outline-button { min-height: 48px; min-width: 218px; font-weight: 400; border-color: #b0afad; }
+.pink-contact { border-top: 1px solid var(--line); padding-top: 38px; margin-top: 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.pink-contact h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 45px; line-height: 55px; font-weight: 400; margin: 0; }
+.pink-case .site-footer { margin-top: 44px; padding-bottom: 20px; }
+@media (max-width: 1050px) {
+  .pink-case { --pink-gutter: 24px; }
+  .pink-toolbar { padding-bottom: 40px; }
+  .pink-hero-heading { grid-template-columns: 1fr; gap: 18px; padding-bottom: 40px; }
+  .pink-category { font-size: 9px; line-height: 16px; padding: 0; margin-bottom: 0; }
+  .pink-hero h1 { font-size: clamp(61px, 9.5vw, 90px); line-height: 1; }
+  .pink-hero .pink-category { max-width: 150px; }
+  .pink-heading { font-size: 42px; }
+  .pink-about .pink-copy { font-size: 16px; line-height: 27px; }
+  .pink-display { font-size: 52px; }
+  .pink-system-intro { gap: 32px; }
+  .pink-palette figcaption { flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .pink-toolbar { padding: 20px 0 32px; gap: 16px; }
+  .pink-toolbar a { font-size: 9px; gap: 7px; letter-spacing: .03em; }
+  .pink-toolbar .pdf-size { display: none; }
+  .pink-hero h1 { font-size: clamp(50px, 15.65vw, 61px); line-height: 1; letter-spacing: -1px; max-width: 350px; margin-bottom: 24px; }
+  .pink-hero-heading { gap: 24px; padding-bottom: 32px; }
+  .pink-subtitle { font-size: 25px; line-height: 31px; }
+  .pink-case figcaption, .pink-note { font-size: 10px; line-height: 17px; }
+  .pink-case figcaption { margin-top: 16px; }
+  .pink-section { margin-top: 56px; }
+  .pink-section-label { gap: 24px; margin-bottom: 38px; }
+  .pink-section-label h2 { font-size: 16px; line-height: 26px; }
+  .pink-section-label > span { font-size: 11px; }
+  .pink-heading { font-size: 35px; line-height: 1.18; margin-bottom: 26px; }
+  .pink-display { font-size: 42px; line-height: 46px; }
+  .pink-intro, .pink-copy, .pink-about .pink-copy { font-size: 14px; line-height: 23px; }
+  .pink-intro { margin-bottom: 32px; }
+  .pink-about-grid, .pink-system-intro { grid-template-columns: 1fr; gap: 28px; }
+  .pink-about .pink-copy { padding: 0; }
+  .pink-case .pink-credit { margin-top: 24px; font-size: 9px; line-height: 17px; }
+  .pink-scope { margin-top: 30px; }
+  .pink-scope dt { font-size: 10px; }
+  .pink-scope dd { font-size: 14px; line-height: 23px; }
+  .pink-pair, .pink-interiors { grid-template-columns: 1fr; gap: 32px; }
+  .pink-process figure > img { aspect-ratio: 687 / 1220; }
+  .pink-interior-tall { grid-row: auto; }
+  .pink-interiors { gap: 24px; }
+  .pink-system-intro { gap: 24px; }
+  .pink-system-intro p { padding: 0; }
+  .pink-palette { gap: 12px; }
+  .pink-palette figure > div { height: 102px; }
+  .pink-palette figcaption { display: grid; gap: 2px; font-size: 8px; letter-spacing: 0; }
+  .pink-print-pair figure > img, .pink-print-pair .pink-artwork { aspect-ratio: 342 / 484; }
+  .pink-small-artwork { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
+  .pink-card-originals .pink-artwork { aspect-ratio: 637 / 1110; padding: 0; }
+  .pink-flyer-originals .pink-artwork { aspect-ratio: 724 / 1536; padding: 0; }
+  .pink-small-artwork figcaption { font-size: 10px; }
+  .pink-next { font-size: 47px; line-height: 48px; }
+  .pink-end-actions { flex-direction: column; align-items: start; gap: 18px; margin-top: 28px; }
+  .pink-contact { flex-direction: column; align-items: start; gap: 24px; margin-top: 36px; padding-top: 30px; }
+  .pink-contact h2 { font-size: 35px; line-height: 42px; }
+  .pink-case .site-footer { margin-top: 30px; font-size: 9px; }
+}

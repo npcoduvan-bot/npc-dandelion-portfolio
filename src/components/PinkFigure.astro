@@ -1,0 +1,27 @@
+---
+interface Props {
+  name: string;
+  alt: string;
+  caption?: string;
+  width: number;
+  height: number;
+  class?: string;
+  priority?: boolean;
+  zoom?: boolean;
+}
+const { name, alt, caption, width, height, class: className, priority = false, zoom = false } = Astro.props;
+const src = `/assets/pink/${name}.webp`;
+const responsive = ['interior-cover', 'cards-mockup-revised'].includes(name);
+const imageProps = {
+  src, alt, width, height,
+  loading: priority ? 'eager' as const : 'lazy' as const,
+  fetchpriority: priority ? 'high' as const : undefined,
+  decoding: 'async' as const,
+  srcset: responsive ? `/assets/pink/${name}-800.webp 800w, ${src} ${width}w` : undefined,
+  sizes: responsive ? '(max-width: 1050px) calc(100vw - 48px), (max-width: 1440px) 90vw, 1296px' : undefined,
+};
+---
+<figure class={className}>
+  {zoom ? <a class="pink-artwork" href={src} target="_blank" rel="noopener noreferrer" aria-label={`Открыть изображение крупнее: ${alt}`}><img {...imageProps} /></a> : <img {...imageProps} />}
+  {caption && <figcaption>{caption}{zoom && <span aria-hidden="true"> ↗</span>}</figcaption>}
+</figure>

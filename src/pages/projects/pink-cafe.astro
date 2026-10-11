@@ -1,0 +1,138 @@
+---
+import '../../styles/global.css';
+import '../../styles/pink-case.css';
+import SiteHeader from '../../components/SiteHeader.astro';
+import PinkFigure from '../../components/PinkFigure.astro';
+
+const pdf = '/downloads/PINK-CAFE.pdf';
+const printPairs = [
+  { id: 'menu', number: '06', label: 'МЕНЮ', title: 'Меню, которое продолжает интерьер', description: 'Пастельная палитра, категории напитков и иллюстрация фламинго.', name: 'menu', width: 1086, alt: 'Меню «Вкус кофе» с розовыми и зелёными блоками и иллюстрацией фламинго', photoAlt: 'Напечатанное меню кофейни в рамке на розовой стене' },
+  { id: 'payment', number: '07', label: 'ТАБЛИЧКА ДЛЯ ОПЛАТЫ', title: 'Фирменная графика в деталях', description: 'Знакомые растительные мотивы в небольшом настольном носителе.', name: 'payment', width: 1083, alt: 'Макет таблички для оплаты: QR-код среди пастельных блоков и растительных мотивов', photoAlt: 'Напечатанная табличка для оплаты в прозрачной подставке на стойке' },
+];
+---
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#090909" />
+    <title>Розовая кофейня «Вкус кофе» · NPC Dandelion</title>
+    <meta name="description" content="Ручная роспись стен, интерьерные визуализации и печатные материалы для кофейни «Вкус кофе». Полный кейс NPC Dandelion и PDF для скачивания." />
+    <link rel="canonical" href="https://npc-dandelion-portfolio.pages.dev/projects/pink-cafe/" />
+    <link rel="preload" href="/fonts/portfolio/Cormorant-Garamond-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Розовая кофейня — розовый, тропики, кофе" />
+    <meta property="og:description" content="От ручной росписи стен до меню и визитки. Кейс NPC Dandelion." />
+    <meta property="og:url" content="https://npc-dandelion-portfolio.pages.dev/projects/pink-cafe/" />
+    <meta property="og:image" content="https://npc-dandelion-portfolio.pages.dev/assets/pink/interior-cover.webp" />
+    <meta property="og:image:alt" content="Розовый интерьер кофейни с тропическими мотивами — ИИ-визуализация на основе фотографии" />
+  </head>
+  <body class="pink-case">
+    <a class="skip-link" href="#main">К содержимому</a>
+    <div class="site-shell">
+      <SiteHeader />
+      <main id="main">
+        <div class="pink-toolbar">
+          <a href="/#projects"><span aria-hidden="true">←</span> ВСЕ ПРОЕКТЫ</a>
+          <a href={pdf} download>СКАЧАТЬ КЕЙС <span class="pdf-size">PDF · 8,6 МБ</span><span aria-hidden="true">↓</span></a>
+        </div>
+
+        <section class="pink-hero" aria-labelledby="case-title">
+          <div class="pink-hero-heading">
+            <p class="pink-category">ВКУС КОФЕ<br />ВИЗУАЛЬНОЕ<br />ОФОРМЛЕНИЕ</p>
+            <div><h1 id="case-title">Розовая кофейня</h1><p class="pink-subtitle">Розовый. Тропики. Кофе.</p></div>
+          </div>
+          <PinkFigure name="interior-cover" width={1448} height={1086} priority alt="Интерьер кофейни: розовая стена с фламинго и тропической листвой, зеркала и тёплый свет" caption="Визуализация на основе фотографии с доработкой ИИ" />
+        </section>
+
+        <section class="pink-section pink-about" aria-labelledby="about-case">
+          <div class="pink-section-label"><span>01</span><h2 id="about-case">О ПРОЕКТЕ</h2></div>
+          <div class="pink-about-grid">
+            <div><h3 class="pink-display">От стены<br />до визитки.</h3><p class="pink-credit">NPC ODUVAN / ВИЗУАЛЬНОЕ ОФОРМЛЕНИЕ</p></div>
+            <div class="pink-copy"><p>Ручная роспись стен, интерьерные визуализации и печатные материалы для «Вкус кофе». Фламинго, растительные мотивы и пастельные оттенки связывают пространство и его графическое оформление.</p><dl class="pink-scope"><dt>СОСТАВ ПРОЕКТА</dt><dd>Роспись / интерьер / меню / табличка / визитка / флаер</dd></dl></div>
+          </div>
+        </section>
+
+        <section class="pink-section" aria-labelledby="process-title">
+          <div class="pink-section-label"><span>02</span><h2 id="process-title">РУЧНАЯ РОСПИСЬ</h2></div>
+          <h3 class="pink-heading">От кисти к пространству</h3>
+          <p class="pink-intro">Фламинго и тропическая листва появляются на стене постепенно: от цветовых пятен к контуру и деталям.</p>
+          <div class="pink-pair pink-process">
+            <PinkFigure name="process-flamingo" width={687} height={1220} alt="Художница вручную прорабатывает детали фламинго на розовой стене" caption="Детали фламинго" />
+            <PinkFigure name="process-leaves" width={687} height={1220} alt="Процесс росписи тропических листьев на стене кофейни" caption="Растительные мотивы" />
+          </div>
+          <p class="pink-note">Реальные фотографии процесса</p>
+        </section>
+
+        <section class="pink-section" aria-labelledby="mural-title">
+          <div class="pink-section-label"><span>03</span><h2 id="mural-title">РОСПИСЬ В ИНТЕРЬЕРЕ</h2></div>
+          <h3 class="pink-heading">Иллюстрация становится пространством</h3>
+          <PinkFigure name="mural-real" width={1536} height={1152} alt="Выполненная ручная роспись: фламинго, листья и геометрические зеркала на розовой стене" caption="Выполненная роспись. Реальная фотография." />
+        </section>
+
+        <section class="pink-section" aria-labelledby="interior-title">
+          <div class="pink-section-label"><span>04</span><h2 id="interior-title">ИНТЕРЬЕР</h2></div>
+          <h3 class="pink-heading">Одно пространство, разные ракурсы</h3>
+          <p class="pink-intro">Розовая стена, дерево, абстрактная графика и мягкий тёплый свет.</p>
+          <div class="pink-interiors">
+            <PinkFigure class="pink-interior-tall" name="interior-entry" width={1086} height={1448} alt="Визуализация интерьера в сторону входа: столики, розовая стена и подвесные светильники" />
+            <PinkFigure name="interior-window" width={1448} height={1086} alt="Визуализация окна и барной зоны кофейни" />
+            <PinkFigure name="interior-bar" width={1448} height={1086} alt="Визуализация кофейни с видом на бар, дерево и розовые акценты" />
+          </div>
+          <p class="pink-note">Визуализации на основе фотографий с доработкой ИИ</p>
+        </section>
+
+        <section class="pink-section" aria-labelledby="system-title">
+          <div class="pink-section-label"><span>05</span><h2 id="system-title">ВИЗУАЛЬНАЯ СИСТЕМА</h2></div>
+          <div class="pink-system-intro"><h3 class="pink-heading">Розовый. Тропики. Кофе.</h3><p class="pink-copy">Фламинго, растительные формы и пастельные оттенки переходят со стен на печатные материалы.</p></div>
+          <div class="pink-palette">
+            <figure><div style="background:#F4D9D2"></div><figcaption>РОЗОВЫЙ <span>#F4D9D2</span></figcaption></figure>
+            <figure><div style="background:#E9E3D1"></div><figcaption>КРЕМОВЫЙ <span>#E9E3D1</span></figcaption></figure>
+            <figure><div style="background:#B4CABE"></div><figcaption>ЗЕЛЁНЫЙ <span>#B4CABE</span></figcaption></figure>
+          </div>
+          <p class="pink-note">Цветовые ориентиры по исходному макету меню</p>
+        </section>
+
+        {printPairs.map(item => <section class="pink-section" aria-labelledby={`${item.id}-title`}>
+          <div class="pink-section-label"><span>{item.number}</span><h2 id={`${item.id}-title`}>{item.label}</h2></div>
+          <h3 class="pink-heading">{item.title}</h3>
+          <p class="pink-intro">{item.description}</p>
+          <div class="pink-pair pink-print-pair">
+            <PinkFigure name={`${item.name}-design`} width={item.width} height={1536} alt={item.alt} caption="Исходный макет" zoom />
+            <PinkFigure name={`${item.name}-photo`} width={1152} height={1536} alt={item.photoAlt} caption="После печати / реальная фотография" />
+          </div>
+        </section>)}
+
+        <section class="pink-section" id="business-cards" aria-labelledby="cards-title">
+          <div class="pink-section-label"><span>08</span><h2 id="cards-title">ВИЗИТКА</h2></div>
+          <h3 class="pink-heading">Две стороны одной истории</h3>
+          <p class="pink-intro">Контакты и социальные сети на одной стороне, «4-й кофе в подарок» — на другой.</p>
+          <PinkFigure name="cards-mockup-revised" width={1448} height={1086} alt="Ровные стопки двух сторон визитки «Вкус кофе»: растительная графика с контактами и розовая карта лояльности с белым фламинго" caption="Мокап, созданный с помощью ИИ" />
+          <div class="pink-pair pink-small-artwork pink-card-originals">
+            <PinkFigure name="card-contact" width={637} height={1110} alt="Исходная сторона визитки: «ВкусКофе», QR-код, @vkyscoffe и значки социальных сетей" caption="Контакты и соцсети" zoom />
+            <PinkFigure name="card-loyalty" width={637} height={1110} alt="Исходная карта лояльности «Вкус кофе»: три чашки, белый фламинго и адрес г. Сочи, ул. Воровского, 4" caption="Карта лояльности" zoom />
+          </div>
+        </section>
+
+        <section class="pink-section" aria-labelledby="flyer-title">
+          <div class="pink-section-label"><span>09</span><h2 id="flyer-title">ФЛАЕР</h2></div>
+          <h3 class="pink-heading">Яркая точка входа</h3>
+          <p class="pink-intro">Напиток и скидка 10% на лицевой стороне. Ассортимент и адрес — на обороте.</p>
+          <PinkFigure name="flyer-mockup" width={1448} height={1086} alt="Мокап двустороннего флаера «Вкус кофе» на светлой поверхности с розовыми акцентами" caption="Мокап, созданный с помощью ИИ" />
+          <div class="pink-pair pink-small-artwork pink-flyer-originals">
+            <PinkFigure name="flyer-front" width={724} height={1536} alt="Лицевая сторона флаера «Вкус кофе» с фотографией напитка и скидкой 10%" caption="Лицевая сторона" zoom />
+            <PinkFigure name="flyer-back" width={724} height={1536} alt="Оборотная сторона флаера с ассортиментом, адресом и иллюстрацией фламинго" caption="Оборотная сторона" zoom />
+          </div>
+        </section>
+
+        <section class="pink-section pink-ending" aria-labelledby="next-project">
+          <p class="pink-eyebrow" id="next-project">СЛЕДУЮЩИЙ ПРОЕКТ</p>
+          <a class="pink-next" href="/projects/noir-coffee/">NOIR COFFEE <picture><source media="(max-width: 600px)" srcset="/assets/pink/next-arrow-mobile.svg" width="37" height="16" /><img src="/assets/pink/next-arrow.svg" width="79" height="29" alt="" /></picture></a>
+          <div class="pink-end-actions"><a class="outline-button" href="/#projects">ВСЕ ПРОЕКТЫ <span aria-hidden="true">→</span></a><a class="pink-pdf-link" href={pdf} download>Скачать кейс в PDF <span aria-hidden="true">↓</span></a></div>
+          <div class="pink-contact"><h2>Есть идея? Обсудим.</h2><a class="outline-button" href="https://t.me/npc_dandelion" target="_blank" rel="noopener noreferrer" aria-label="Написать @npc_dandelion в Telegram">СВЯЗАТЬСЯ <span aria-hidden="true">→</span></a></div>
+        </section>
+      </main>
+      <footer class="site-footer"><span>© 2026 NPC Dandelion</span><a href="#top" aria-label="Наверх">↑</a><span>Идеи · Люди · Пространства</span></footer>
+    </div>
+  </body>
+</html>
