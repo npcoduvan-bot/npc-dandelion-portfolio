@@ -1,0 +1,133 @@
+---
+import '../../styles/global.css';
+import '../../styles/nko-case.css';
+import SiteHeader from '../../components/SiteHeader.astro';
+
+const asset = (name: string) => `/assets/nko/${name}.webp`;
+const pdf = '/downloads/NKO-Prichina-schastya.pdf';
+const cards = [
+  { name: 'card-friendship', label: 'Дружба', alt: 'Двое детей и собака идут по сказочному лесу' },
+  { name: 'card-travel', label: 'Путешествие', alt: 'Двое детей стоят посреди бирюзового пейзажа' },
+  { name: 'card-care', label: 'Забота', alt: 'Девочка обнимает кота под надписью «Забота»' },
+  { name: 'card-walk', label: 'Прогулка', alt: 'Дети бегут по полю под надписью «Прогулка»' },
+  { name: 'card-inspiration', label: 'Вдохновение', alt: 'Девочка с книгой в цветочном венке' },
+  { name: 'card-celebration', label: 'Праздник', alt: 'Дети у праздничного торта в сказочном лесу' },
+  { name: 'card-creativity', label: 'Творчество', alt: 'Девочка рисует у мольберта' },
+  { name: 'card-calm', label: 'Спокойствие', alt: 'Рыжеволосая девочка среди одуванчиков' },
+  { name: 'card-rest', label: 'Отдых', alt: 'Девочка отдыхает у окна с чашкой' },
+  { name: 'card-comfort', label: 'Уют', alt: 'Девочка укутана в плед рядом с котом' },
+  { name: 'card-music', label: 'Музыка', alt: 'Ребёнок играет на гитаре' },
+];
+const explorations = [
+  { name: 'card-happiness', label: 'Основной образ', alt: 'Рыжеволосая девочка с одуванчиком под надписью «Счастье»' },
+  { name: 'card-happiness-alt-a', label: 'Вариант 01', alt: 'Улыбающийся ребёнок запускает бумажный самолётик' },
+  { name: 'card-happiness-alt-b', label: 'Вариант 02', alt: 'Ребёнок с оранжевым шаром прыгает среди облаков' },
+  { name: 'card-creativity-alt', label: 'Творчество', alt: 'Девочка с театральной маской среди цветов' },
+];
+---
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1719" />
+    <title>Причина счастья — айдентика НКО · NPC Dandelion</title>
+    <meta name="description" content="Визуальная айдентика НКО «Причина счастья»: логотип, иллюстративная серия, визитки, бланки и оформление мероприятия. Кейс и PDF NPC Dandelion." />
+    <link rel="canonical" href="https://npc-dandelion-portfolio.pages.dev/projects/prichina-schastya/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Причина счастья — визуальная айдентика" />
+    <meta property="og:description" content="От логотипа и иллюстративной серии до печатных носителей и оформления мероприятия." />
+    <meta property="og:url" content="https://npc-dandelion-portfolio.pages.dev/projects/prichina-schastya/" />
+    <meta property="og:image" content="https://npc-dandelion-portfolio.pages.dev/assets/nko/event-counter.webp" />
+    <meta property="og:image:alt" content="Оформление стойки НКО «Причина счастья» для мероприятия" />
+  </head>
+  <body class="nko-case">
+    <a class="skip-link" href="#main">К содержимому</a>
+    <div class="site-shell">
+      <SiteHeader />
+      <main id="main">
+        <div class="nko-toolbar">
+          <a href="/#projects"><span aria-hidden="true">←</span> ВСЕ ПРОЕКТЫ</a>
+          <a href={pdf} download>СКАЧАТЬ КЕЙС <span class="nko-pdf-size">PDF · 18,9 МБ</span><span aria-hidden="true">↓</span></a>
+        </div>
+
+        <section class="nko-hero" aria-labelledby="case-title">
+          <div class="nko-hero-copy">
+            <p class="nko-kicker">НКО / ВИЗУАЛЬНАЯ АЙДЕНТИКА</p>
+            <h1 id="case-title">Причина<br /> <em>счастья</em></h1>
+            <p class="nko-hero-lede">Айдентика о людях, заботе и маленьких поводах для радости.</p>
+            <div class="nko-hero-meta"><span>Логотип</span><span>Иллюстрации</span><span>Печатные носители</span></div>
+          </div>
+          <figure class="nko-hero-image"><img src={asset('event-counter')} width="1448" height="1086" alt="Белая промо-стойка с бирюзовой графикой, логотипами НКО «Причина счастья» и театра" fetchpriority="high" /><figcaption>Оформление стойки для мероприятия</figcaption></figure>
+        </section>
+
+        <section class="nko-section nko-intro" aria-labelledby="about-title">
+          <div class="nko-section-label"><span>01 / О ПРОЕКТЕ</span></div>
+          <div class="nko-intro-grid">
+            <h2 id="about-title">Одна идея.<br />Разные истории.</h2>
+            <div><p>Для НКО «Причина счастья» разработана визуальная система, объединяющая знак, иллюстративную серию, персональные визитки, шаблоны документов и оформление стойки для мероприятия.</p><dl class="nko-facts"><div><dt>ЗАДАЧА</dt><dd>Создать дружелюбный образ организации и связать разные форматы общей графикой.</dd></div><div><dt>РЕШЕНИЕ</dt><dd>Пунктирное сердце, геометрическая форма, мягкая бирюзовая палитра и иллюстративные сюжеты.</dd></div></dl></div>
+          </div>
+        </section>
+
+        <section class="nko-section" aria-labelledby="identity-title">
+          <div class="nko-section-label"><span>02 / ЛОГОТИП</span></div>
+          <div class="nko-section-head"><h2 id="identity-title">Знак и его основа</h2><p>Пунктирный контур сердца сочетается с геометрическим элементом. Две версии помогают знаку работать на светлых и цветных носителях.</p></div>
+          <div class="nko-logo-grid">
+            <figure><img src={asset('logo-outline')} width="662" height="524" loading="lazy" alt="Контурная версия логотипа: пунктирное сердце и геометрическая форма" /><figcaption><span>01</span> Контурная версия</figcaption></figure>
+            <figure><img src={asset('logo-color')} width="876" height="837" loading="lazy" alt="Цветная версия логотипа: сердце на бирюзовом пятне" /><figcaption><span>02</span> Цветная версия</figcaption></figure>
+          </div>
+          <div class="nko-palette" aria-label="Палитра презентации"><div style="--swatch:#244A4D"><span></span><small>#244A4D<br />Тёмный бирюз</small></div><div style="--swatch:#9CCDD1"><span></span><small>#9CCDD1<br />Аква</small></div><div style="--swatch:#DCEFF0"><span></span><small>#DCEFF0<br />Светлая аква</small></div><div style="--swatch:#FCFCFA"><span></span><small>#FCFCFA<br />Белый</small></div><div style="--swatch:#303C3D"><span></span><small>#303C3D<br />Графит</small></div></div>
+          <p class="nko-note">Палитра подобрана по растровым материалам для презентации. Печатные значения уточняются по исходным файлам.</p>
+        </section>
+
+        <section class="nko-section" aria-labelledby="applications-title">
+          <div class="nko-section-label"><span>03 / ПРИМЕНЕНИЕ</span></div>
+          <div class="nko-section-head"><h2 id="applications-title">Логотип на носителях</h2><p>От небольшого бейджа до повседневных вещей: знак сохраняет характер в контурной и цветной версиях.</p></div>
+          <figure class="nko-wide-image"><img src={asset('applications-mockup')} width="1254" height="1254" loading="lazy" alt="Концепции применения логотипа на шопере, кружке, блокноте и бейдже" /><figcaption>Шопер · Кружка · Блокнот · Бейдж / концепции применения, ИИ-визуализации</figcaption></figure>
+        </section>
+
+        <section class="nko-section" aria-labelledby="cards-title">
+          <div class="nko-section-label"><span>04 / ИЛЛЮСТРАТИВНАЯ СЕРИЯ</span></div>
+          <div class="nko-section-head"><h2 id="cards-title">Маленькие причины</h2><p>Общий формат объединяет разные истории. У каждой темы свой сюжет, настроение и цветовой акцент.</p></div>
+          <div class="nko-card-grid">
+            {cards.map((card) => <figure><img src={asset(card.name)} width="405" height="728" loading="lazy" alt={card.alt} /><figcaption>{card.label}</figcaption></figure>)}
+          </div>
+        </section>
+
+        <section class="nko-section" aria-labelledby="explorations-title">
+          <div class="nko-section-label"><span>05 / ПОИСК ОБРАЗА</span></div>
+          <div class="nko-section-head"><h2 id="explorations-title">Одно слово. Разные настроения.</h2><p>Варианты «Счастья» и «Творчества» показывают поиск эмоционального образа внутри единой серии.</p></div>
+          <div class="nko-card-grid nko-card-grid-four">
+            {explorations.map((card) => <figure><img src={asset(card.name)} width="405" height="728" loading="lazy" alt={card.alt} /><figcaption>{card.label}</figcaption></figure>)}
+          </div>
+        </section>
+
+        <section class="nko-section" aria-labelledby="business-title">
+          <div class="nko-section-label"><span>06 / ПЕРСОНАЛЬНЫЕ ВИЗИТКИ</span></div>
+          <div class="nko-section-head"><h2 id="business-title">Знакомство через образ</h2><p>Информационная сторона остаётся узнаваемой, а иллюстрация на обороте придаёт каждому комплекту индивидуальность.</p></div>
+          <div class="nko-business-grid">
+            <figure><img src={asset('business-card-natalya')} width="766" height="1333" loading="lazy" alt="Лицевая сторона визитки Натальи с контурным логотипом" /><figcaption>Наталья / лицевая сторона</figcaption></figure>
+            <figure><img src={asset('business-card-inspiration-back')} width="766" height="1333" loading="lazy" alt="Иллюстрированный оборот визитки Натальи с образом «Вдохновение»" /><figcaption>Наталья / оборот</figcaption></figure>
+            <figure><img src={asset('business-card-svetlana')} width="766" height="1333" loading="lazy" alt="Лицевая сторона визитки Светланы с контурным логотипом" /><figcaption>Светлана / лицевая сторона</figcaption></figure>
+            <figure><img src={asset('business-card-happiness-back')} width="766" height="1333" loading="lazy" alt="Иллюстрированный оборот визитки Светланы с образом «Счастье»" /><figcaption>Светлана / оборот</figcaption></figure>
+          </div>
+        </section>
+
+        <section class="nko-section" aria-labelledby="letterhead-title">
+          <div class="nko-section-label"><span>07 / ДОКУМЕНТЫ</span></div>
+          <div class="nko-section-head"><h2 id="letterhead-title">Фирменный бланк</h2><p>Мягкие формы и растительная графика обрамляют документ, оставляя центральное поле свободным для текста.</p></div>
+          <figure class="nko-letterhead-mockup"><img src={asset('letterhead-mockup')} width="1059" height="1486" loading="lazy" alt="Мокап фирменного бланка НКО на столе" /><figcaption>Визуализация шаблона · демонстрационное текстовое наполнение</figcaption></figure>
+          <div class="nko-letterheads"><figure><img src={asset('letterhead-color')} width="1095" height="1536" loading="lazy" alt="Цветной шаблон документа с бирюзовыми волнами и растительной графикой" /><figcaption>Цветной вариант</figcaption></figure><figure><img src={asset('letterhead-mono')} width="1095" height="1536" loading="lazy" alt="Монохромный шаблон документа с растительной графикой" /><figcaption>Монохромный вариант</figcaption></figure></div>
+        </section>
+
+        <section class="nko-closing" aria-labelledby="closing-title">
+          <p class="nko-kicker">ПРИЧИНА СЧАСТЬЯ / NPC DANDELION</p>
+          <h2 id="closing-title">Счастье<br />в простых вещах.</h2>
+          <p>Единая визуальная система — от небольшого печатного носителя до оформления пространства мероприятия.</p>
+          <div class="nko-closing-actions"><a href={pdf} download>Скачать полный кейс <span aria-hidden="true">↓</span></a><a href="/#projects">Все проекты <span aria-hidden="true">→</span></a></div>
+        </section>
+      </main>
+      <footer class="site-footer"><span>© 2026 NPC Dandelion</span><a href="#top" aria-label="Наверх">↑</a><span>Идеи · Люди · Пространства</span></footer>
+    </div>
+  </body>
+</html>

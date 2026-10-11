@@ -1,0 +1,99 @@
+.nko-case { background:#0b1719; color:#eff6f4; }
+.nko-case .site-shell { width:min(100% - 104px,1320px); }
+.nko-case .site-footer { border-top:1px solid #315052; }
+.nko-toolbar { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:26px 0 20px; border-bottom:1px solid #315052; font-size:10px; letter-spacing:.11em; }
+.nko-toolbar a { display:inline-flex; align-items:center; gap:12px; min-height:32px; }
+.nko-toolbar a:hover,.nko-closing-actions a:hover { color:#9ccdd1; }
+.nko-pdf-size { color:#9ccdd1; }
+.nko-hero { display:grid; grid-template-columns:.92fr 1.08fr; gap:5%; align-items:center; min-height:650px; padding:72px 0 95px; }
+.nko-hero-copy { align-self:center; }
+.nko-kicker { margin:0 0 32px; color:#9ccdd1; font-size:11px; letter-spacing:.18em; line-height:1.6; }
+.nko-hero h1,.nko-closing h2 { margin:0; font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(64px,8vw,122px); line-height:.86; font-weight:400; letter-spacing:-.045em; }
+.nko-hero h1 em { color:#9ccdd1; font-style:normal; }
+.nko-hero-lede { max-width:390px; margin:35px 0 30px; color:#d3e3e1; font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(25px,2.8vw,37px); line-height:1.12; }
+.nko-hero-meta { display:flex; flex-wrap:wrap; gap:8px; }
+.nko-hero-meta span { border:1px solid #44666a; border-radius:50px; color:#9ccdd1; padding:8px 11px; font-size:9px; letter-spacing:.07em; text-transform:uppercase; }
+.nko-hero-image { margin:0; background:#eaf4f2; padding:16px 16px 10px; transform:rotate(1deg); box-shadow:0 28px 70px #0006; }
+.nko-hero-image img { width:100%; height:auto; }
+.nko-hero-image figcaption { padding-top:10px; font-size:10px; color:#416064; letter-spacing:.05em; }
+.nko-section { border-top:1px solid #315052; padding:36px 0 90px; }
+.nko-section-label { color:#9ccdd1; font-size:10px; letter-spacing:.16em; margin-bottom:45px; }
+.nko-intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:8%; }
+.nko-intro h2,.nko-section-head h2 { margin:0; font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(48px,5.8vw,83px); font-weight:400; line-height:.95; letter-spacing:-.035em; }
+.nko-intro-grid>div>p,.nko-section-head p { color:#c8d9d7; font-size:15px; line-height:1.8; margin:0; max-width:530px; }
+.nko-facts { display:grid; gap:26px; border-top:1px solid #315052; padding-top:26px; margin-top:36px; }
+.nko-facts div { display:grid; grid-template-columns:110px 1fr; gap:25px; }
+.nko-facts dt { color:#9ccdd1; font-size:10px; letter-spacing:.13em; }
+.nko-facts dd { margin:0; color:#bdcfcd; font-size:13px; line-height:1.65; }
+.nko-section-head { display:grid; grid-template-columns:1fr .72fr; gap:7%; align-items:end; margin-bottom:35px; }
+.nko-section-head h2 { font-size:clamp(46px,5.5vw,75px); }
+.nko-section-head p { font-size:14px; }
+.nko-logo-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.nko-logo-grid figure { margin:0; min-width:0; }
+.nko-logo-grid img { width:100%; height:390px; object-fit:contain; padding:38px; background:#fcfcfa; }
+.nko-logo-grid figcaption,.nko-wide-image figcaption,.nko-letterhead-mockup figcaption,.nko-letterheads figcaption { display:flex; gap:14px; align-items:baseline; margin-top:12px; color:#b8cbc9; font-size:11px; line-height:1.5; }
+.nko-logo-grid figcaption span { color:#9ccdd1; }
+.nko-palette { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin:58px 0 0; }
+.nko-palette>div { min-width:0; }
+.nko-palette span { display:block; height:70px; background:var(--swatch); border:1px solid #547174; }
+.nko-palette small { display:block; margin-top:10px; color:#c8d9d7; font-size:10px; line-height:1.5; }
+.nko-note { margin:25px 0 0; color:#8da9a7; font-size:10px; line-height:1.7; }
+.nko-wide-image { margin:0; }
+.nko-wide-image img { width:min(100%,900px); height:auto; margin:auto; background:#eff1ec; }
+.nko-wide-image figcaption { justify-content:center; text-align:center; }
+.nko-card-grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:24px 15px; }
+.nko-card-grid figure,.nko-business-grid figure,.nko-letterheads figure { margin:0; min-width:0; }
+.nko-card-grid img { width:100%; height:auto; border:1px solid #315052; }
+.nko-card-grid figcaption,.nko-business-grid figcaption { margin-top:10px; color:#b8cbc9; font-size:11px; }
+.nko-card-grid-four { grid-template-columns:repeat(4,minmax(0,1fr)); max-width:1000px; }
+.nko-business-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+.nko-business-grid img { width:100%; height:auto; background:#f8f2e9; }
+.nko-letterhead-mockup { margin:0 auto 50px; max-width:590px; }
+.nko-letterhead-mockup img { width:100%; height:auto; }
+.nko-letterhead-mockup figcaption { justify-content:center; text-align:center; }
+.nko-letterheads { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; max-width:900px; margin:auto; }
+.nko-letterheads img { width:100%; height:auto; }
+.nko-closing { border-top:1px solid #315052; padding:80px 0 120px; max-width:930px; }
+.nko-closing h2 { font-size:clamp(66px,9vw,120px); }
+.nko-closing>p:not(.nko-kicker) { max-width:560px; margin:35px 0 38px; color:#c8d9d7; font-size:16px; line-height:1.7; }
+.nko-closing-actions { display:flex; flex-wrap:wrap; gap:18px; }
+.nko-closing-actions a { display:inline-flex; justify-content:space-between; gap:22px; border:1px solid #5c8385; border-radius:100px; padding:14px 22px; min-width:205px; font-size:11px; letter-spacing:.08em; }
+@media(max-width:900px) {
+  .nko-case .site-shell { width:min(100% - 42px,700px); }
+  .nko-hero { grid-template-columns:1fr; gap:40px; padding:55px 0 70px; }
+  .nko-hero-image { max-width:600px; transform:none; }
+  .nko-card-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .nko-card-grid-four { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .nko-logo-grid img { height:300px; }
+}
+@media(max-width:600px) {
+  .nko-case .site-shell { width:calc(100% - 30px); }
+  .nko-toolbar { font-size:9px; gap:10px; padding-top:17px; }
+  .nko-toolbar a { gap:5px; }
+  .nko-pdf-size { display:none; }
+  .nko-hero { padding:48px 0 65px; }
+  .nko-kicker { margin-bottom:22px; font-size:10px; }
+  .nko-hero h1 { font-size:clamp(64px,15vw,95px); }
+  .nko-hero-lede { margin:25px 0; }
+  .nko-hero-image { padding:8px 8px 7px; }
+  .nko-hero-image figcaption { font-size:9px; }
+  .nko-section { padding:25px 0 70px; }
+  .nko-section-label { margin-bottom:29px; }
+  .nko-intro-grid,.nko-section-head { grid-template-columns:1fr; gap:25px; }
+  .nko-intro h2,.nko-section-head h2 { font-size:clamp(48px,12vw,70px); }
+  .nko-intro-grid>div>p,.nko-section-head p { font-size:13px; }
+  .nko-facts div { grid-template-columns:1fr; gap:8px; }
+  .nko-logo-grid { gap:8px; }
+  .nko-logo-grid img { height:190px; padding:14px; }
+  .nko-logo-grid figcaption { font-size:10px; }
+  .nko-palette { grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; margin-top:38px; }
+  .nko-palette span { height:45px; }
+  .nko-palette small { font-size:8px; overflow-wrap:anywhere; }
+  .nko-card-grid,.nko-card-grid-four { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 10px; }
+  .nko-business-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 10px; }
+  .nko-letterheads { gap:8px; }
+  .nko-letterhead-mockup { margin-bottom:35px; }
+  .nko-closing { padding:60px 0 80px; }
+  .nko-closing h2 { font-size:clamp(65px,13vw,90px); }
+  .nko-closing>p:not(.nko-kicker) { font-size:14px; }
+}
