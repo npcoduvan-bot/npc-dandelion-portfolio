@@ -1,0 +1,88 @@
+---
+import '../../styles/global.css';
+import '../../styles/levis-case.css';
+import SiteHeader from '../../components/SiteHeader.astro';
+import LevisFigure from '../../components/LevisFigure.astro';
+
+const sections = [
+  { id: 'campaign', number: '02', label: 'IMAGE CAMPAIGN', title: 'Живи в Levi’s', columns: 2, images: [
+    { id: '13013', width: 1097, caption: '501® / движение и детали', alt: 'Имиджевый коллаж Levi’s 501: девушка в джинсах, детали денима и красный логотип' },
+    { id: '13011', width: 1097, caption: 'LIVE IN LEVI’S / ритм типографики', alt: 'Рекламный коллаж с моделями в движении и повторяющейся надписью LIVE IN LEVI’S' },
+  ] },
+  { id: 'editorial', number: '03', label: 'EDITORIAL LAYOUTS', title: 'Деним в деталях', columns: 3, images: [
+    { id: '13006', width: 1178, caption: 'Фактура / коллаж', alt: 'Коллаж Levi’s: джинсовая куртка, светлый деним и красная фирменная графика' },
+    { id: '13012', width: 1178, caption: 'Ракурс / композиция', alt: 'Коллаж с девушкой в светлых джинсах, фактурой денима и надписью «Живи в»' },
+    { id: '13017', width: 1097, caption: 'Город / образ', alt: 'Городской рекламный макет Levi’s: модель в джинсовом комплекте на переходе' },
+  ] },
+  { id: 'product', number: '04', label: 'PRODUCT SYSTEM', title: 'Модель. Посадка. Характер.', columns: 3, images: [
+    { id: '13004', width: 1200, caption: '501® ORIGINAL CROPPED', alt: 'Карточка джинсов Levi’s 501 Original Cropped с фотографией модели и описанием посадки' },
+    { id: '12999', width: 1200, caption: '721 HIGH-RISE SKINNY', alt: 'Карточка джинсов Levi’s 721 High-Rise Skinny: высокая посадка и облегающий силуэт' },
+    { id: '12996', width: 1200, caption: '725 HIGH-RISE BOOTCUT', alt: 'Карточка джинсов Levi’s 725 High-Rise Bootcut с фотографией модели на светлом фоне' },
+  ] },
+];
+---
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#090909" />
+    <title>Levi’s Sochi — реклама и соцсети · NPC Dandelion</title>
+    <meta name="description" content="Графика для магазина Levi’s в Сочи: имиджевые коллажи, рекламные композиции и карточки моделей джинсов. Кейс NPC Dandelion." />
+    <link rel="canonical" href="https://npc-dandelion-portfolio.pages.dev/projects/levis-sochi/" />
+    <link rel="preload" href="/fonts/portfolio/Bodoni-Moda-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Levi’s Sochi — Деним. В движении." />
+    <meta property="og:description" content="Имиджевые коллажи, рекламная графика и карточки моделей джинсов. NPC Dandelion." />
+    <meta property="og:url" content="https://npc-dandelion-portfolio.pages.dev/projects/levis-sochi/" />
+    <meta property="og:image" content="https://npc-dandelion-portfolio.pages.dev/assets/levis/13014.jpg" />
+    <meta property="og:image:alt" content="Деним разных оттенков и красный логотип Levi’s" />
+  </head>
+  <body class="levis-case">
+    <a class="skip-link" href="#main">К содержимому</a>
+    <div class="site-shell">
+      <SiteHeader />
+      <main id="main">
+        <a class="levis-back" href="/#projects"><span aria-hidden="true">←</span> ВСЕ ПРОЕКТЫ</a>
+        <section class="levis-hero" aria-labelledby="case-title">
+          <div class="levis-hero-copy">
+            <p class="levis-category">РЕКЛАМА<span class="levis-category-divider" aria-hidden="true"> / </span><br />СОЦСЕТИ</p>
+            <h1 id="case-title">LEVI’S<br />SOCHI</h1>
+            <p class="levis-tagline">Деним.<br />В движении.</p>
+            <p class="levis-intro">Графика для магазина Levi’s в Сочи</p>
+            <span class="levis-accent" aria-hidden="true"></span>
+          </div>
+          <LevisFigure id="13014" width={1178} alt="Джинсы разных оттенков, крупные детали денима и красный логотип Levi’s" caption="01 / DENIM" priority columns={2} />
+        </section>
+        <section class="levis-section" aria-labelledby="about-case">
+          <div class="levis-section-label"><span>01</span><h2 id="about-case">О ПРОЕКТЕ</h2></div>
+          <div class="levis-about-grid">
+            <h3 class="levis-display">Один бренд.<br />Разные ритмы.</h3>
+            <div class="levis-copy">
+              <p>Серия рекламных макетов для магазина Levi’s в Сочи: имиджевые коллажи, графические композиции и карточки моделей джинсов.</p>
+              <dl class="levis-scope">
+                <div><dt>РОЛЬ</dt><dd>Графический дизайн<br />Компоновка</dd></div>
+                <div><dt>ЗАДАЧА</dt><dd>Показать характер бренда и разнообразие коллекции</dd></div>
+              </dl>
+            </div>
+          </div>
+        </section>
+        {sections.map((section) => (
+          <section class="levis-section" aria-labelledby={`${section.id}-title`}>
+            <div class="levis-section-label"><span>{section.number}</span><h2 id={`${section.id}-title`}>{section.label}</h2></div>
+            <h3 class="levis-display levis-section-title">{section.title}</h3>
+            <div class:list={['levis-gallery', { 'levis-gallery-pair': section.columns === 2 }]}>
+              {section.images.map((image) => <LevisFigure {...image} columns={section.columns} />)}
+            </div>
+          </section>
+        ))}
+        <section class="levis-closing" aria-labelledby="thanks-title">
+          <p class="levis-category">LEVI’S SOCHI / SELECTED WORK</p>
+          <h2 id="thanks-title">Спасибо<br />за просмотр</h2>
+          <div class="levis-closing-links"><a href="/#projects">← Все проекты</a><a href="/projects/noir-coffee/">NOIR COFFEE <span aria-hidden="true">→</span></a></div>
+        </section>
+      </main>
+      <footer class="site-footer"><span>© 2026 NPC Dandelion</span><a href="#top" aria-label="Наверх">↑</a><span>Идеи · Люди · Пространства</span></footer>
+    </div>
+  </body>
+</html>

@@ -39,3 +39,5 @@ pnpm build
 Страница кейса — `src/pages/projects/noir-coffee.astro`, её стили — `src/styles/noir-case.css`, изображения — `public/assets/noir/`. Настройки Cloudflare Pages остаются прежними: `pnpm build`, каталог `dist`, ветка `main`.
 
 Страница розовой кофейни — `src/pages/projects/pink-cafe.astro`, стили — `src/styles/pink-case.css`, общий компонент изображений — `src/components/PinkFigure.astro`, материалы — `public/assets/pink/`. Проверены ширины 320, 390, 768, 1051, 1200 и 1440 px, загрузка изображений и шрифтов, переходы между кейсами и скачивание PDF.
+
+Кейс Levi’s Sochi — `/projects/levis-sochi/`, перенесён из утверждённой сборки `LEVIS-ONLY-20261011-04`. Страница: `src/pages/projects/levis-sochi.astro`; стили: `src/styles/levis-case.css`; изображения: `public/assets/levis/`. Все 9 исходных JPEG сохранены без изменений и открываются в полном размере по нажатию. Для телефонов подготовлены WebP шириной 600 px. Тексты и сетки — HTML/CSS, шрифты и шапка общие с портфолио. Карточка кейса добавлена на главную.

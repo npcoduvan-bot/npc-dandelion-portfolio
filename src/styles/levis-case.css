@@ -1,0 +1,67 @@
+.levis-case { background: #090909; color: #efedeb; }
+.levis-case .site-shell { width: calc(100% - 144px); max-width: 1296px; }
+.levis-back { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin: 8px 0 26px; color: #b0afad; font-size: 11px; letter-spacing: .06em; }
+.levis-back:hover, .levis-closing-links a:hover { color: #efedeb; }
+.levis-hero { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding-bottom: 96px; }
+.levis-hero-copy { padding-top: 28px; }
+.levis-category { margin: 0; font-size: 11px; line-height: 1.9; letter-spacing: .08em; color: #949391; }
+.levis-category-divider { display: none; }
+.levis-hero h1 { margin: 32px 0 24px; font-family: 'Bodoni Moda', Georgia, serif; font-size: clamp(64px, 7.5vw, 108px); line-height: 1.06; font-weight: 400; letter-spacing: -.02em; }
+.levis-tagline { margin: 0 0 28px; font: 400 clamp(36px, 3.34vw, 48px)/1.13 'Cormorant Garamond', Georgia, serif; }
+.levis-intro { max-width: 36em; margin: 0; font-size: 16px; line-height: 1.7; color: #b0afad; }
+.levis-accent { display: block; margin-top: 46px; width: 65px; height: 3px; background: #af142a; }
+.levis-figure { margin: 0; min-width: 0; }
+.levis-figure a { display: block; }
+.levis-figure img { width: 100%; height: auto; }
+.levis-figure figcaption { margin-top: 18px; font-size: 12px; line-height: 1.6; color: #b0afad; }
+.levis-hero .levis-figure figcaption { color: #949391; font-size: 11px; letter-spacing: .06em; }
+.levis-section { border-top: 1px solid #2b2b2b; padding: 22px 0 110px; }
+.levis-section-label { display: flex; align-items: baseline; gap: 24px; }
+.levis-section-label > span { font-size: 12px; color: #949391; }
+.levis-section-label h2 { margin: 0; font-size: 18px; line-height: 1.4; font-weight: 400; }
+.levis-about-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 64px; }
+.levis-display { font: 400 60px/1.1 'Cormorant Garamond', Georgia, serif; margin: 0; }
+.levis-copy > p { margin: 8px 0 36px; font-size: 17px; line-height: 1.65; color: #b0afad; max-width: 38em; }
+.levis-scope { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 0; }
+.levis-scope dt { margin-bottom: 18px; font-size: 10px; color: #949391; letter-spacing: .06em; }
+.levis-scope dd { margin: 0; font-size: 15px; line-height: 1.7; }
+.levis-section-title { font-size: 52px; margin: 38px 0 32px; }
+.levis-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.levis-gallery-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.levis-closing { border-top: 1px solid #2b2b2b; padding: 32px 0 56px; }
+.levis-closing h2 { margin: 48px 0; font: 400 clamp(52px, 7vw, 100px)/1.16 'Cormorant Garamond', Georgia, serif; }
+.levis-closing-links { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; color: #b0afad; font-size: 13px; }
+.levis-closing-links a { display: inline-flex; gap: 20px; align-items: center; min-height: 44px; }
+@media (max-width: 1050px) {
+  .levis-case .site-shell { width: calc(100% - 64px); }
+  .levis-display { font-size: 46px; }
+  .levis-section-title { font-size: 42px; }
+  .levis-scope { grid-template-columns: 1fr; gap: 24px; }
+  .levis-section { padding-bottom: 80px; }
+  .levis-hero h1 { font-size: 72px; }
+  .levis-intro { font-size: 14px; }
+}
+@media (max-width: 700px) {
+  .levis-case .site-shell { width: calc(100% - 48px); }
+  .levis-back { margin: 4px 0 24px; font-size: 10px; }
+  .levis-hero { grid-template-columns: 1fr; gap: 32px; padding-bottom: 64px; }
+  .levis-hero-copy { padding: 0; }
+  .levis-category { font-size: 10px; }
+  .levis-hero .levis-category br { display: none; }
+  .levis-category-divider { display: inline; }
+  .levis-hero h1 { font-size: clamp(60px, 17.44vw, 84px); line-height: 1.12; margin: 30px 0 20px; }
+  .levis-tagline, .levis-accent { display: none; }
+  .levis-intro { color: #efedeb; font: 400 22px/1.4 'Cormorant Garamond', Georgia, serif; }
+  .levis-section-label { gap: 24px; }
+  .levis-section-label h2 { font-size: 16px; }
+  .levis-about-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 48px; }
+  .levis-display { font-size: 38px; line-height: 1.16; }
+  .levis-copy > p { margin: 0 0 30px; font-size: 14px; line-height: 1.65; }
+  .levis-scope dd { font-size: 14px; }
+  .levis-scope dt { margin-bottom: 14px; }
+  .levis-gallery, .levis-gallery-pair { grid-template-columns: 1fr; gap: 44px; }
+  .levis-figure figcaption { margin-top: 16px; font-size: 10px; }
+  .levis-section { padding-bottom: 70px; }
+  .levis-section-title { font-size: 32px; line-height: 1.2; margin: 40px 0 30px; }
+  .levis-closing { padding-bottom: 32px; }
+}
