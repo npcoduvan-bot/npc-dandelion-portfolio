@@ -14,7 +14,25 @@
     </svg>
     <div class="hero-leaves" aria-hidden="true">
       <svg viewBox="230 -20 1170 1110" focusable="false">
-        <image href="/assets/hero/dandelion-leaves-plum.webp" x="0" y="0" width="1536" height="1024" transform="rotate(12 800 650)" />
+        <defs>
+          <!-- Keep the approved leaf artwork; only refine its existing linework. -->
+          <filter id="hero-fine-engraving" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
+            <feMorphology in="SourceGraphic" operator="erode" radius=".48" result="finer-lines" />
+            <feComponentTransfer in="finer-lines">
+              <feFuncR type="gamma" amplitude="1" exponent="1.3" offset="0" />
+              <feFuncG type="gamma" amplitude="1" exponent="1.3" offset="0" />
+              <feFuncB type="gamma" amplitude="1" exponent="1.3" offset="0" />
+            </feComponentTransfer>
+          </filter>
+          <linearGradient id="hero-stem-shadow" gradientUnits="userSpaceOnUse" x1="0" y1="1024" x2="0" y2="565">
+            <stop offset="0" stop-color="#000" />
+            <stop offset=".85" stop-color="#fff" />
+          </linearGradient>
+          <mask id="hero-stem-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1536" height="1024">
+            <rect width="1536" height="1024" fill="url(#hero-stem-shadow)" />
+          </mask>
+        </defs>
+        <image href="/assets/hero/dandelion-leaves-plum.webp" x="0" y="0" width="1536" height="1024" transform="rotate(12 800 650)" filter="url(#hero-fine-engraving)" mask="url(#hero-stem-mask)" />
       </svg>
     </div>
     <div class="hero-content">
@@ -35,7 +53,7 @@
   .hero-stage::after { content: ''; position: absolute; bottom: 0; left: 5.078125%; right: 5.078125%; height: 1.125px; background: #2b2b2b; }
   .hero-orbits { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
   .hero-orbits circle { stroke-width: 1.25; }
-  .hero-leaves { position: absolute; left: 44%; top: -2.5cqw; width: 49%; height: 43cqw; pointer-events: none; }
+  .hero-leaves { position: absolute; left: 41%; top: -3.5cqw; width: 53%; height: 46cqw; pointer-events: none; }
   .hero-leaves svg { display: block; width: 100%; height: 100%; overflow: visible; }
   .hero-content { position: relative; z-index: 1; padding-top: 6.44097cqw; margin-left: 5.34722%; width: 49.51389%; }
   h1 { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 400; font-synthesis: none; font-optical-sizing: none; font-size: 8.0078125cqw; line-height: 7.6171875cqw; color: #efedeb; margin: 0; }
@@ -57,7 +75,7 @@
   .hero-manifest::after { content: ''; position: absolute; width: 2.5390625cqw; height: .984375px; background: #efedeb; right: 0; top: calc(100% + 1.46267cqw); }
   @media (max-width: 1050px) {
     .hero-stage { height: 670px; }
-    .hero-leaves { left: 3%; top: 168px; width: 100%; height: 320px; }
+    .hero-leaves { left: 1%; top: 158px; width: 104%; height: 344px; }
     .hero-orbits circle { stroke-width: 1; }
     .hero-content { padding-top: 22px; margin-inline: var(--home-gutter); width: auto; }
     h1 { font-size: 83px; line-height: 83px; }
@@ -76,7 +94,7 @@
     .hero-manifest::before, .hero-manifest::after, .hero-stage::after { display: none; }
   }
   @media (min-width: 561px) and (max-width: 1050px) {
-    .hero-leaves { left: 39%; top: 24px; width: 57%; height: 490px; }
+    .hero-leaves { left: 37%; top: 18px; width: 61%; height: 512px; }
     .view-work { max-width: 342px; }
   }
   @media (max-width: 389px) {
