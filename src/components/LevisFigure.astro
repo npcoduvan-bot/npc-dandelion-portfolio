@@ -1,14 +1,14 @@
 ---
-const { id, width, alt, caption, priority = false, columns = 3 } = Astro.props;
+const { id, width, height = 1536, alt, caption, priority = false, columns = 3, ext = 'jpg' } = Astro.props;
 const sizes = columns === 2
   ? '(max-width: 700px) calc(100vw - 48px), (max-width: 1440px) calc((100vw - 168px) / 2), 636px'
   : '(max-width: 700px) calc(100vw - 48px), (max-width: 1440px) calc((100vw - 192px) / 3), 416px';
 ---
 <figure class="levis-figure">
-  <a href={`/assets/levis/${id}.jpg`} target="_blank" rel="noopener noreferrer" aria-label={`${alt}. Открыть изображение в полном размере в новой вкладке`}>
+  <a href={`/assets/levis/${id}.${ext}`} target="_blank" rel="noopener noreferrer" aria-label={`${alt}. Открыть изображение в полном размере в новой вкладке`}>
     <picture>
       <source type="image/webp" media="(max-width: 600px)" srcset={`/assets/levis/${id}-600.webp`} />
-      <img src={`/assets/levis/${id}.jpg`} width={width} height="1536" alt={alt} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" sizes={sizes} />
+      <img src={`/assets/levis/${id}.${ext}`} width={width} height={height} alt={alt} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" sizes={sizes} />
     </picture>
   </a>
   <figcaption>{caption}</figcaption>
