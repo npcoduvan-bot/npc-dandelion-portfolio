@@ -13,9 +13,7 @@
       <circle class="hero-orbit-point" fill="#784256" />
     </svg>
     <div class="hero-leaves" aria-hidden="true">
-      <svg viewBox="230 -20 1170 1110" focusable="false">
-        <image href="/assets/hero/dandelion-leaves-plum.webp" x="0" y="0" width="1536" height="1024" transform="rotate(12 800 650)" />
-      </svg>
+      <img src="/assets/hero/dandelion-leaves-engraved-v2.webp" alt="" width="1536" height="1024" fetchpriority="high" decoding="async" />
     </div>
     <div class="hero-content">
       <h1 id="hero-title" aria-label="THIS WORKS.">
@@ -35,8 +33,8 @@
   .hero-stage::after { content: ''; position: absolute; bottom: 0; left: 5.078125%; right: 5.078125%; height: 1.125px; background: #2b2b2b; }
   .hero-orbits { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
   .hero-orbits circle { stroke-width: 1.25; }
-  .hero-leaves { position: absolute; left: 44%; top: -2.5cqw; width: 49%; height: 43cqw; pointer-events: none; }
-  .hero-leaves svg { display: block; width: 100%; height: 100%; overflow: visible; }
+  .hero-leaves { position: absolute; left: 43%; top: -2.5cqw; width: 55%; height: 43cqw; pointer-events: none; }
+  .hero-leaves img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
   .hero-content { position: relative; z-index: 1; padding-top: 6.44097cqw; margin-left: 5.34722%; width: 49.51389%; }
   h1 { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 400; font-synthesis: none; font-optical-sizing: none; font-size: 8.0078125cqw; line-height: 7.6171875cqw; color: #efedeb; margin: 0; }
   h1 > span { display: block; height: 7.77778cqw; white-space: nowrap; position: relative; }
@@ -57,7 +55,7 @@
   .hero-manifest::after { content: ''; position: absolute; width: 2.5390625cqw; height: .984375px; background: #efedeb; right: 0; top: calc(100% + 1.46267cqw); }
   @media (max-width: 1050px) {
     .hero-stage { height: 670px; }
-    .hero-leaves { left: 3%; top: 168px; width: 100%; height: 320px; }
+    .hero-leaves { left: 0; top: 157px; width: 106%; height: 350px; }
     .hero-orbits circle { stroke-width: 1; }
     .hero-content { padding-top: 22px; margin-inline: var(--home-gutter); width: auto; }
     h1 { font-size: 83px; line-height: 83px; }
@@ -76,7 +74,7 @@
     .hero-manifest::before, .hero-manifest::after, .hero-stage::after { display: none; }
   }
   @media (min-width: 561px) and (max-width: 1050px) {
-    .hero-leaves { left: 39%; top: 24px; width: 57%; height: 490px; }
+    .hero-leaves { left: 35%; top: 18px; width: 63%; height: 510px; }
     .view-work { max-width: 342px; }
   }
   @media (max-width: 389px) {
