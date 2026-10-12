@@ -20,7 +20,7 @@ const { variant, image, srcSet, alt = '' } = Astro.props;
     <span class="cover-signage-footer">НАВИГАЦИЯ · ПРОСТРАНСТВА</span>
   </div>}
 
-  {variant === 'green' && <div class="cover-green-copy" aria-hidden="true">
+  {variant === 'green' && !image && <div class="cover-green-copy" aria-hidden="true">
     <span class="cover-kicker">06 / DIGITAL И ПЕЧАТЬ</span>
     <span class="cover-green-leaf leaf-one"></span>
     <span class="cover-green-leaf leaf-two"></span>
