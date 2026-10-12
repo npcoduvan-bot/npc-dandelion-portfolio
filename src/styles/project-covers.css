@@ -72,9 +72,18 @@
   .project-visual .cover-photo { transition: none; }
 }
 
-/* New photographic covers retain the artwork proportions and original colors. */
+/* Preserve photographic cover proportions; reveal full color on hover. */
 .project-card.pink .cover-pink { background: #bc7a65; }
 .project-card.nko .cover-nko { background: #cfdbd0; }
 .project-visual .cover-photo { object-fit: cover; object-position: center; filter: none; }
 .project-card.green .cover-photo { object-fit: contain; }
 .project-card:hover .cover-photo { filter: none; transform: scale(1.025); }
+
+/* Every case cover starts in monochrome, including editorial covers. */
+.project-card .project-visual { filter: grayscale(1); transition: filter .45s ease; }
+.project-card:hover .project-visual,
+.project-card:focus-within .project-visual { filter: grayscale(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card .project-visual { transition: none; }
+}
