@@ -4,6 +4,65 @@ import '../../styles/levis-case.css';
 import SiteHeader from '../../components/SiteHeader.astro';
 import LevisFigure from '../../components/LevisFigure.astro';
 
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
+// Additional source designs are revealed only when their optimized images are present.
+const additionalImages = [
+  {
+    "id": "new-denim-closeup",
+    "width": 1800,
+    "height": 2520,
+    "ext": "webp",
+    "caption": "Деним / крупный план",
+    "alt": "Имиджевый макет Levi’s с крупным планом джинсов, фирменной графикой и фотографией денима"
+  },
+  {
+    "id": "new-patchwork",
+    "width": 1097,
+    "height": 1536,
+    "ext": "webp",
+    "caption": "Патчи / индивидуальность",
+    "alt": "Модель в джинсах с разноцветными нашивками идёт по полю"
+  },
+  {
+    "id": "new-lifestyle",
+    "width": 1800,
+    "height": 2520,
+    "ext": "webp",
+    "caption": "Люди / движение",
+    "alt": "Рекламный коллаж Levi’s с людьми в джинсах, природой и фирменным логотипом"
+  },
+  {
+    "id": "new-denim-culture",
+    "width": 1536,
+    "height": 1536,
+    "ext": "webp",
+    "caption": "Деним / стиль жизни",
+    "alt": "Имиджевый коллаж Levi’s с танцующими людьми и джинсами"
+  },
+  {
+    "id": "new-pocket-detail",
+    "width": 1600,
+    "height": 1600,
+    "ext": "webp",
+    "caption": "Красный ярлык / деталь",
+    "alt": "Крупный план заднего кармана Levi’s с красным ярлыком и вертикальным логотипом"
+  },
+  {
+    "id": "new-denim-labels",
+    "width": 1600,
+    "height": 1600,
+    "ext": "webp",
+    "caption": "Бирки / идентичность",
+    "alt": "Коллаж из джинсовых бирок, тканевых фактур и логотипа Levi’s"
+  }
+];
+const additionalReady = additionalImages.every(({ id }) =>
+  existsSync(join(process.cwd(), 'public', 'assets', 'levis', `${id}.webp`)) &&
+  existsSync(join(process.cwd(), 'public', 'assets', 'levis', `${id}-600.webp`))
+);
+
 const sections = [
   { id: 'campaign', number: '02', label: 'IMAGE CAMPAIGN', title: 'Живи в Levi’s', columns: 2, images: [
     { id: '13013', width: 1097, caption: '501® / движение и детали', alt: 'Имиджевый коллаж Levi’s 501: девушка в джинсах, детали денима и красный логотип' },
@@ -14,7 +73,8 @@ const sections = [
     { id: '13012', width: 1178, caption: 'Ракурс / композиция', alt: 'Коллаж с девушкой в светлых джинсах, фактурой денима и надписью «Живи в»' },
     { id: '13017', width: 1097, caption: 'Город / образ', alt: 'Городской рекламный макет Levi’s: модель в джинсовом комплекте на переходе' },
   ] },
-  { id: 'product', number: '04', label: 'PRODUCT SYSTEM', title: 'Модель. Посадка. Характер.', columns: 3, images: [
+  ...(additionalReady ? [{ id: 'additional', number: '04', label: 'BRAND STORIES', title: 'Культура денима', columns: 2, images: additionalImages }] : []),
+  { id: 'product', number: additionalReady ? '05' : '04', label: 'PRODUCT SYSTEM', title: 'Модель. Посадка. Характер.', columns: 3, images: [
     { id: '13004', width: 1200, caption: '501® ORIGINAL CROPPED', alt: 'Карточка джинсов Levi’s 501 Original Cropped с фотографией модели и описанием посадки' },
     { id: '12999', width: 1200, caption: '721 HIGH-RISE SKINNY', alt: 'Карточка джинсов Levi’s 721 High-Rise Skinny: высокая посадка и облегающий силуэт' },
     { id: '12996', width: 1200, caption: '725 HIGH-RISE BOOTCUT', alt: 'Карточка джинсов Levi’s 725 High-Rise Bootcut с фотографией модели на светлом фоне' },
