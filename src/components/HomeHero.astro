@@ -1,9 +1,22 @@
 <section class="home-hero" aria-labelledby="hero-title">
   <div class="hero-stage">
-    <img class="smoke" src="/assets/figma/hero-smoke-desktop.png" alt="" width="1122" height="1402" fetchpriority="high" />
-    <div class="fade fade-left" aria-hidden="true"></div>
-    <div class="fade fade-right" aria-hidden="true"></div>
-    <div class="fade fade-bottom" aria-hidden="true"></div>
+    <svg class="hero-orbits" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="hero-orbit-shadow" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#784256" stop-opacity=".85" />
+          <stop offset=".55" stop-color="#784256" stop-opacity=".55" />
+          <stop offset="1" stop-color="#784256" stop-opacity=".08" />
+        </linearGradient>
+      </defs>
+      <circle class="hero-orbit-outer" fill="none" stroke="#784256" stroke-opacity=".44" />
+      <circle class="hero-orbit-inner" fill="none" stroke="url(#hero-orbit-shadow)" />
+      <circle class="hero-orbit-point" fill="#784256" />
+    </svg>
+    <div class="hero-leaves" aria-hidden="true">
+      <svg viewBox="230 -20 1170 1110" focusable="false">
+        <image href="/assets/hero/dandelion-leaves-plum.webp" x="0" y="0" width="1536" height="1024" transform="rotate(12 800 650)" />
+      </svg>
+    </div>
     <div class="hero-content">
       <h1 id="hero-title" aria-label="THIS WORKS.">
         <span class="title-this">THIS</span>
@@ -20,11 +33,10 @@
   .home-hero { container-type: inline-size; width: calc(100% + 2 * var(--home-gutter)); margin-inline: calc(-1 * var(--home-gutter)); background: #090909; }
   .hero-stage { position: relative; overflow: hidden; height: 38.96484375cqw; }
   .hero-stage::after { content: ''; position: absolute; bottom: 0; left: 5.078125%; right: 5.078125%; height: 1.125px; background: #2b2b2b; }
-  .smoke { position: absolute; left: 29.30556%; top: 0; width: 65.625%; height: 50.13889cqw; object-fit: cover; max-width: none; opacity: .84; pointer-events: none; }
-  .fade { position: absolute; pointer-events: none; }
-  .fade-left { left: 5.41667%; top: 0; width: 45.90278%; height: 39.02778cqw; background: linear-gradient(90deg, #090909, #09090900); }
-  .fade-right { left: 58.33333%; top: 0; width: 35.90278%; height: 39.02778cqw; background: linear-gradient(90deg, #09090900, #090909); }
-  .fade-bottom { left: 45.50781%; bottom: 0; width: 44.23828%; height: 2.14844cqw; background: linear-gradient(#09090900, #090909); }
+  .hero-orbits { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
+  .hero-orbits circle { stroke-width: 1.25; }
+  .hero-leaves { position: absolute; left: 44%; top: -2.5cqw; width: 49%; height: 43cqw; pointer-events: none; }
+  .hero-leaves svg { display: block; width: 100%; height: 100%; overflow: visible; }
   .hero-content { position: relative; z-index: 1; padding-top: 6.44097cqw; margin-left: 5.34722%; width: 49.51389%; }
   h1 { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 400; font-synthesis: none; font-optical-sizing: none; font-size: 8.0078125cqw; line-height: 7.6171875cqw; color: #efedeb; margin: 0; }
   h1 > span { display: block; height: 7.77778cqw; white-space: nowrap; position: relative; }
@@ -45,9 +57,8 @@
   .hero-manifest::after { content: ''; position: absolute; width: 2.5390625cqw; height: .984375px; background: #efedeb; right: 0; top: calc(100% + 1.46267cqw); }
   @media (max-width: 1050px) {
     .hero-stage { height: 670px; }
-    .smoke { left: 0; top: 104px; width: 100%; height: auto; aspect-ratio: 390 / 487.3; object-fit: cover; }
-    .fade-left, .fade-right { display: none; }
-    .fade-bottom { left: 0; top: 100px; width: 100%; height: 510px; background: linear-gradient(180deg, #090909 0%, #09090900 22%, #09090900 45%, #090909 80%); }
+    .hero-leaves { left: 3%; top: 168px; width: 100%; height: 320px; }
+    .hero-orbits circle { stroke-width: 1; }
     .hero-content { padding-top: 22px; margin-inline: var(--home-gutter); width: auto; }
     h1 { font-size: 83px; line-height: 83px; }
     h1 > span { height: 83px; letter-spacing: 0; }
@@ -65,7 +76,7 @@
     .hero-manifest::before, .hero-manifest::after, .hero-stage::after { display: none; }
   }
   @media (min-width: 561px) and (max-width: 1050px) {
-    .smoke { left: 16%; top: 75px; width: 84%; height: 560px; object-fit: cover; }
+    .hero-leaves { left: 39%; top: 24px; width: 57%; height: 490px; }
     .view-work { max-width: 342px; }
   }
   @media (max-width: 389px) {
@@ -76,3 +87,63 @@
     .directions { margin-top: calc(452px - (100cqw - 48px) * 169 / 342); }
   }
 </style>
+
+<script>
+  // Both orbits share a centre. The outer one passes through the existing title
+  // period; no text or layout styles are involved in the animation.
+  const stage = document.querySelector<HTMLElement>('.home-hero .hero-stage');
+  const inner = stage?.querySelector<SVGCircleElement>('.hero-orbit-inner');
+  const outer = stage?.querySelector<SVGCircleElement>('.hero-orbit-outer');
+  const point = stage?.querySelector<SVGCircleElement>('.hero-orbit-point');
+
+  if (stage && inner && outer && point) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let cx = 0, cy = 0, radius = 0, stageTop = 0, scrollDistance = 1;
+    let frame = 0;
+
+    const draw = () => {
+      frame = 0;
+      const progress = Math.max(0, Math.min(1, (window.scrollY - stageTop) / scrollDistance));
+      const travel = reducedMotion.matches ? 0 : progress;
+      const angle = (-157 - travel * 120) * Math.PI / 180;
+      point.setAttribute('cx', String(cx + radius * Math.cos(angle)));
+      point.setAttribute('cy', String(cy + radius * Math.sin(angle)));
+      const shadow = Math.max(0, Math.min(1, (progress - .32) / .5));
+      point.setAttribute('opacity', String(1 - shadow * shadow * (3 - 2 * shadow)));
+    };
+
+    const measure = () => {
+      const bounds = stage.getBoundingClientRect();
+      const mobile = window.matchMedia('(max-width: 1050px)').matches;
+      const titlePoint = stage.querySelector<HTMLElement>(mobile ? '.dot-mobile' : '.dot-desktop');
+      if (!titlePoint) return;
+      const period = titlePoint.getBoundingClientRect();
+      const px = period.left + period.width / 2 - bounds.left;
+      const py = period.top + period.height / 2 - bounds.top;
+
+      // Oversized circles are intentionally cropped by the original hero stage.
+      // A shared centre guarantees that their contours can never cross.
+      cx = bounds.width * (mobile ? .88 : .79);
+      cy = mobile ? 350 : bounds.height * .48;
+      const outerRadius = Math.hypot(px - cx, py - cy);
+      radius = outerRadius * .80;
+      for (const [circle, r] of [[outer, outerRadius], [inner, radius]] as const) {
+        circle.setAttribute('cx', String(cx));
+        circle.setAttribute('cy', String(cy));
+        circle.setAttribute('r', String(r));
+      }
+      point.setAttribute('r', mobile ? '4' : String(Math.max(4, bounds.width * .0052)));
+      stageTop = bounds.top + window.scrollY;
+      scrollDistance = bounds.height * .8;
+      draw();
+    };
+
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(draw); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', measure, { passive: true });
+    reducedMotion.addEventListener('change', draw);
+    new ResizeObserver(measure).observe(stage);
+    document.fonts.ready.then(measure);
+    measure();
+  }
+</script>
