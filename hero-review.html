@@ -1,0 +1,242 @@
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><title>NPC Dandelion — проверка листьев (пробная ветка)</title><style>@font-face { font-family: 'Bodoni Moda'; src: url('https://raw.githubusercontent.com/npcoduvan-bot/npc-dandelion-portfolio/main/public/fonts/portfolio/Bodoni-Moda-Regular.ttf') format('truetype'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: Montserrat; src: url('https://raw.githubusercontent.com/npcoduvan-bot/npc-dandelion-portfolio/main/public/fonts/portfolio/Montserrat-Regular.ttf') format('truetype'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: Montserrat; src: url('https://raw.githubusercontent.com/npcoduvan-bot/npc-dandelion-portfolio/main/public/fonts/portfolio/Montserrat-Light.ttf') format('truetype'); font-style: normal; font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('https://raw.githubusercontent.com/npcoduvan-bot/npc-dandelion-portfolio/main/public/fonts/portfolio/Cormorant-Garamond-Regular.ttf') format('truetype'); font-style: normal; font-weight: 400; font-display: swap; }
+:root{color-scheme:dark;--bg:#0a0a0b;--ink:#eee9e7;--muted:#a5a0a2;--line:#363133;--plum:#74364f;font-family:Montserrat,Arial,sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink)}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible{outline:2px solid #d4a7b7;outline-offset:5px}.skip-link{position:absolute;left:16px;top:-60px;z-index:30;padding:12px 18px;background:#fff;color:#111}.skip-link:focus{top:16px}.site-shell{width:min(100% - 104px,1440px);margin:auto}.contact-pill,.outline-button{border:1px solid #a78d99;border-radius:100px;display:inline-flex;align-items:center;justify-content:center;gap:20px;transition:background .2s,color .2s}.contact-pill{font-size:10px;letter-spacing:.1em;min-width:138px;padding:11px 16px;font-weight:600}.contact-pill:hover,.outline-button:hover{background:#efe9ec;color:#111}.contact-pill span,.outline-button span{font-size:18px;line-height:0}.outline-button{font-size:10px;letter-spacing:.08em;padding:12px 23px;min-width:180px}.section{border-bottom:1px solid var(--line);padding:38px 0 44px}.section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:20px}.section-heading h2,.about-contact h2{font-size:17px;font-weight:400;letter-spacing:.14em;margin:0}.section-heading span{font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;color:#b7aeb2}.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 18px}.project-card{min-width:0}.project-visual{aspect-ratio:1.18;position:relative;overflow:hidden;border:1px solid #272528;background:#111;display:flex;align-items:end}.project-visual img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .4s,transform .5s}.project-card:hover .project-visual img{filter:grayscale(.2);transform:scale(1.035)}.project-visual::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(transparent 45%,rgba(0,0,0,.5))}.project-card.pink .project-visual{background:radial-gradient(circle at 70% 30%,#87636c 0%,#382b32 30%,#130f12 72%)}.project-card.nko .project-visual{background:linear-gradient(130deg,#141414 10%,#545257 49%,#1a191b 51%,#0e0e0f)}.project-card.signage .project-visual{background:linear-gradient(155deg,#060608,#24212b 50%,#6a5962 51%,#121014 53%)}.project-card.green .project-visual{background:radial-gradient(circle at 25% 70%,#343c35,#111714 58%,#090b0a)}.project-card.more .project-visual{background:linear-gradient(135deg,#0e0e10,#252326,#0d0d0f)}.asset-note{z-index:1;position:relative;color:#e1d6da;font-size:10px;line-height:1.5;letter-spacing:.09em;text-transform:uppercase;max-width:180px;margin:20px}.project-watermark{position:absolute;font-family:'Cormorant Garamond',Georgia,serif;font-size:220px;line-height:1;color:#ffffff0b;top:-25px;right:-5px}.project-info{display:flex;justify-content:space-between;gap:10px;padding-top:11px}.project-info h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;font-weight:400;line-height:1;margin:0 0 6px}.project-info p,.project-number{color:#aaa3a7;font-size:12px;margin:0}.project-number{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;border-bottom:1px solid #aaa3a7;height:22px}.project-footnote{color:#777175;font-size:11px;line-height:1.6;margin:28px 0 0}.illustration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.illustration-grid figure{margin:0}.illustration-grid img{height:270px;width:100%;object-fit:cover;filter:grayscale(1) brightness(.8);border:1px solid #2e2a2d;transition:filter .4s}.illustration-grid figure:hover img{filter:grayscale(.1) brightness(.95)}.illustration-grid figcaption{font-size:11px;color:#aaa3a7;margin-top:10px}.about-contact{display:grid;grid-template-columns:1.15fr .85fr .7fr;gap:6%;padding:47px 0 55px}.about-block p{color:#b1aaad;font-size:13px;line-height:1.7;max-width:380px;margin:19px 0}.text-link{font-size:12px;border-bottom:1px solid var(--plum);padding-bottom:3px}.text-link span{margin-left:8px}.about-contact blockquote{font-family:'Cormorant Garamond',Georgia,serif;color:#d5cbcf;font-size:25px;line-height:1.1;border-left:1px solid #696266;margin:35px 0 0;padding:8px 0 8px 28px;align-self:center}.contact-block{justify-self:end}.contact-link{display:inline-flex;gap:12px;align-items:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;margin:26px 0 7px}.contact-link span{font-family:Montserrat,Arial,sans-serif;font-size:18px}.contact-block p{font-size:13px;color:#c5bdc0;white-space:nowrap}.site-footer{min-height:75px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#8e878b;font-size:10px;letter-spacing:.05em}.site-footer a{font-size:20px;color:#d1c4ca}@media(prefers-reduced-motion:no-preference){.project-card,.illustration-grid figure{opacity:.45;transform:translateY(12px);transition:opacity .6s,transform .6s}.project-card.is-visible,.illustration-grid figure.is-visible{opacity:1;transform:none}}@media(max-width:850px){.site-shell{width:min(100% - 42px,680px)}.contact-pill{font-size:9px;min-width:112px;padding:10px 12px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.illustration-grid img{height:220px}.about-contact{grid-template-columns:1fr 1fr;gap:35px}.contact-block{justify-self:start}}@media(max-width:560px){.site-shell{width:calc(100% - 30px)}.contact-pill{font-size:8px;min-width:101px;gap:7px}.outline-button{min-width:195px}.section{padding:29px 0 38px}.section-heading h2,.about-contact h2{font-size:13px}.section-heading span{font-size:14px}.project-grid{grid-template-columns:1fr;gap:27px}.project-visual{aspect-ratio:1.23}.project-info h3{font-size:23px}.project-info p{font-size:11px}.illustration-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 10px}.illustration-grid figure:last-child{grid-column:span 2}.illustration-grid img{height:230px}.illustration-grid figure:last-child img{height:270px}.about-contact{grid-template-columns:1fr;gap:42px;padding:34px 0 43px}.about-block p{font-size:12px}.about-contact blockquote{margin:0;border-left:0;padding:0;font-size:25px}.contact-link{margin-top:16px}.site-footer{min-height:100px;align-items:flex-start;flex-direction:column;justify-content:center;gap:8px}.site-footer a{display:none}}
+/* Entire published case card is one keyboard-accessible link. */
+.project-card:has(.project-case-link){position:relative}
+.project-case-link::after{content:"";position:absolute;inset:0;z-index:2}
+.project-case-link:focus-visible{outline:none}
+.project-card:has(.project-case-link:focus-visible){outline:2px solid #d4a7b7;outline-offset:6px}
+.case-link-arrow{font-family:Montserrat,Arial,sans-serif;font-size:14px;margin-left:8px;color:#c7b6be}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-visual img{transition:none}}
+
+/* Approved Figma frame: 1440 px with 73.125 px side margins. */
+.home-page { --home-gutter: clamp(24px, 5.078125vw, 73.125px); background: #090909; }
+.home-page .site-shell { width: calc(100% - 2 * var(--home-gutter)); max-width: 1293.75px; }
+@media (max-width: 1050px) {
+  .home-page { --home-gutter: 24px; }
+  .home-page .site-shell { width: calc(100% - 48px); max-width: 680px; }
+}
+
+.text-link:hover,.contact-link:hover{color:#d6a5b9}
+</style><style>
+  .portfolio-header {
+    min-height: 101.25px;
+    display: flex;
+    align-items: center;
+    gap: clamp(28px, 4.2vw, 60.46875px);
+    position: relative;
+    z-index: 3;
+    color: #efedeb;
+    font-weight: 400;
+  }
+  .portfolio-brand { display: flex; align-items: center; flex-shrink: 0; margin-left: -8.4375px; }
+  .portfolio-brand img { flex-shrink: 0; max-width: none; }
+  .leaf-mobile { display: none; }
+  .portfolio-brand-rule { width: .703125px; height: 43.59375px; background: #b0afad; margin: 0 24.609375px 0 23.90625px; }
+  .portfolio-brand-label { font-size: 12.65625px; line-height: 18.28125px; letter-spacing: 1.3359px; color: #b0afad; white-space: nowrap; transform: translateY(-.703125px); }
+  .portfolio-navigation { display: flex; align-items: center; justify-content: space-between; width: 312.188px; flex-shrink: 0; margin-left: auto; gap: 24px; }
+  .portfolio-navigation a { display: flex; align-items: center; min-height: 44px; font-size: 12.65625px; line-height: 19.6875px; letter-spacing: .7734px; white-space: nowrap; }
+  .portfolio-navigation { transform: translateY(-1.40625px); }
+  .portfolio-navigation a:nth-child(1) { width: 73.125px; }
+  .portfolio-navigation a:nth-child(2) { width: 71.71875px; }
+  .portfolio-navigation a:nth-child(3) { width: 87.1875px; }
+  .portfolio-contact { display: inline-flex; align-items: center; justify-content: flex-start; gap: 2.8125px; padding-left: 33.1875px; width: 191.25px; height: 46.40625px; flex-shrink: 0; margin-right: -1.40625px; transform: translateY(-2.109375px); border: .984375px solid #b0afad; border-radius: 25.3125px; font-size: 12.65625px; line-height: 16.875px; letter-spacing: .84375px; transition: background .2s; }
+  .portfolio-contact > span { width: 98.4375px; flex-shrink: 0; }
+  .portfolio-contact img { flex-shrink: 0; max-width: none; }
+  .portfolio-navigation a:hover { color: #d6a5b9; }
+  .portfolio-contact:hover { background: #ffffff0d; }
+  @media (max-width: 1200px) and (min-width: 1051px) {
+    .portfolio-brand-label { font-size: 10px; letter-spacing: 1px; }
+    .portfolio-navigation { width: auto; gap: 24px; }
+    .portfolio-navigation a { font-size: 11px; }
+    .portfolio-contact { width: 166px; padding-left: 20px; gap: 16px; }
+    .portfolio-contact > span { width: auto; }
+  }
+  @media (max-width: 1050px) {
+    .portfolio-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 16px; min-height: 132px; padding: 20px 0 12px; }
+    .portfolio-brand { margin: 0; gap: 12px; }
+    .leaf-desktop, .portfolio-brand-rule { display: none; }
+    .portfolio-brand .leaf-mobile { display: block; }
+    .portfolio-brand-label { font-size: 9px; line-height: 15px; letter-spacing: 1px; transform: none; }
+    .portfolio-brand-label > span { display: block; }
+    .portfolio-contact { grid-column: 2; grid-row: 1; width: 124px; height: 44px; font-size: 11px; line-height: 16px; padding: 0; justify-content: center; margin: 0; transform: none; }
+    .portfolio-contact > span { width: auto; }
+    .portfolio-contact img { display: none; }
+    .portfolio-navigation { grid-column: 1 / -1; grid-row: 2; width: 100%; margin: 0; gap: 16px; transform: none; }
+    .portfolio-navigation a:nth-child(n) { width: auto; }
+    .portfolio-navigation a { font-size: 11px; line-height: 16px; letter-spacing: 0; }
+  }
+  @media (max-width: 359px) {
+    .portfolio-header { column-gap: 10px; }
+    .portfolio-contact { width: 112px; font-size: 10px; }
+    .portfolio-brand { gap: 8px; }
+    .portfolio-brand-label { font-size: 8px; letter-spacing: .7px; }
+  }
+</style><style>
+  .home-hero { container-type: inline-size; width: calc(100% + 2 * var(--home-gutter)); margin-inline: calc(-1 * var(--home-gutter)); background: #090909; }
+  .hero-stage { position: relative; overflow: hidden; height: 38.96484375cqw; }
+  .hero-stage::after { content: ''; position: absolute; bottom: 0; left: 5.078125%; right: 5.078125%; height: 1.125px; background: #2b2b2b; }
+  .hero-orbits { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
+  .hero-orbits circle { stroke-width: 1.25; }
+  .hero-leaves { position: absolute; left: 41%; top: -3.5cqw; width: 53%; height: 46cqw; pointer-events: none; }
+  .hero-leaves svg { display: block; width: 100%; height: 100%; overflow: visible; }
+  .hero-content { position: relative; z-index: 1; padding-top: 6.44097cqw; margin-left: 5.34722%; width: 49.51389%; }
+  h1 { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 400; font-synthesis: none; font-optical-sizing: none; font-size: 8.0078125cqw; line-height: 7.6171875cqw; color: #efedeb; margin: 0; }
+  h1 > span { display: block; height: 7.77778cqw; white-space: nowrap; position: relative; }
+  .title-this { letter-spacing: -.09765625cqw; }
+  .title-works { letter-spacing: -.234375cqw; }
+  .dot-desktop { position: absolute; left: 29.02778cqw; top: 5.76389cqw; max-width: none; }
+  .dot-mobile { display: none; }
+  .directions { margin: 3.95833cqw 0 0; padding-top: .97222cqw; position: relative; font-size: 1.31836cqw; line-height: 1.953125cqw; font-weight: 300; color: #b0afad; white-space: nowrap; }
+  .directions::before { content: ''; position: absolute; top: 0; left: 0; width: 31.52778cqw; height: 1px; background: #b0afad; }
+  .view-work { display: flex; align-items: center; justify-content: space-between; padding: 0 2.30469cqw; width: 17.28516cqw; height: 3.22266cqw; margin: 3.15104cqw 0 0 -.2691cqw; border: .984375px solid #cab4bb; border-radius: 25.3125px; font-size: .878906cqw; line-height: 1.171875cqw; letter-spacing: .05859cqw; color: #efedeb; transition: background .2s; }
+  .view-work img { max-width: none; flex-shrink: 0; }
+  .view-work > * { transform: translateY(-1.6875px); }
+  .view-work:hover { background: #ffffff0d; }
+  .hero-manifest { position: absolute; right: 5%; top: 27.899306cqw; margin: 0; width: 9.16667%; font-size: .878906cqw; line-height: 1.7578125cqw; text-align: right; letter-spacing: .078125cqw; color: #b0afad; }
+  .hero-manifest > span { display: block; }
+  .hero-manifest .manifest-separator { display: none; }
+  .hero-manifest::before { content: ''; position: absolute; height: 8.984375cqw; width: .984375px; background: #efedeb; right: 0; bottom: calc(100% + 1.43403cqw); }
+  .hero-manifest::after { content: ''; position: absolute; width: 2.5390625cqw; height: .984375px; background: #efedeb; right: 0; top: calc(100% + 1.46267cqw); }
+  @media (max-width: 1050px) {
+    .hero-stage { height: 670px; }
+    .hero-leaves { left: 1%; top: 158px; width: 104%; height: 344px; }
+    .hero-orbits circle { stroke-width: 1; }
+    .hero-content { padding-top: 22px; margin-inline: var(--home-gutter); width: auto; }
+    h1 { font-size: 83px; line-height: 83px; }
+    h1 > span { height: 83px; letter-spacing: 0; }
+    h1 > .title-works { height: 86px; line-height: 86px; }
+    .dot-desktop { display: none; }
+    .dot-mobile { display: block; position: absolute; left: 307px; top: 67px; max-width: none; }
+    .directions { margin-top: 283px; padding: 0; font-size: 14px; line-height: 23px; white-space: normal; }
+    .directions > span { display: block; }
+    .directions .directions-separator, .directions::before { display: none; }
+    .view-work { width: 100%; height: 50px; margin: 30px 0 0; justify-content: flex-start; gap: 30px; padding: 0 34px; font-size: 11px; line-height: 16px; letter-spacing: .84375px; }
+    .view-work > * { transform: translateY(-3.5px); }
+    .hero-manifest { left: var(--home-gutter); right: var(--home-gutter); top: 626px; width: auto; font-size: 10px; line-height: 16px; letter-spacing: 1.2px; text-align: left; }
+    .hero-manifest > span, .hero-manifest .manifest-separator { display: inline; }
+    .hero-manifest .manifest-separator { white-space: pre; }
+    .hero-manifest::before, .hero-manifest::after, .hero-stage::after { display: none; }
+  }
+  @media (min-width: 561px) and (max-width: 1050px) {
+    .hero-leaves { left: 37%; top: 18px; width: 61%; height: 512px; }
+    .view-work { max-width: 342px; }
+  }
+  @media (max-width: 389px) {
+    h1 { font-size: calc((100cqw - 48px) * .24269); }
+    h1 > span { height: calc((100cqw - 48px) * 83 / 342); line-height: calc((100cqw - 48px) * 83 / 342); }
+    h1 > .title-works { height: calc((100cqw - 48px) * 86 / 342); line-height: calc((100cqw - 48px) * 86 / 342); }
+    .dot-mobile { left: calc((100cqw - 48px) * .89766); top: calc((100cqw - 48px) * 67 / 342); }
+    .directions { margin-top: calc(452px - (100cqw - 48px) * 169 / 342); }
+  }
+</style><style>.preview-note{font:12px Montserrat,Arial,sans-serif;color:#bbb;line-height:1.6;margin:24px auto;max-width:900px;padding:0 20px;text-align:center}.preview-note b{color:#fff}</style></head><body class="home-page"><div class="site-shell"><header class="portfolio-header" id="top"><a class="portfolio-brand" href="#top" aria-label="NPC Dandelion"><img class="leaf-desktop" src="https://raw.githubusercontent.com/npcoduvan-bot/npc-dandelion-portfolio/main/public/assets/figma/leaf-desktop.svg" alt="" width="47.8125" height="56.25"/><img class="leaf-mobile" src="https://raw.githubusercontent.com/npcoduvan-bot/npc-dandelion-portfolio/main/public/assets/figma/leaf-mobile.svg" alt="" width="30" height="35.2941"/><span class="portfolio-brand-rule" aria-hidden="true"></span><span class="portfolio-brand-label"><span>ГРАФИЧЕСКИЙ</span> <span>ДИЗАЙНЕР</span></span></a><nav class="portfolio-navigation" aria-label="Основная навигация"><a href="#projects">ПРОЕКТЫ</a><a href="#projects">ОБО МНЕ</a><a href="#projects">КОНТАКТЫ</a></nav><a class="portfolio-contact" href="#projects"><span>СВЯЗАТЬСЯ</span><img src="https://raw.githubusercontent.com/npcoduvan-bot/npc-dandelion-portfolio/main/public/assets/figma/arrow.svg" alt="" width="21.0938" height="12.6562"/></a></header><main><section class="home-hero" aria-labelledby="hero-title">
+  <div class="hero-stage">
+    <svg class="hero-orbits" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="hero-orbit-shadow" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#784256" stop-opacity=".85" />
+          <stop offset=".55" stop-color="#784256" stop-opacity=".55" />
+          <stop offset="1" stop-color="#784256" stop-opacity=".08" />
+        </linearGradient>
+      </defs>
+      <circle class="hero-orbit-outer" fill="none" stroke="#784256" stroke-opacity=".44" />
+      <circle class="hero-orbit-inner" fill="none" stroke="url(#hero-orbit-shadow)" />
+      <circle class="hero-orbit-point" fill="#784256" />
+    </svg>
+    <div class="hero-leaves" aria-hidden="true">
+      <svg viewBox="230 -20 1170 1110" focusable="false">
+        <defs>
+          <!-- Keep the approved leaf artwork; only refine its existing linework. -->
+          <filter id="hero-fine-engraving" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
+            <!-- Contrast/alpha gamma narrows fine line edges without erasing the veins. -->
+            <feComponentTransfer in="SourceGraphic">
+              <feFuncR type="gamma" amplitude="1" exponent="1.8" offset="0" />
+              <feFuncG type="gamma" amplitude="1" exponent="1.8" offset="0" />
+              <feFuncB type="gamma" amplitude="1" exponent="1.8" offset="0" />
+              <feFuncA type="gamma" amplitude="1" exponent="1.5" offset="0" />
+            </feComponentTransfer>
+          </filter>
+          <linearGradient id="hero-stem-shadow" gradientUnits="userSpaceOnUse" x1="0" y1="1024" x2="0" y2="565">
+            <stop offset="0" stop-color="#000" />
+            <stop offset=".85" stop-color="#fff" />
+          </linearGradient>
+          <mask id="hero-stem-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1536" height="1024">
+            <rect width="1536" height="1024" fill="url(#hero-stem-shadow)" />
+          </mask>
+        </defs>
+        <image href="https://raw.githubusercontent.com/npcoduvan-bot/npc-dandelion-portfolio/main/public/assets/hero/dandelion-leaves-plum.webp" x="0" y="0" width="1536" height="1024" transform="rotate(12 800 650)" filter="url(#hero-fine-engraving)" mask="url(#hero-stem-mask)" />
+      </svg>
+    </div>
+    <div class="hero-content">
+      <h1 id="hero-title" aria-label="THIS WORKS.">
+        <span class="title-this">THIS</span>
+        <span class="title-works">WORKS<img class="dot-desktop" src="https://raw.githubusercontent.com/npcoduvan-bot/npc-dandelion-portfolio/main/public/assets/figma/dot-desktop.svg" alt="" width="14" height="14" /><img class="dot-mobile" src="https://raw.githubusercontent.com/npcoduvan-bot/npc-dandelion-portfolio/main/public/assets/figma/dot-mobile.svg" alt="" width="8" height="8" /></span>
+      </h1>
+      <p class="directions"><span>Брендинг · Полиграфия</span><span class="directions-separator"> · </span><span>Иллюстрации · UX/UI</span></p>
+      <a class="view-work" href="#projects"><span>СМОТРЕТЬ РАБОТЫ</span><img src="https://raw.githubusercontent.com/npcoduvan-bot/npc-dandelion-portfolio/main/public/assets/figma/arrow.svg" alt="" width="21.0938" height="12.6562" /></a>
+    </div>
+    <p class="hero-manifest"><span>ИДЕИ</span><span class="manifest-separator"> · </span><span>ЛЮДИ</span><span class="manifest-separator"> · </span><span>ПРОСТРАНСТВА</span></p>
+  </div>
+</section>
+
+<section id="projects" class="preview-note"><b>Предпросмотр без публикации:</b> используется настоящая иллюстрация из репозитория и изменения из ветки design/hero-leaf-linework-20261012. На рабочей версии сайта ничего не менялось.</section></main></div><script>
+  // Both orbits share a centre. The outer one passes through the existing title
+  // period; no text or layout styles are involved in the animation.
+  const stage = document.querySelector('.home-hero .hero-stage');
+  const inner = stage?.querySelector('.hero-orbit-inner');
+  const outer = stage?.querySelector('.hero-orbit-outer');
+  const point = stage?.querySelector('.hero-orbit-point');
+
+  if (stage && inner && outer && point) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let cx = 0, cy = 0, radius = 0, stageTop = 0, scrollDistance = 1;
+    let frame = 0;
+
+    const draw = () => {
+      frame = 0;
+      const progress = Math.max(0, Math.min(1, (window.scrollY - stageTop) / scrollDistance));
+      const travel = reducedMotion.matches ? 0 : progress;
+      const angle = (-157 - travel * 120) * Math.PI / 180;
+      point.setAttribute('cx', String(cx + radius * Math.cos(angle)));
+      point.setAttribute('cy', String(cy + radius * Math.sin(angle)));
+      const shadow = Math.max(0, Math.min(1, (progress - .32) / .5));
+      point.setAttribute('opacity', String(1 - shadow * shadow * (3 - 2 * shadow)));
+    };
+
+    const measure = () => {
+      const bounds = stage.getBoundingClientRect();
+      const mobile = window.matchMedia('(max-width: 1050px)').matches;
+      const titlePoint = stage.querySelector(mobile ? '.dot-mobile' : '.dot-desktop');
+      if (!titlePoint) return;
+      const period = titlePoint.getBoundingClientRect();
+      const px = period.left + period.width / 2 - bounds.left;
+      const py = period.top + period.height / 2 - bounds.top;
+
+      // Oversized circles are intentionally cropped by the original hero stage.
+      // A shared centre guarantees that their contours can never cross.
+      cx = bounds.width * (mobile ? .88 : .79);
+      cy = mobile ? 350 : bounds.height * .48;
+      const outerRadius = Math.hypot(px - cx, py - cy);
+      radius = outerRadius * .80;
+      for (const [circle, r] of [[outer, outerRadius], [inner, radius]]) {
+        circle.setAttribute('cx', String(cx));
+        circle.setAttribute('cy', String(cy));
+        circle.setAttribute('r', String(r));
+      }
+      point.setAttribute('r', mobile ? '4' : String(Math.max(4, bounds.width * .0052)));
+      stageTop = bounds.top + window.scrollY;
+      scrollDistance = bounds.height * .8;
+      draw();
+    };
+
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(draw); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', measure, { passive: true });
+    reducedMotion.addEventListener('change', draw);
+    new ResizeObserver(measure).observe(stage);
+    document.fonts.ready.then(measure);
+    measure();
+  }
+</script></body></html>
