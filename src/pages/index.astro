@@ -1,13 +1,15 @@
 ---
 import '../styles/global.css';
+import '../styles/project-covers.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import HomeHero from '../components/HomeHero.astro';
+import ProjectCover from '../components/ProjectCover.astro';
 
 const cases = [
-  { number: '01', title: 'NOIR COFFEE', kind: 'Брендинг · визуальная система', className: 'noir', image: '/assets/noir/mockup-900.webp', alt: 'Визитки NOIR COFFEE: белый логотип на чёрном фоне и мраморная графика', href: '/projects/noir-coffee/' },
-  { number: '02', title: 'Розовая кофейня', kind: 'Интерьер · графика · печать', className: 'pink', image: '/assets/pink/interior-cover-800.webp', alt: 'Розовый интерьер кофейни «Вкус кофе» с тропической росписью — ИИ-визуализация на основе фотографии', href: '/projects/pink-cafe/' },
-  { number: '03', title: 'Levi’s Sochi', kind: 'Реклама · соцсети · графика', className: 'levis', image: '/assets/levis/13014-600.webp', alt: 'Джинсы разных оттенков и красный логотип Levi’s', href: '/projects/levis-sochi/' },
-  { number: '04', title: 'Причина счастья', kind: 'НКО · айдентика · иллюстрация', className: 'nko', image: '/assets/nko/event-counter.webp', alt: 'Оформление стойки НКО «Причина счастья» с бирюзовой графикой', href: '/projects/prichina-schastya/' },
+  { number: '01', title: 'NOIR COFFEE', kind: 'Брендинг · визуальная система', className: 'noir', image: '/assets/covers/noir-coffee-v2-700.webp', srcSet: '/assets/covers/noir-coffee-v2-700.webp 700w, /assets/covers/noir-coffee-v2-1400.webp 1374w', alt: 'Чёрный фирменный фартук NOIR COFFEE, визитки и эспрессо на камне — ИИ-мокап по исходной айдентике', href: '/projects/noir-coffee/' },
+  { number: '02', title: 'Розовая кофейня', kind: 'Интерьер · графика · печать', className: 'pink', image: '/assets/covers/pink-cafe-v2-700.webp', srcSet: '/assets/covers/pink-cafe-v2-700.webp 700w, /assets/covers/pink-cafe-v2-1400.webp 1374w', alt: 'Узкие флаеры «Вкус кофе» с фламинго на розовом камне, чашка кофе и тени листьев — ИИ-мокап по исходным макетам', href: '/projects/pink-cafe/' },
+  { number: '03', title: 'Levi’s Sochi', kind: 'Реклама · соцсети · графика', className: 'levis', image: '/assets/covers/levis-sochi-v2-700.webp', srcSet: '/assets/covers/levis-sochi-v2-700.webp 700w, /assets/covers/levis-sochi-v2-1400.webp 1374w', alt: 'Три рекламных макета Levi’s и сложенный деним на светлом камне — ИИ-мокап по материалам кейса', href: '/projects/levis-sochi/' },
+  { number: '04', title: 'Причина счастья', kind: 'НКО · айдентика · иллюстрация', className: 'nko', image: '/assets/covers/prichina-schastya-v2-700.webp', srcSet: '/assets/covers/prichina-schastya-v2-700.webp 700w, /assets/covers/prichina-schastya-v2-1400.webp 1374w', alt: 'Иллюстративные карточки «Счастье», «Вдохновение» и «Дружба» с бирюзовой коробкой — ИИ-мокап по материалам «Причины счастья»', href: '/projects/prichina-schastya/' },
   { number: '05', title: 'Вывески и пространства', kind: 'Средовой дизайн · навигация', className: 'signage' },
   { number: '06', title: 'Зелёный курс города', kind: 'Digital · печать', className: 'green' },
   { number: '07', title: 'Другие проекты', kind: 'Подборка работ', className: 'more' }
@@ -43,15 +45,12 @@ const illustrations = [
           <div class="project-grid">
             {cases.map((item) => (
               <article class={`project-card ${item.className}`}>
-                <div class="project-visual">
-                  {item.image ? <img src={item.image} alt={item.alt} loading="lazy" width="900" height="600" /> : <span class="asset-note">Материалы кейса готовятся к публикации</span>}
-                  {!item.image && <span class="project-watermark" aria-hidden="true">{item.number}</span>}
-                </div>
+                <ProjectCover variant={item.className} image={item.image} srcSet={item.srcSet} alt={item.alt} />
                 <div class="project-info"><div><h3>{item.href ? <a class="project-case-link" href={item.href}>{item.title}<span class="case-link-arrow" aria-hidden="true"> ↗</span></a> : item.title}</h3><p>{item.kind}</p></div><span class="project-number">{item.number}</span></div>
               </article>
             ))}
           </div>
-          <p class="project-footnote">Открыты кейсы NOIR COFFEE, «Розовая кофейня», Levi’s Sochi и «Причина счастья». PDF доступны на страницах проектов. Остальные работы готовятся к публикации.</p>
+          <p class="project-footnote">Открыты кейсы NOIR COFFEE, «Розовая кофейня», Levi’s Sochi и «Причина счастья». Остальные работы готовятся к публикации.</p>
         </section>
 
         <section class="section illustrations" id="illustrations" aria-labelledby="illustrations-title">
