@@ -1,0 +1,44 @@
+---
+interface Props { name: string; title: string; description: string; }
+const { name, title, description } = Astro.props;
+const id = `video-${name}`;
+---
+<figure class="pink-process-video">
+  <div class="pink-process-circle">
+    <video id={id} loop muted playsinline preload="none" poster={`/assets/pink/${name}.webp`} aria-label={description}>
+      <source src={`/assets/pink/${name}.mp4`} type="video/mp4" />
+    </video>
+    <button class="pink-video-toggle" type="button" aria-controls={id} aria-label={`Воспроизвести: ${title}`} data-title={title}>
+      <span aria-hidden="true">▶</span>
+    </button>
+  </div>
+  <figcaption><span>{title}</span><a href={`/assets/pink/${name}.mp4`} target="_blank" rel="noopener noreferrer" aria-label={`Открыть полное видео: ${title}`}>Видео целиком ↗</a></figcaption>
+</figure>
+<script>
+  document.querySelectorAll<HTMLElement>('.pink-process-video').forEach((figure) => {
+    const video = figure.querySelector('video')!;
+    const button = figure.querySelector<HTMLButtonElement>('button')!;
+    const icon = button.querySelector('span')!;
+    const update = () => {
+      button.setAttribute('aria-label', `${video.paused ? 'Воспроизвести' : 'Приостановить'}: ${button.dataset.title}`);
+      icon.textContent = video.paused ? '▶' : 'Ⅱ';
+      figure.classList.toggle('is-playing', !video.paused);
+    };
+    button.addEventListener('click', async () => {
+      if (video.paused) {
+        try { await video.play(); } catch { update(); }
+      } else video.pause();
+    });
+    video.addEventListener('play', update);
+    video.addEventListener('pause', update);
+    video.addEventListener('ended', update);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) video.pause();
+      }).observe(figure);
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) video.pause();
+    });
+  });
+</script>

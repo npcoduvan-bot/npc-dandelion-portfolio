@@ -11,7 +11,7 @@ interface Props {
 }
 const { name, alt, caption, width, height, class: className, priority = false, zoom = false } = Astro.props;
 const src = `/assets/pink/${name}.webp`;
-const responsive = ['interior-cover', 'cards-mockup-revised'].includes(name);
+const responsive = ['interior-wall-final', 'interior-seating-final', 'interior-window-final', 'cards-mockup-revised'].includes(name);
 const imageProps = {
   src, alt, width, height,
   loading: priority ? 'eager' as const : 'lazy' as const,
