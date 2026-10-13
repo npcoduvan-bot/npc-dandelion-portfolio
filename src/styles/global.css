@@ -20,3 +20,17 @@
 }
 
 .text-link:hover,.contact-link:hover{color:#d6a5b9}
+
+/* Home typography: serif is reserved for project names below the unchanged hero. */
+.home-page .section-heading span,
+.home-page .project-number,
+.home-page .project-watermark,
+.home-page .about-contact blockquote,
+.home-page .contact-link {
+  font-family: Montserrat, Arial, sans-serif;
+}
+.home-page .about-contact blockquote {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.45;
+}
