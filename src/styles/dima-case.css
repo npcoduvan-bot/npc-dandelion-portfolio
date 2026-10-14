@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700;800;900&display=swap');
 .dima-case{--ink:#f0efe9;--muted:#aaa9a4;--line:#3b3a37;--aqua:#8ac3b7;background:#0a0c0b;color:var(--ink)}
 .dima-case .site-shell{width:min(calc(100% - 8.5vw),1296px)}
 .dima-case h1,.dima-case h2,.dima-case h3,.dima-case p{margin-top:0}
@@ -237,4 +237,129 @@
  .dima-static-archive-grid figcaption{font-size:7px}
  .dima-static-about-photo{right:5%;width:35%;height:43%}
  .dima-static-about>p{width:63%}
+}
+
+
+
+/* 2026-10: case screens are original editorial elements, not misleading replica screenshots */
+.dima-case{--case-heading-ink:#f3ede5;--case-orange:#ef7b3e}
+.dima-case h1,.dima-case h2,.dima-case h3,.dima-case h4{font-kerning:normal;font-optical-sizing:auto}
+.dima-case .dima-headline h1{
+  font-family:Geologica,Montserrat,Arial,sans-serif;
+  font-size:clamp(72px,9.5vw,144px);
+  line-height:1.11;
+  letter-spacing:-.008em;
+  font-weight:800;
+}
+.dima-case .dima-overview h3,
+.dima-case .dima-real-site h3,
+.dima-case .dima-visual-copy h3,
+.dima-case .dima-photo-heading h3,
+.dima-case .dima-mobile-grid h3,
+.dima-case .dima-captures-heading h3{
+  font-family:Geologica,Montserrat,Arial,sans-serif;
+  font-weight:600;
+  font-size:clamp(43px,5vw,70px);
+  line-height:1.22;
+  letter-spacing:0;
+  text-wrap:balance;
+}
+.dima-case .dima-section-index h2{letter-spacing:.105em}
+.dima-case .dima-visual-statement>span{
+  font-weight:800;
+  line-height:1.17;
+  letter-spacing:0;
+  font-size:clamp(65px,7.6vw,110px);
+}
+.dima-case .dima-end h2{
+  font-weight:800;
+  line-height:1.19;
+  letter-spacing:0;
+  font-size:clamp(68px,10vw,145px);
+}
+.dima-case .dima-visual-copy blockquote{line-height:1.32;letter-spacing:0}
+.dima-case-copy-pair{display:grid;grid-template-columns:1fr .84fr;gap:7%;align-items:start;margin-bottom:40px}
+.dima-case-copy-pair .dima-section-description{margin:6px 0 0;max-width:550px}
+.dima-editorial-feature{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.12fr) minmax(0,.64fr);gap:14px;padding:20px;min-height:390px;background:#191817;border:1px solid #433f3b;align-items:stretch}
+.dima-editorial-feature figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:10px}
+.dima-editorial-feature figure>img{display:block;width:100%;height:100%;min-height:0;object-fit:cover}
+.dima-editorial-feature figcaption{font:500 10px/1.5 Montserrat,Arial,sans-serif;color:#c6b9ab;letter-spacing:.1em}
+.dima-editorial-left{display:flex;flex-direction:column;align-items:start;padding:20px 8px 7px 12px;min-width:0}
+.dima-editorial-overline{font:400 10px/1.45 Montserrat,Arial,sans-serif;color:#beaaa0;letter-spacing:.075em}
+.dima-editorial-display{font:800 clamp(45px,5.1vw,74px)/1.13 Geologica,Montserrat,Arial,sans-serif;letter-spacing:-.014em;margin:54px 0 14px;color:#f1ebe2}
+.dima-editorial-display>span{color:var(--case-orange);font-size:.5em;margin-left:.13em;vertical-align:top}
+.dima-editorial-left>p{font:400 clamp(13px,1.15vw,16px)/1.55 Montserrat,Arial,sans-serif;color:#e7ddd4}
+.dima-editorial-pullquote{font:400 10px/1.65 Montserrat,Arial,sans-serif;letter-spacing:.09em;color:#f0a278;margin-top:auto;max-width:240px}
+.dima-editorial-sea>img{object-position:48% center}
+.dima-editorial-cat>img{aspect-ratio:1;object-position:50% 45%;max-height:250px;flex:none}
+.dima-editorial-cat{align-self:start;margin-top:38px!important}
+.dima-editorial-feature+.dima-figure-note a:hover{color:var(--case-orange)}
+.dima-editorial-sections{display:grid;grid-template-columns:1.16fr .84fr;gap:24px}
+.dima-editorial-sections article{border:1px solid #423c37;background:#171615;min-width:0;padding:clamp(24px,3vw,42px);display:flex;flex-direction:column}
+.dima-editorial-section-head>span,.dima-editorial-section-head>p{font:400 11px/1.6 Montserrat,Arial,sans-serif;color:#b8a59a;letter-spacing:.105em;margin:0 0 18px}
+.dima-editorial-section-head>h4{font:700 clamp(43px,5vw,75px)/1.15 Geologica,Montserrat,Arial,sans-serif;letter-spacing:0;color:#f1ebe2;margin:0 0 24px}
+.dima-editorial-section-head>h4 span{color:var(--case-orange)}
+.dima-editorial-section-head>p{font-size:10px;max-width:380px}
+.dima-editorial-archive .dima-editorial-section-head>p{max-width:410px;color:#cfc2b6;letter-spacing:0;line-height:1.7;font-size:13px}
+.dima-editorial-archive-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;align-items:start;margin:22px 0 26px}
+.dima-editorial-archive-photos figure{margin:0;min-width:0;background:#e2d8cc;padding:7px 7px 11px;color:#26221e;transform:rotate(-1.5deg);box-shadow:0 9px 17px #0008}
+.dima-editorial-archive-photos figure:nth-child(2){transform:rotate(2deg);margin-top:14px}
+.dima-editorial-archive-photos figure:nth-child(3){transform:rotate(-1deg);margin-top:6px}
+.dima-editorial-archive-photos figure img{display:block;width:100%;height:clamp(140px,18vw,250px);object-fit:cover}
+.dima-editorial-archive-photos figcaption{font:500 9px/1.5 Montserrat,Arial,sans-serif;letter-spacing:.045em;padding-top:12px}
+.dima-editorial-action{display:inline-block;align-self:start;font:500 11px/1.5 Montserrat,Arial,sans-serif;letter-spacing:.07em;border-bottom:1px solid var(--case-orange);padding:10px 0;margin-top:auto}
+.dima-editorial-action:hover{color:var(--case-orange)}
+.dima-editorial-about blockquote{font:400 clamp(19px,2vw,26px)/1.55 Geologica,Montserrat,Arial,sans-serif;color:#d5c8bc;margin:14px 0 70px;border:0;padding:0}
+.dima-editorial-about .dima-editorial-section-head>h4{margin-top:26px}
+.dima-editorial-feature .dima-editorial-sea>img,.dima-editorial-feature .dima-editorial-cat>img{filter:none}
+.dima-mobile-originals{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:12px;align-items:start;max-width:500px}
+.dima-mobile-originals figure{margin:0;background:#ded4c7;color:#302b26;padding:9px 9px 15px}
+.dima-mobile-originals figure:first-child{margin-top:34px}
+.dima-mobile-originals figure img{width:100%;height:230px;object-fit:cover;display:block}
+.dima-mobile-originals figure:last-child img{aspect-ratio:1;height:auto}
+.dima-mobile-originals figcaption{font:500 9px/1.55 Montserrat,Arial,sans-serif;letter-spacing:.09em;margin-top:12px}
+.dima-mobile-originals figure:nth-child(2){transform:rotate(3deg)}
+.dima-mobile-grid{grid-template-columns:1fr 420px;gap:7%}
+.dima-mobile-grid>div>p{margin-top:22px}
+@media(max-width:1050px){
+  .dima-case-copy-pair{grid-template-columns:1fr;gap:22px}
+  .dima-editorial-feature{grid-template-columns:1fr 1.05fr;min-height:0}
+  .dima-editorial-left{grid-column:1/-1;padding:14px 12px 20px}
+  .dima-editorial-display{font-size:clamp(60px,11vw,85px);margin:35px 0 13px}
+  .dima-editorial-pullquote{margin:12px 0 0}
+  .dima-editorial-cat{margin-top:0!important}
+  .dima-editorial-sea img{height:260px!important}
+  .dima-editorial-cat img{height:260px!important;max-height:none}
+  .dima-editorial-sections{grid-template-columns:1fr}
+  .dima-mobile-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .dima-case .dima-headline h1{font-size:clamp(56px,13.5vw,82px);line-height:1.14;letter-spacing:0}
+  .dima-case .dima-overview h3,
+  .dima-case .dima-real-site h3,
+  .dima-case .dima-visual-copy h3,
+  .dima-case .dima-photo-heading h3,
+  .dima-case .dima-mobile-grid h3,
+  .dima-case .dima-captures-heading h3{font-size:clamp(35px,10vw,44px);line-height:1.28;letter-spacing:.008em;font-weight:600}
+  .dima-case .dima-visual-statement>span{font-size:clamp(40px,11vw,60px);line-height:1.2;letter-spacing:.002em}
+  .dima-case .dima-end h2{font-size:clamp(42px,11.5vw,59px);line-height:1.24;letter-spacing:.007em;margin:50px 0}
+  .dima-case .dima-visual-copy blockquote{font-size:clamp(27px,8vw,35px);line-height:1.34}
+  .dima-case-copy-pair{margin-bottom:28px}
+  .dima-editorial-feature{gap:10px;padding:11px}
+  .dima-editorial-left{padding:12px 8px 17px}
+  .dima-editorial-overline{font-size:8px}
+  .dima-editorial-display{font-size:clamp(47px,12.3vw,66px);line-height:1.14;letter-spacing:0;margin:30px 0 12px}
+  .dima-editorial-feature figcaption{font-size:8px}
+  .dima-editorial-sea img,.dima-editorial-cat img{height:195px!important}
+  .dima-editorial-pullquote{font-size:8px;line-height:1.5}
+  .dima-editorial-sections article{padding:24px 18px}
+  .dima-editorial-section-head>h4{font-size:clamp(40px,10vw,51px);line-height:1.2;letter-spacing:.004em}
+  .dima-editorial-archive-photos{gap:8px;margin:20px 0 23px}
+  .dima-editorial-archive-photos figure{padding:5px 5px 9px}
+  .dima-editorial-archive-photos figure img{height:145px}
+  .dima-editorial-archive-photos figcaption{font-size:7px;letter-spacing:0}
+  .dima-editorial-about blockquote{font-size:19px;line-height:1.65;margin-bottom:40px}
+  .dima-figure-note{line-height:1.6}
+  .dima-mobile-originals{max-width:360px;margin:0 auto}
+  .dima-mobile-originals figure img{height:210px}
 }
