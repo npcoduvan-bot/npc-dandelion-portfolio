@@ -363,3 +363,61 @@
   .dima-mobile-originals{max-width:360px;margin:0 auto}
   .dima-mobile-originals figure img{height:210px}
 }
+
+
+/* Actual screenshots supplied by the photographer: no external preview services or mock browsers */
+.dima-real-screens-intro{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.88fr);gap:7%;align-items:start;margin-bottom:48px}
+.dima-real-screens-intro h3{font-family:Geologica,Montserrat,Arial,sans-serif;font-size:clamp(45px,5.7vw,81px);font-weight:650;line-height:1.2;letter-spacing:0;margin:0}
+.dima-real-screens-intro p{font:400 16px/1.85 Montserrat,Arial,sans-serif;color:#c8bfb5;margin:0 0 21px;max-width:550px}
+.dima-real-screens-intro .dima-screens-note{font-size:12px;line-height:1.7;color:#9c948b}
+.dima-actual-screen{min-width:0;margin:0;display:flex;flex-direction:column;align-items:start}
+.dima-actual-screen>img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain;object-position:top center;background:#191613;border:1px solid #433e39}
+.dima-actual-screen figcaption{font:400 11px/1.65 Montserrat,Arial,sans-serif;letter-spacing:.08em;color:#aaa098;text-transform:uppercase;margin-top:14px}
+.dima-actual-screen-home{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,470px);gap:7%;align-items:start;background:#181614;border:1px solid #413934;padding:clamp(20px,4vw,55px)}
+.dima-actual-screen-home .dima-screen-copy{grid-column:1;grid-row:1;padding-top:30px}
+.dima-actual-screen-home>img{grid-column:2;grid-row:1;border-color:#5b5148;box-shadow:0 28px 45px #0007}
+.dima-actual-screen-home figcaption{grid-column:2;grid-row:2;margin:0}
+.dima-screen-copy{display:flex;flex-direction:column;align-items:start;gap:0}
+.dima-screen-index{color:#ee813e;font:500 12px/1.55 Montserrat,Arial,sans-serif;letter-spacing:.12em}
+.dima-screen-copy h4{font-family:Geologica,Montserrat,Arial,sans-serif;font-size:clamp(39px,4.1vw,59px);font-weight:650;line-height:1.2;letter-spacing:0;margin:30px 0}
+.dima-screen-copy p{font:400 16px/1.8 Montserrat,Arial,sans-serif;color:#cfc4b9;max-width:350px;margin:0 0 40px}
+.dima-screen-copy a,.dima-screens-link{font:500 11px/1.6 Montserrat,Arial,sans-serif;letter-spacing:.1em;display:inline-block;border-bottom:1px solid #ee813e;padding:12px 0;text-transform:uppercase}
+.dima-screen-copy a:hover,.dima-screens-link:hover{color:#ff9961}
+.dima-screenshot-duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:32px;max-width:1130px;align-items:start;margin:0 auto}
+.dima-screenshot-duo .dima-actual-screen>img{border:1px solid #4b423a;box-shadow:0 12px 25px #0005}
+.dima-screenshot-duo .dima-actual-screen:nth-child(2){margin-top:58px}
+.dima-gallery-screens .dima-screens-link{margin:25px 0 0}
+.dima-actual-screen-about{max-width:650px;margin:0 auto}
+.dima-about-screen .dima-real-screens-intro{margin-bottom:42px}
+.dima-case .dima-section-index>h2{letter-spacing:.12em}
+.dima-case .dima-headline h1{letter-spacing:.002em;line-height:1.16}
+.dima-case .dima-photo-heading h3,.dima-case .dima-mobile-grid h3{letter-spacing:.004em;line-height:1.26}
+.dima-square-capture{aspect-ratio:1}
+.dima-square-capture>img{width:100%;height:100%;object-fit:cover}
+@media(max-width:1050px){
+  .dima-real-screens-intro{grid-template-columns:1fr;gap:21px}
+  .dima-real-screens-intro h3{font-size:clamp(46px,7.1vw,69px)}
+  .dima-actual-screen-home{grid-template-columns:minmax(0,.55fr) minmax(0,.85fr);gap:20px}
+  .dima-actual-screen-home .dima-screen-copy{padding-top:0}
+  .dima-screen-copy h4{font-size:clamp(30px,4vw,46px)}
+  .dima-screen-copy p{font-size:13px}
+}
+@media(max-width:560px){
+  .dima-real-screens-intro{gap:20px;margin-bottom:30px}
+  .dima-real-screens-intro h3{font-size:clamp(38px,10vw,53px);line-height:1.23;letter-spacing:.005em}
+  .dima-real-screens-intro p{font-size:13px;line-height:1.8}
+  .dima-real-screens-intro .dima-screens-note{font-size:11px}
+  .dima-actual-screen-home{display:flex;flex-direction:column;align-items:stretch;gap:22px;padding:15px}
+  .dima-actual-screen-home .dima-screen-copy{padding:4px 5px 0}
+  .dima-screen-copy h4{font-size:clamp(33px,9vw,45px);line-height:1.25;letter-spacing:.004em;margin:22px 0}
+  .dima-screen-copy p{font-size:13px;margin:0 0 17px}
+  .dima-actual-screen-home figcaption{margin:0 2px 4px}
+  .dima-screenshot-duo{grid-template-columns:1fr;gap:35px}
+  .dima-screenshot-duo .dima-actual-screen:nth-child(2){margin-top:0}
+  .dima-actual-screen>img{width:100%;border-width:1px}
+  .dima-actual-screen figcaption{font-size:10px;line-height:1.6}
+  .dima-screens-link{font-size:10px}
+  .dima-about-screen .dima-real-screens-intro{margin-bottom:29px}
+  .dima-case .dima-headline h1{letter-spacing:.004em;line-height:1.18}
+  .dima-case .dima-end h2{letter-spacing:.008em;line-height:1.26}
+}
