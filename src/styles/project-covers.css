@@ -95,3 +95,21 @@
 .project-card.dima .cover-dima::after{content:"НЕ НА\A ЗАКАЗ";white-space:pre;position:absolute;left:7%;bottom:12%;z-index:2;color:#fff;font:500 clamp(40px,4.2vw,63px)/.94 'Geologica',Montserrat,Arial,sans-serif;letter-spacing:-.06em;pointer-events:none}
 @media(max-width:850px){.project-card.dima .cover-dima::after{font-size:clamp(37px,5vw,58px)}}
 @media(max-width:560px){.project-card.dima .cover-dima::after{font-size:clamp(52px,14vw,76px)}}
+
+
+/* Dima / original-site-inspired portfolio card: yacht, square cat and orange accent */
+.project-card.dima .cover-dima::after{content:none}
+.project-card.dima .cover-dima{background:#121818}
+.project-card.dima .cover-photo{object-position:44% center}
+.project-card.dima .cover-dima::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(6,10,10,.48) 0%,transparent 32%,rgba(5,8,9,.85) 100%);pointer-events:none}
+.project-card.dima .cover-dima-layout{position:absolute;inset:0;z-index:2;color:#faf1e8;display:block;overflow:hidden}
+.project-card.dima .dima-cover-label{position:absolute;top:17px;left:18px;font:500 9px/1.4 Montserrat,Arial,sans-serif;letter-spacing:.11em}
+.project-card.dima .dima-cover-cat{width:34%;aspect-ratio:1;overflow:hidden;position:absolute;right:6%;top:13%;border:8px solid #f17b3d;background:#101717;box-shadow:0 10px 25px #0006;transform:rotate(4deg)}
+.project-card.dima .dima-cover-cat img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 47%;filter:none;transform:none}
+.project-card.dima:hover .dima-cover-cat img{filter:none;transform:none}
+.project-card.dima .dima-cover-heading{position:absolute;left:6%;bottom:13%;display:flex;align-items:flex-start;gap:3px}
+.project-card.dima .dima-cover-heading strong{font:900 clamp(37px,4.15vw,60px)/.9 Geologica,Montserrat,Arial,sans-serif;letter-spacing:-.065em;text-shadow:0 2px 15px #0006}
+.project-card.dima .dima-cover-heading>span{color:#f17b3d;font:900 33px/1 Geologica,Montserrat,Arial,sans-serif}
+.project-card.dima .dima-cover-note{position:absolute;right:5%;bottom:6%;text-align:right;font:500 7px/1.55 Montserrat,Arial,sans-serif;letter-spacing:.06em;color:#ffd3b5}
+@media(max-width:1050px){.project-card.dima .dima-cover-heading strong{font-size:clamp(38px,5.4vw,62px)}}
+@media(max-width:560px){.project-card.dima .dima-cover-heading strong{font-size:clamp(44px,14vw,72px)}.project-card.dima .dima-cover-cat{width:30%;border-width:7px}.project-card.dima .dima-cover-note{font-size:8px}}
