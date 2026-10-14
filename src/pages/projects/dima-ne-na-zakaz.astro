@@ -2,7 +2,8 @@
 import '../../styles/global.css';
 import '../../styles/dima-case.css';
 import SiteHeader from '../../components/SiteHeader.astro';
-const live = 'https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/';
+const live = 'https://dima-ne-na-zakaz.pages.dev/';
+const archive = `${live}#archive`;
 ---
 <!doctype html>
 <html lang="ru">
@@ -57,12 +58,12 @@ const live = 'https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/';
         <h3>Никаких<br />«Записаться».</h3>
         <div>
           <p>Открываешь сайт, а тебя никто никуда не зовёт. Огромное «НЕ НА ЗАКАЗ», два снимка и короткое «Я так вижу мир». Дальше — всё, что Дима наснимал.</p>
-          <p class="dima-screens-note">Это настоящие скриншоты опубликованного сайта, снятые с телефона. Убраны только панели браузера и телефона. На обложке кейса фотография кота отдельно показана квадратной.</p>
+          <p class="dima-screens-note">Это настоящие скриншоты опубликованного сайта, снятые с телефона. Убраны только панели браузера и телефона. Главный экран снят после обновления сайта: карточка кота теперь квадратная.</p>
         </div>
       </div>
       <figure class="dima-actual-screen dima-actual-screen-home">
         <div class="dima-screen-copy"><span class="dima-screen-index">01 / ГЛАВНАЯ</span><h4>Начинается<br />с простого «нет».</h4><p>Без прайса. Без записи. Только фотографии и характер автора.</p><a href={live} target="_blank" rel="noopener noreferrer">ОТКРЫТЬ ГЛАВНУЮ ↗</a></div>
-        <img src="/assets/dima/screens/home.webp" loading="eager" decoding="async" width="687" height="1383" alt="Реальный скриншот первого экрана сайта НЕ НА ЗАКАЗ: крупная надпись, полароидные фото кота и яхты" />
+        <img src="/assets/dima/screens/home-current.jpg" loading="eager" decoding="async" width="360" height="725" alt="Реальный скриншот обновлённой главной страницы сайта НЕ НА ЗАКАЗ: крупная надпись, квадратная карточка кота и фото яхты" />
         <figcaption>Скриншот 01 / Главная страница · мобильная версия</figcaption>
       </figure>
     </section>
@@ -83,7 +84,7 @@ const live = 'https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/';
           <figcaption>03 / Как выглядит лента фотографий</figcaption>
         </figure>
       </div>
-      <a class="dima-screens-link" href="https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/#archive" target="_blank" rel="noopener noreferrer">ПОСМОТРЕТЬ ВСЮ ГАЛЕРЕЮ ↗</a>
+      <a class="dima-screens-link" href={archive} target="_blank" rel="noopener noreferrer">ПОСМОТРЕТЬ ВСЮ ГАЛЕРЕЮ ↗</a>
     </section>
 
     <section class="dima-section dima-about-screen" aria-labelledby="about-screen-title">
@@ -118,7 +119,7 @@ const live = 'https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/';
         <figure class="dima-photo-polaroid rotate-right"><img src="/assets/dima/moto.jpg" alt="Мотоциклист у моря на закате — фотография Димы" loading="lazy" width="960" height="1280" /><figcaption>№ 02 / ТЕХНИКА</figcaption></figure>
         <figure class="dima-photo-polaroid rotate-light"><img src="/assets/dima/details.jpg" alt="Божья коровка у кнопок лифта — фотография Димы" loading="lazy" width="960" height="1280" /><figcaption>№ 03 / ДЕТАЛИ</figcaption></figure>
       </div>
-      <div class="dima-gallery-nav"><span>Выборка из фотосерии Димы</span><a href="https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/#archive" target="_blank" rel="noopener noreferrer">ВСЯ ГАЛЕРЕЯ ↗</a></div>
+      <div class="dima-gallery-nav"><span>Выборка из фотосерии Димы</span><a href={archive} target="_blank" rel="noopener noreferrer">ВСЯ ГАЛЕРЕЯ ↗</a></div>
     </section>
 
     <section class="dima-section dima-mobile" aria-labelledby="mobile-site">
