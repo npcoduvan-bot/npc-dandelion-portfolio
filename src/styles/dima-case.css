@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;800;900&display=swap');
 .dima-case{--ink:#f0efe9;--muted:#aaa9a4;--line:#3b3a37;--aqua:#8ac3b7;background:#0a0c0b;color:var(--ink)}
 .dima-case .site-shell{width:min(calc(100% - 8.5vw),1296px)}
 .dima-case h1,.dima-case h2,.dima-case h3,.dima-case p{margin-top:0}
@@ -69,3 +69,83 @@
 @media(prefers-reduced-motion:reduce){.dima-photo-grid figure{transform:none}}
 
 .dima-cover-sea img{aspect-ratio:1.3;object-position:center 50%}
+
+
+/* V2 — same visual language as the published «НЕ НА ЗАКАЗ»: black, cream, orange and bold Geologica */
+.dima-case{--ink:#f5f1e9;--muted:#b4aaa0;--line:#393733;--aqua:#f2793a;background:#0d0e0d}
+.dima-case .site-shell{max-width:1300px}
+.dima-hero-top{border-color:#70635c;color:#c6b9ae}
+.dima-headline h1,.dima-end h2{font-family:Geologica,Montserrat,Arial,sans-serif;font-weight:900;letter-spacing:-.05em;color:#f1e9df}
+.dima-headline h1 span{color:#f2793a}
+.dima-headline>p{color:#d2c4b8}
+.dima-cover-composition{background:#111210;color:#e9e1d9;padding:18px 22px 28px;grid-template-columns:1.4fr .7fr;gap:20px}
+.dima-cover-sea{align-self:start}.dima-cover-sea img{aspect-ratio:1.27;object-fit:cover;object-position:center;background:#12312f}
+.dima-cover-composition figcaption{color:#cfc4b8}
+.dima-square-capture{border:12px solid #ec7638;background:#090d0d;box-shadow:0 9px 20px #0009}
+.dima-square-capture img{object-position:center 45%}
+.dima-square-caption{background:#ec7638;color:#191613}
+.dima-cover-side-note{color:#ef8145;bottom:50px}
+.dima-section{border-color:#353532}
+.dima-section-index>span{color:#f2793a}
+.dima-section-index h2{color:#e7c8ad}
+.dima-overview h3,.dima-real-site h3,.dima-visual-copy h3,.dima-photo-heading h3,.dima-mobile-grid h3,.dima-captures-heading h3{font-family:Geologica,Montserrat,Arial,sans-serif;font-weight:800;letter-spacing:-.065em;line-height:1.01}
+.dima-overview h3{font-size:clamp(51px,5.8vw,82px)}
+.dima-real-site h3{font-size:clamp(51px,5.5vw,80px)}
+.dima-visual-copy h3{font-size:clamp(47px,5vw,71px)}
+.dima-photo-heading h3,.dima-mobile-grid h3{font-size:clamp(45px,5.4vw,76px)}
+.dima-overview-grid>div>p,.dima-section-description,.dima-visual-copy>p,.dima-photo-heading>p,.dima-mobile-grid>div>p{color:#c2b9b0}
+.dima-facts{border-top:1px solid #49423d;padding-top:28px}
+.dima-facts dd{color:#eee7df}
+.dima-browser{border:1px solid #554d44;background:#191919;box-shadow:0 20px 80px #0009}
+.dima-browser-bar{background:#d8cfc3;border-color:#aba297;color:#37312d}
+.dima-browser-bar>span:nth-child(2){color:#514d47}
+.dima-browser-window{background:#272728}
+.dima-browser-action{background:#eb793a;color:#151210;font-weight:600}
+.dima-browser-action:hover{background:#f7a368}
+.dima-visual-statement{background:#ec7638;color:#1b1310}
+.dima-visual-statement>span{font-weight:900;font-size:clamp(68px,8.1vw,116px);letter-spacing:-.06em}
+.dima-accent{color:#fbe6c8}
+.dima-visual-statement small{color:#302017}
+.dima-visual-copy blockquote{font-family:Geologica,Arial,sans-serif;font-weight:500;color:#f1e7dd;border-color:#f2793a;line-height:1.18;font-size:clamp(31px,3.1vw,47px)}
+.dima-photo-grid{background:transparent;border:1px solid #393733;padding:47px 36px 46px;gap:38px}
+.dima-photo-grid figure{background:#d8cfc3;padding:12px 12px 27px;box-shadow:0 12px 22px #0008}
+.dima-photo-polaroid figcaption{color:#24211d;font-weight:500}
+.dima-gallery-nav a,.dima-mobile-grid a,.dima-end a{border-color:#f2793a}
+.dima-end h2 span{color:#f2793a}
+.dima-captures{padding-top:24px;margin-top:110px}
+.dima-captures-heading{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:7%;margin-bottom:45px}
+.dima-captures-heading h3{font-size:clamp(44px,5.2vw,72px);margin:0}
+.dima-captures-heading p{font-size:16px;line-height:1.85;color:#c2b9b0;max-width:610px;margin:0}
+.dima-capture-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.dima-capture-figure{margin:0;min-width:0;border:1px solid #5a5148;background:#191919}
+.dima-capture-frame{position:relative;aspect-ratio:.95;overflow:hidden;background:#1b1c1a}
+.dima-capture-frame iframe,.dima-capture-frame img{width:100%;height:100%;position:absolute;inset:0;border:0;object-fit:cover;object-position:top}
+.dima-capture-frame iframe{background:#171717}
+.dima-capture-figure figcaption{color:#e8d9cb;padding:15px 17px;font-size:10px;letter-spacing:.1em;border-top:1px solid #383531}
+.dima-mobile-shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:0}
+.dima-device-island{z-index:2}
+.dima-device{background:#1a1c1b;border-color:#5b534c}
+.dima-case :is(.dima-capture-figure,.dima-browser) a:focus-visible{outline-color:#f2793a}
+@media(min-width:1100px){.dima-cover-side-note{right:37px;bottom:32px}}
+@media(max-width:1050px){
+  .dima-captures-heading{grid-template-columns:1fr;gap:20px}
+  .dima-capture-grid{gap:15px}
+  .dima-overview h3,.dima-real-site h3,.dima-photo-heading h3,.dima-mobile-grid h3{font-size:clamp(50px,8vw,68px)}
+  .dima-cover-composition{grid-template-columns:1.32fr .7fr}
+}
+@media(max-width:560px){
+  .dima-headline h1{font-size:clamp(60px,13.8vw,88px);line-height:.91}
+  .dima-cover-composition{padding:9px;gap:10px}
+  .dima-cover-sea img{aspect-ratio:1.16}
+  .dima-square-capture{border-width:7px}
+  .dima-square-caption{font-size:6px}
+  .dima-captures{margin-top:65px}
+  .dima-captures-heading h3{font-size:clamp(42px,11vw,62px)}
+  .dima-captures-heading p{font-size:13px}
+  .dima-capture-grid{grid-template-columns:1fr;gap:27px}
+  .dima-capture-frame{aspect-ratio:1.14}
+  .dima-photo-grid{padding:25px 35px;gap:27px}
+  .dima-visual-statement{background:#ec7638}
+  .dima-visual-statement>span{font-size:clamp(50px,12vw,78px)}
+  .dima-visual-copy blockquote{font-size:32px}
+}
