@@ -28,5 +28,10 @@ jobs:
         run: |
           test -f dist/projects/dima-ne-na-zakaz/index.html
           grep -q 'Кадры есть' dist/projects/dima-ne-na-zakaz/index.html
-          grep -q 'dima-editorial-feature' dist/projects/dima-ne-na-zakaz/index.html
+          grep -q 'dima-real-screens' dist/projects/dima-ne-na-zakaz/index.html
+          grep -q 'gallery-grid.webp' dist/projects/dima-ne-na-zakaz/index.html
+          test -s public/assets/dima/screens/home.webp
+          test -s public/assets/dima/screens/gallery-intro.webp
+          test -s public/assets/dima/screens/gallery-grid.webp
+          test -s public/assets/dima/screens/about.webp
           if grep -q 'dima-static-preview' dist/projects/dima-ne-na-zakaz/index.html; then echo 'Outdated faux-screen preview still exists' && exit 1; fi
