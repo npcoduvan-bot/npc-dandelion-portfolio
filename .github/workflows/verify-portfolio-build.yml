@@ -28,4 +28,5 @@ jobs:
         run: |
           test -f dist/projects/dima-ne-na-zakaz/index.html
           grep -q 'Кадры есть' dist/projects/dima-ne-na-zakaz/index.html
-          grep -q 'dima-static-preview' dist/projects/dima-ne-na-zakaz/index.html
+          grep -q 'dima-editorial-feature' dist/projects/dima-ne-na-zakaz/index.html
+          if grep -q 'dima-static-preview' dist/projects/dima-ne-na-zakaz/index.html; then echo 'Outdated faux-screen preview still exists' && exit 1; fi
