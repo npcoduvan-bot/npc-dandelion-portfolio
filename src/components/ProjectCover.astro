@@ -1,6 +1,6 @@
 ---
 interface Props {
-  variant: 'noir' | 'pink' | 'levis' | 'nko' | 'signage' | 'green' | 'more';
+  variant: 'noir' | 'pink' | 'levis' | 'nko' | 'signage' | 'green' | 'more' | 'dima';
   image?: string;
   srcSet?: string;
   alt?: string;
@@ -13,7 +13,7 @@ const { variant, image, srcSet, alt = '' } = Astro.props;
   {image && <img class="cover-photo" src={image} srcset={srcSet} sizes="(max-width: 560px) calc(100vw - 48px), (max-width: 1050px) 331px, 420px" alt={alt} loading="lazy" width={1374} height={1145} />}
 
   {variant === 'signage' && <div class="cover-signage-copy" aria-hidden="true">
-    <span class="cover-kicker">05 / СРЕДОВОЙ ДИЗАЙН</span>
+    <span class="cover-kicker">06 / СРЕДОВОЙ ДИЗАЙН</span>
     <span class="cover-signage-track"></span>
     <span class="cover-signage-arrow">↗</span>
     <strong>ЗНАКИ<br /><span>И МЕСТА</span></strong>
@@ -30,7 +30,7 @@ const { variant, image, srcSet, alt = '' } = Astro.props;
   </div>}
 
   {variant === 'more' && <div class="cover-more-copy" aria-hidden="true">
-    <span class="cover-kicker">06 / ПОДБОРКА РАБОТ</span>
+    <span class="cover-kicker">07 / ПОДБОРКА РАБОТ</span>
     <span class="cover-more-sun"></span>
     <span class="cover-more-lines"></span>
     <strong>ЕЩЁ<span>↗</span></strong>
