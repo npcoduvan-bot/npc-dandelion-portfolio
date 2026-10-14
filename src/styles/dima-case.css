@@ -149,3 +149,92 @@
   .dima-visual-statement>span{font-size:clamp(50px,12vw,78px)}
   .dima-visual-copy blockquote{font-size:32px}
 }
+
+
+/* Stable, in-repository previews: original source photos, never third-party embeds. */
+.dima-browser-window,.dima-capture-frame,.dima-device{isolation:isolate}
+.dima-static-preview{position:absolute;inset:0;overflow:hidden;background:#101111;color:#efe8df;font-family:Geologica,Montserrat,Arial,sans-serif;text-align:left}
+.dima-browser-window .dima-static-preview img,
+.dima-capture-frame .dima-static-preview img{position:static;inset:auto;display:block;border:0;max-width:none}
+.dima-browser-window>.dima-rendered-shot,
+.dima-capture-frame>.dima-rendered-shot,
+.dima-device>.dima-rendered-shot{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:2;background:#101111}
+.dima-browser-window>.dima-browser-action{z-index:3}
+.dima-browser-window iframe,.dima-capture-frame iframe,.dima-device iframe{display:none!important}
+.dima-static-home{padding:clamp(13px,3.5%,40px);background:#131312}
+.dima-static-home .dima-static-nav{display:flex;justify-content:space-between;align-items:center;gap:15px;padding-bottom:clamp(12px,3%,25px);border-bottom:1px solid #59514a;color:#eee8df;font:500 clamp(8px,1.05vw,13px)/1.3 Montserrat,Arial,sans-serif;letter-spacing:.06em}
+.dima-static-home .dima-static-nav>span{font-size:.78em;color:#aaa49c;text-align:right}
+.dima-static-kicker,.dima-static-home .dima-static-kicker{display:flex;justify-content:space-between;gap:8px;color:#b1a89e;font:400 clamp(9px,.95vw,13px)/1.35 Montserrat,Arial,sans-serif;letter-spacing:.12em}
+.dima-static-home .dima-static-kicker{padding-top:clamp(18px,4.5%,38px)}
+.dima-static-title{font:800 clamp(70px,10.1vw,154px)/1.01 Geologica,Montserrat,Arial,sans-serif;letter-spacing:-.035em;margin:clamp(12px,3%,28px) 0 8px}
+.dima-static-title span{font-size:.45em;color:#f17b3d;vertical-align:top;display:inline-block;margin-left:.15em}
+.dima-static-subtitle{font-size:clamp(12px,1.7vw,23px);color:#c8bdb0;line-height:1.4;margin-bottom:clamp(15px,3%,36px)}
+.dima-static-picture-row{display:grid;grid-template-columns:1.32fr .72fr;gap:clamp(6px,1.3vw,18px);height:41%;max-height:350px}
+.dima-static-picture-row>img{width:100%!important;height:100%!important;object-fit:cover}
+.dima-static-picture-row>img:last-child{aspect-ratio:1;object-position:center}
+.dima-static-photo-footer{display:flex;justify-content:space-between;color:#bdb3a7;font:500 clamp(8px,.9vw,11px)/1.35 Montserrat,Arial,sans-serif;letter-spacing:.1em;padding-top:9px}
+.dima-static-archive,.dima-static-about{padding:clamp(15px,5.5%,42px);background:#191818}
+.dima-static-archive h4,.dima-static-about h4{color:#f5eee7;font:800 clamp(45px,5.7vw,86px)/1.04 Geologica,Montserrat,Arial,sans-serif;letter-spacing:-.025em;margin:12px 0}
+.dima-static-archive>p,.dima-static-about>p{font:400 clamp(10px,1.15vw,15px)/1.55 Montserrat,Arial,sans-serif;color:#bcb1a6;max-width:560px;margin:5px 0 18px}
+.dima-static-tags{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 23px}
+.dima-static-tags>span{border:1px solid #78716c;border-radius:30px;font:400 clamp(8px,.75vw,11px)/1.2 Montserrat,Arial,sans-serif;letter-spacing:.04em;padding:7px 10px;color:#eee1d5}
+.dima-static-archive-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(6px,1.8vw,20px);align-items:start}
+.dima-static-archive-grid figure{margin:0;background:#dfd7cc;color:#24201e;min-width:0;padding:clamp(4px,.9vw,12px)}
+.dima-static-archive-grid img{width:100%;aspect-ratio:.85;object-fit:cover}
+.dima-static-archive-grid figcaption{color:#34302b;font:500 clamp(7px,.7vw,11px)/1.4 Montserrat,Arial,sans-serif;padding:10px 0 1px}
+.dima-static-archive-grid figure:nth-child(2){transform:rotate(3deg);margin-top:14px}
+.dima-static-archive-grid figure:nth-child(3){transform:rotate(-2deg);margin-top:8px}
+.dima-static-about{display:flex;flex-direction:column}
+.dima-static-about-kicker{font:400 clamp(8px,.75vw,11px)/1.4 Montserrat,Arial,sans-serif;color:#ad9283;letter-spacing:.09em;margin-top:18px}
+.dima-static-about h4{font-size:clamp(41px,6vw,94px);margin:24px 0 14px}
+.dima-static-about h4 span{color:#f27b3b}
+.dima-static-about>p{width:68%;max-width:400px}
+.dima-static-about-photo{position:absolute;right:6%;bottom:5%;width:36%;height:61%;display:flex;flex-direction:column;align-items:end}
+.dima-static-about-photo img{width:100%;height:100%;object-fit:cover}
+.dima-static-about-photo span{font-size:9px;letter-spacing:.08em;margin-top:10px;color:#e2d2c1}
+.dima-static-mobile{padding:50px 22px 20px;background:#121211;overflow:hidden}
+.dima-static-mobile .dima-static-nav{display:flex;justify-content:space-between;align-items:center;color:#e7e1d8;font-size:10px;letter-spacing:.07em;padding-bottom:23px;border-bottom:1px solid #645f58}
+.dima-static-mobile>.dima-static-nav b{font-size:19px}
+.dima-static-mobile>p{font-size:8px;letter-spacing:.14em;color:#c1b6a9;margin:25px 0 13px}
+.dima-static-mobile h4{font:900 52px/1.05 Geologica,Montserrat,Arial,sans-serif;letter-spacing:-.035em;margin:0 0 13px}
+.dima-static-mobile h4 span{color:#f1793a}
+.dima-static-mobile>span{font-size:12px;color:#c8bbb0}
+.dima-static-mobile figure{margin:24px 0 0}
+.dima-static-mobile figure img{display:block;width:100%;height:170px;object-fit:cover}
+.dima-static-mobile figcaption{font-size:9px;color:#c2b6aa;margin-top:7px;letter-spacing:.06em}
+.dima-static-mobile-cat img{aspect-ratio:1}
+.dima-device>.dima-rendered-shot{z-index:1}
+.dima-device-island{z-index:3}
+/* Typography: heavy Geologica needs more tracking and larger line boxes. */
+.dima-headline h1{line-height:1.02;letter-spacing:-.026em;font-weight:800}
+.dima-overview h3,.dima-real-site h3,.dima-visual-copy h3,.dima-photo-heading h3,.dima-mobile-grid h3,.dima-captures-heading h3{line-height:1.17;letter-spacing:-.023em;font-weight:700;text-wrap:balance;overflow-wrap:normal}
+.dima-visual-statement>span{font-weight:800;letter-spacing:-.027em;line-height:1.1}
+.dima-end h2{font-weight:800;line-height:1.16;letter-spacing:-.028em}
+.dima-visual-copy blockquote{letter-spacing:-.02em;line-height:1.2}
+@media(max-width:1050px){
+ .dima-static-title{font-size:clamp(55px,9.5vw,104px)}
+ .dima-static-archive h4,.dima-static-about h4{font-size:clamp(40px,6vw,67px)}
+}
+@media(max-width:560px){
+ .dima-headline h1{line-height:1.08;letter-spacing:-.022em}
+ .dima-overview h3,.dima-visual-copy h3,.dima-photo-heading h3,.dima-mobile-grid h3,.dima-captures-heading h3{font-size:clamp(38px,10.8vw,51px);line-height:1.18;letter-spacing:-.018em}
+ .dima-real-site h3{font-size:clamp(41px,11.5vw,49px);line-height:1.2;letter-spacing:-.016em}
+ .dima-end h2{font-size:clamp(44px,12vw,61px);line-height:1.19;letter-spacing:-.014em;margin:46px 0 43px}
+ .dima-visual-statement>span{font-size:clamp(43px,11.2vw,67px);line-height:1.12;letter-spacing:-.018em}
+ .dima-static-home{padding:11px}
+ .dima-static-home .dima-static-nav{font-size:6.5px;padding-bottom:8px}
+ .dima-static-home .dima-static-kicker{font-size:6px;padding-top:15px}
+ .dima-static-title{font-size:clamp(32px,11vw,60px);line-height:1.08;margin:13px 0 7px}
+ .dima-static-subtitle{font-size:9px;margin:9px 0 15px}
+ .dima-static-picture-row{height:36%;gap:7px}
+ .dima-static-photo-footer{font-size:6px}
+ .dima-static-archive,.dima-static-about{padding:17px}
+ .dima-static-archive h4,.dima-static-about h4{font-size:clamp(31px,9vw,48px)}
+ .dima-static-archive>p,.dima-static-about>p{font-size:9px}
+ .dima-static-tags{margin:12px 0}
+ .dima-static-tags span{font-size:6px;padding:5px}
+ .dima-static-archive-grid{gap:9px}
+ .dima-static-archive-grid figcaption{font-size:7px}
+ .dima-static-about-photo{right:5%;width:35%;height:43%}
+ .dima-static-about>p{width:63%}
+}
