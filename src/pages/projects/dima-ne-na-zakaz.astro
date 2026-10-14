@@ -3,7 +3,6 @@ import '../../styles/global.css';
 import '../../styles/dima-case.css';
 import SiteHeader from '../../components/SiteHeader.astro';
 const live = 'https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/';
-const preview = 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fdima-ne-na-zakaz.npcoduvan.chatgpt.site%2F?w=1440&h=1024';
 ---
 <!doctype html>
 <html lang="ru">
@@ -70,35 +69,58 @@ const preview = 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fdima-ne-na-zakaz.npco
       <div class="dima-browser">
         <div class="dima-browser-bar"><span class="dima-traffic" aria-hidden="true">● ● ●</span><span>dima-ne-na-zakaz.npcoduvan.chatgpt.site</span><a href={live} target="_blank" rel="noopener noreferrer" aria-label="Открыть оригинальный сайт">↗</a></div>
         <div class="dima-browser-window">
-          <iframe src={live} title="Опубликованный сайт «НЕ НА ЗАКАЗ»" loading="lazy"></iframe>
-          <img src={preview} alt="Полноразмерный снимок главной страницы опубликованного сайта «НЕ НА ЗАКАЗ»" loading="lazy" decoding="async" onerror="this.remove()" />
+          <div class="dima-static-preview dima-static-home" aria-label="Компоновка главного экрана на основе исходных материалов сайта">
+            <div class="dima-static-nav"><b>ДИМА / ФОТОГРАФИИ</b><span>СМОТРЕТЬ &nbsp; КТО СНИМАЕТ &nbsp; УСЛУГ НЕТ</span></div>
+            <div class="dima-static-kicker"><span>ЛИЧНЫЙ ВИЗУАЛЬНЫЙ АРХИВ</span><span>ВЫПУСК 001 / 2026</span></div>
+            <div class="dima-static-title">НЕ НА<br />ЗАКАЗ<span>*</span></div>
+            <p class="dima-static-subtitle">Я так вижу мир</p>
+            <div class="dima-static-picture-row"><img src="/assets/dima/sea.jpg" alt="" loading="lazy" /><img src="/assets/dima/cat.jpg" alt="" loading="lazy" /></div>
+            <div class="dima-static-photo-footer"><span>№ 065 / ВОКРУГ</span><span>ЭТОТ ТОЖЕ НЕ ЗАКАЗЫВАЛ</span></div>
+          </div>
+          <img class="dima-rendered-shot" src="/assets/dima/screens/home-desktop.png" alt="Снимок опубликованной главной страницы «НЕ НА ЗАКАЗ»" loading="lazy" decoding="async" onerror="this.remove()" />
           <a class="dima-browser-action" href={live} target="_blank" rel="noopener noreferrer">ОТКРЫТЬ ОРИГИНАЛ ↗</a>
         </div>
       </div>
-      <p class="dima-figure-note">02 / ГЛАВНАЯ · СНИМОК ОПУБЛИКОВАННОГО САЙТА</p>
+      <p class="dima-figure-note">02 / ГЛАВНАЯ · ПРЕДПРОСМОТР САЙТА</p>
     </section>
 
     
     <section class="dima-section dima-captures" aria-labelledby="screens-title">
       <div class="dima-section-index"><span>03</span><h2 id="screens-title">ЕЩЁ ЭКРАНЫ</h2></div>
-      <div class="dima-captures-heading"><h3>Не просто<br />красивая обложка.</h3><p>Показываю и внутренние разделы: галерею с фильтрами, страницу о Диме и то, что остаётся за первым экраном. Это снимки опубликованного сайта, а не новые макеты.</p></div>
+      <div class="dima-captures-heading"><h3>Не просто<br />красивая обложка.</h3><p>Показываю и внутренние разделы: галерею с фильтрами, страницу о Диме и то, что остаётся за первым экраном. Для каждого раздела подготовлен свой экран. Если автоматический снимок ещё не получен, показываем аккуратную композицию из тех же исходных фотографий.</p></div>
       <div class="dima-capture-grid">
         <figure class="dima-capture-figure">
           <div class="dima-browser-bar"><span class="dima-traffic" aria-hidden="true">● ● ●</span><span>/ #archive</span><a href="https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/#archive" target="_blank" rel="noopener noreferrer" aria-label="Открыть галерею">↗</a></div>
           <div class="dima-capture-frame">
-            <iframe title="Галерея сайта Димы" loading="lazy" src="https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/#archive"></iframe>
-            <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fdima-ne-na-zakaz.npcoduvan.chatgpt.site%2F%23archive?w=1040&h=960" loading="lazy" decoding="async" alt="Скриншот галереи «НЕ НА ЗАКАЗ» с полароидными карточками" onerror="this.remove()" />
+            <div class="dima-static-preview dima-static-archive" aria-label="Демонстрация композиции раздела галереи">
+              <span class="dima-static-kicker">01 / ФОТОГРАФИИ</span>
+              <h4>НУ, ВОТ<br />ФОТКИ.</h4>
+              <p>Без единой темы и обязательной истории.</p>
+              <div class="dima-static-tags"><span>ВСЁ ПОДРЯД</span><span>ТО, ЧТО ЕДЕТ</span><span>ВОКРУГ</span></div>
+              <div class="dima-static-archive-grid">
+                <figure><img src="/assets/dima/mountains.jpg" alt="" loading="lazy" /><figcaption>№ 012 / ВОКРУГ</figcaption></figure>
+                <figure><img src="/assets/dima/moto.jpg" alt="" loading="lazy" /><figcaption>№ 060 / ТЕХНИКА</figcaption></figure>
+                <figure><img src="/assets/dima/details.jpg" alt="" loading="lazy" /><figcaption>№ 096 / ДЕТАЛИ</figcaption></figure>
+              </div>
+            </div>
+            <img class="dima-rendered-shot" src="/assets/dima/screens/archive-desktop.png" loading="lazy" decoding="async" alt="Снимок фотоархива и категорий сайта Димы" onerror="this.remove()" />
           </div><figcaption>03 / ГАЛЕРЕЯ · ФИЛЬТРЫ И КАРТОЧКИ</figcaption>
         </figure>
         <figure class="dima-capture-figure">
           <div class="dima-browser-bar"><span class="dima-traffic" aria-hidden="true">● ● ●</span><span>/ #about</span><a href="https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/#about" target="_blank" rel="noopener noreferrer" aria-label="Открыть раздел о Диме">↗</a></div>
           <div class="dima-capture-frame">
-            <iframe title="Раздел о Диме" loading="lazy" src="https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/#about"></iframe>
-            <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fdima-ne-na-zakaz.npcoduvan.chatgpt.site%2F%23about?w=1040&h=960" loading="lazy" decoding="async" alt="Скриншот раздела «Меня зовут Дима» на сайте «НЕ НА ЗАКАЗ»" onerror="this.remove()" />
+            <div class="dima-static-preview dima-static-about" aria-label="Демонстрация композиции раздела об авторе">
+              <span class="dima-static-kicker">02 / КТО СНИМАЕТ</span>
+              <span class="dima-static-about-kicker">БЕЗ ГЕРОИЧЕСКОЙ БИОГРАФИИ</span>
+              <h4>МЕНЯ<br />ЗОВУТ<br />ДИМА<span>.</span></h4>
+              <p>Я никогда не собирался монетизировать фотографии. Для меня это просто отдушина, которую я с детства люблю.</p>
+              <div class="dima-static-about-photo"><img src="/assets/dima/moto.jpg" alt="" loading="lazy" /><span>УСЛУГ НЕТ ↗</span></div>
+            </div>
+            <img class="dima-rendered-shot" src="/assets/dima/screens/about-desktop.png" loading="lazy" decoding="async" alt="Снимок раздела «Меня зовут Дима» на сайте" onerror="this.remove()" />
           </div><figcaption>04 / О СЕБЕ · НИКАКОЙ ГЕРОИЧЕСКОЙ БИОГРАФИИ</figcaption>
         </figure>
       </div>
-      <p class="dima-figure-note">Изображения экранов получаются через сервис скриншотов. Если изображение не загрузилось, попробуйте ссылку ↗ — она ведёт на настоящий раздел сайта.</p>
+      <p class="dima-figure-note">В основе каждого экрана — настоящие фотографии и тексты сайта. Пока готовится снимок опубликованной страницы, отображается статичная композиция. Стрелка ↗ ведёт на действующий раздел.</p>
     </section>
 
     <section class="dima-section dima-visual" aria-labelledby="visual-system">
@@ -128,7 +150,18 @@ const preview = 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fdima-ne-na-zakaz.npco
       <div class="dima-section-index"><span>05</span><h2 id="mobile-site">МОБИЛЬНАЯ ВЕРСИЯ</h2></div>
       <div class="dima-mobile-grid">
         <div><h3>На телефоне<br />тоже работает.</h3><p>Не пришлось жертвовать большими буквами и забавными подписями. На телефоне всё просто выстраивается по-другому — фотографии по-прежнему главные.</p><a href={live} target="_blank" rel="noopener noreferrer">ОТКРЫТЬ МОБИЛЬНЫЙ САЙТ ↗</a></div>
-        <div class="dima-device"><div class="dima-device-island"></div><iframe src={live} loading="lazy" title="Сайт Димы в узком мобильном окне"></iframe><img class="dima-mobile-shot" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fdima-ne-na-zakaz.npcoduvan.chatgpt.site%2F?w=390&h=820" loading="lazy" decoding="async" alt="Скриншот мобильной версии главной сайта Димы" onerror="this.remove()" /></div>
+        <div class="dima-device">
+          <div class="dima-device-island" aria-hidden="true"></div>
+          <div class="dima-static-preview dima-static-mobile" aria-label="Демонстрация мобильного экрана">
+            <span class="dima-static-nav">ДИМА / ФОТОГРАФИИ <b>☰</b></span>
+            <p>ЛИЧНЫЙ ВИЗУАЛЬНЫЙ АРХИВ</p>
+            <h4>НЕ НА<br />ЗАКАЗ<span>*</span></h4>
+            <span>Я так вижу мир</span>
+            <figure><img src="/assets/dima/sea.jpg" alt="" loading="lazy" /><figcaption>№ 065 / ВОКРУГ</figcaption></figure>
+            <figure class="dima-static-mobile-cat"><img src="/assets/dima/cat.jpg" alt="" loading="lazy" /><figcaption>ЭТОТ ТОЖЕ НЕ ЗАКАЗЫВАЛ</figcaption></figure>
+          </div>
+          <img class="dima-rendered-shot dima-mobile-shot" src="/assets/dima/screens/home-mobile.png" loading="lazy" decoding="async" alt="Реальный снимок мобильной главной страницы сайта Димы" onerror="this.remove()" />
+        </div>
       </div>
     </section>
 
