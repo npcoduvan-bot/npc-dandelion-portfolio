@@ -27,7 +27,7 @@ jobs:
       - name: Check rendered Dima case page
         run: |
           test -f dist/projects/dima-ne-na-zakaz/index.html
-          grep -q 'Кадры есть' dist/projects/dima-ne-na-zakaz/index.html
+          grep -q 'Никаких' dist/projects/dima-ne-na-zakaz/index.html
           grep -q 'dima-real-screens' dist/projects/dima-ne-na-zakaz/index.html
           grep -q 'gallery-grid.webp' dist/projects/dima-ne-na-zakaz/index.html
           test -s public/assets/dima/screens/home.webp
