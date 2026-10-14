@@ -12,6 +12,13 @@ const { variant, image, srcSet, alt = '' } = Astro.props;
 <div class={`project-visual cover-${variant}`}>
   {image && <img class="cover-photo" src={image} srcset={srcSet} sizes="(max-width: 560px) calc(100vw - 48px), (max-width: 1050px) 331px, 420px" alt={alt} loading="lazy" width={1374} height={1145} />}
 
+  {variant === 'dima' && <div class="cover-dima-layout" aria-hidden="true">
+    <span class="dima-cover-label">ДИМА / ФОТОГРАФИИ</span>
+    <div class="dima-cover-cat"><img src="/assets/dima/cat.jpg" alt="" loading="lazy" width="400" height="400" /></div>
+    <div class="dima-cover-heading"><strong>НЕ НА<br />ЗАКАЗ</strong><span>*</span></div>
+    <span class="dima-cover-note">* КОММЕРЧЕСКИЕ АМБИЦИИ<br />ОТСУТСТВУЮТ</span>
+  </div>}
+
   {variant === 'signage' && <div class="cover-signage-copy" aria-hidden="true">
     <span class="cover-kicker">06 / СРЕДОВОЙ ДИЗАЙН</span>
     <span class="cover-signage-track"></span>
