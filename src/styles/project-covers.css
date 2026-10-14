@@ -87,3 +87,11 @@
 @media (prefers-reduced-motion: reduce) {
   .project-card .project-visual { transition: none; }
 }
+
+/* Dima art-photography site: restrained, type-led cover with original photograph. */
+.project-card.dima .cover-dima{background:#112e2b}
+.project-card.dima .cover-photo{object-fit:cover;object-position:center;filter:none}
+.project-card.dima .cover-dima::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,13,16,.76),transparent 56%),linear-gradient(90deg,rgba(0,27,32,.36),transparent 78%);z-index:1;pointer-events:none}
+.project-card.dima .cover-dima::after{content:"НЕ НА\A ЗАКАЗ";white-space:pre;position:absolute;left:7%;bottom:12%;z-index:2;color:#fff;font:500 clamp(40px,4.2vw,63px)/.94 'Geologica',Montserrat,Arial,sans-serif;letter-spacing:-.06em;pointer-events:none}
+@media(max-width:850px){.project-card.dima .cover-dima::after{font-size:clamp(37px,5vw,58px)}}
+@media(max-width:560px){.project-card.dima .cover-dima::after{font-size:clamp(52px,14vw,76px)}}
