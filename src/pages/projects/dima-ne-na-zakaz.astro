@@ -1,0 +1,121 @@
+---
+import '../../styles/global.css';
+import '../../styles/dima-case.css';
+import SiteHeader from '../../components/SiteHeader.astro';
+const live = 'https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/';
+const preview = 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fdima-ne-na-zakaz.npcoduvan.chatgpt.site%2F?w=1440&h=1024';
+---
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#090909" />
+  <meta name="description" content="НЕ НА ЗАКАЗ — веб-дизайн авторского фотопортфолио Димы. Концепция арт-проекта, типографика, галерея, мобильная адаптация. Кейс NPC Dandelion." />
+  <link rel="canonical" href="https://npc-dandelion-portfolio.pages.dev/projects/dima-ne-na-zakaz/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="НЕ НА ЗАКАЗ — сайт-фотоархив Димы · NPC Dandelion" />
+  <meta property="og:description" content="Личный фотоархив вместо коммерческого портфолио: ирония, фотографии, типографика и адаптивный дизайн." />
+  <meta property="og:image" content="https://npc-dandelion-portfolio.pages.dev/assets/dima/sea.jpg" />
+  <title>НЕ НА ЗАКАЗ — сайт Димы · NPC Dandelion</title>
+</head>
+<body class="dima-case">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="site-shell">
+  <SiteHeader />
+  <main id="main">
+    <nav class="dima-toolbar" aria-label="Навигация по кейсу"><a href="/#projects">← ВСЕ ПРОЕКТЫ</a><a href={live} target="_blank" rel="noopener noreferrer">ПОСМОТРЕТЬ САЙТ ↗</a></nav>
+
+    <section class="dima-hero" aria-labelledby="case-title">
+      <div class="dima-hero-top"><span>WEB DESIGN / 2026</span><span>ЛИЧНЫЙ ФОТОАРХИВ</span></div>
+      <div class="dima-headline">
+        <div><p class="dima-eyebrow">АРТ-ПОРТФОЛИО ФОТОГРАФА</p><h1 id="case-title">НЕ НА<br />ЗАКАЗ<span>*</span></h1></div>
+        <p>Сайт для человека,<br />который фотографирует<br />не ради заказов.</p>
+      </div>
+      <div class="dima-cover-composition">
+        <figure class="dima-cover-sea"><img src="/assets/dima/sea.jpg" alt="Морской пейзаж с судном — фотография Димы" width="960" height="600" fetchpriority="high" /><figcaption>№ 01 / МОРЕ</figcaption></figure>
+        <figure class="dima-cover-cat">
+          <div class="dima-square-capture">
+            <iframe src={live} title="Оригинальная верхняя композиция сайта с фотографией чёрного кота" loading="lazy" tabindex="-1"></iframe>
+            <span class="dima-square-caption">ФОРМАТ КАРТОЧКИ 1:1</span>
+          </div>
+          <figcaption>Верхняя фотография кота · квадратный формат в кейсе</figcaption>
+        </figure>
+        <p class="dima-cover-side-note">* КОММЕРЧЕСКИЕ<br />АМБИЦИИ ОТСУТСТВУЮТ</p>
+      </div>
+      <p class="dima-figure-note">01 / ПРЕЗЕНТАЦИЯ ПРОЕКТА · ФОТОГРАФИИ ДИМЫ</p>
+    </section>
+
+    <section class="dima-section dima-overview" aria-labelledby="about-case">
+      <div class="dima-section-index"><span>01</span><h2 id="about-case">О ПРОЕКТЕ</h2></div>
+      <div class="dima-overview-grid">
+        <h3>Снимать.<br />Не продавать.</h3>
+        <div>
+          <p>Обычное портфолио фотографа убеждает заказать съёмку. У Димы другая история: он снимает животных, технику, город, природу и всё, на чём задерживается взгляд. Монетизация здесь не нужна.</p>
+          <p>Поэтому вместо списка услуг появился личный визуальный архив — со своей типографикой, небольшими шутками и фотографиями без обязательной общей темы.</p>
+          <dl class="dima-facts">
+            <div><dt>ФОРМАТ</dt><dd>Арт-проект / авторское фотопортфолио</dd></div>
+            <div><dt>РАБОТА</dt><dd>Концепция / дизайн / интерфейс / адаптация</dd></div>
+            <div><dt>АВТОР ФОТО</dt><dd>Дима</dd></div>
+            <div><dt>ГОД</dt><dd>2026</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="dima-section dima-real-site" aria-labelledby="real-site">
+      <div class="dima-section-index"><span>02</span><h2 id="real-site">ГЛАВНАЯ СТРАНИЦА</h2></div>
+      <h3>Никаких услуг.<br />Просто смотрите.</h3>
+      <p class="dima-section-description">Всю композицию строят фотографии, крупный заголовок, свободные поля и ироничные авторские подписи. Ниже — просмотр актуального опубликованного сайта.</p>
+      <div class="dima-browser">
+        <div class="dima-browser-bar"><span class="dima-traffic" aria-hidden="true">● ● ●</span><span>dima-ne-na-zakaz.npcoduvan.chatgpt.site</span><a href={live} target="_blank" rel="noopener noreferrer" aria-label="Открыть оригинальный сайт">↗</a></div>
+        <div class="dima-browser-window">
+          <iframe src={live} title="Опубликованный сайт «НЕ НА ЗАКАЗ»" loading="lazy"></iframe>
+          <img src={preview} alt="Полноразмерный снимок главной страницы опубликованного сайта «НЕ НА ЗАКАЗ»" loading="lazy" decoding="async" onerror="this.remove()" />
+          <a class="dima-browser-action" href={live} target="_blank" rel="noopener noreferrer">ОТКРЫТЬ ОРИГИНАЛ ↗</a>
+        </div>
+      </div>
+      <p class="dima-figure-note">02 / LIVE-ПРОСМОТР САЙТА · СНИМОК ОБНОВЛЯЕТСЯ ВНЕШНИМ СЕРВИСОМ</p>
+    </section>
+
+    <section class="dima-section dima-visual" aria-labelledby="visual-system">
+      <div class="dima-section-index"><span>03</span><h2 id="visual-system">ВИЗУАЛЬНЫЙ ЯЗЫК</h2></div>
+      <div class="dima-visual-grid">
+        <div class="dima-visual-statement"><span>NO<br />ORDERS<span class="dima-accent">*</span></span><small>* Снимать только потому, что хочется.</small></div>
+        <div class="dima-visual-copy">
+          <h3>Строго.<br />С иронией.</h3>
+          <p>Геометричная типографика Geologica, почти плакатные заголовки, спокойная палитра и неожиданная интонация текста. Никакой рекламной серьёзности.</p>
+          <blockquote>«Этот тоже<br />не заказывал»</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="dima-section dima-photos" aria-labelledby="photo-archive">
+      <div class="dima-section-index"><span>04</span><h2 id="photo-archive">ФОТОАРХИВ</h2></div>
+      <div class="dima-photo-heading"><h3>То, что<br />зацепило.</h3><p>Галерея объединяет очень разные сюжеты: кадры у моря, горы, мотоциклы, животных и городские мелочи. Карточки с архивной подачей поддерживают характер проекта.</p></div>
+      <div class="dima-photo-grid">
+        <figure class="dima-photo-polaroid rotate-left"><img src="/assets/dima/mountains.jpg" alt="Снежные вершины под облаками — фотография Димы" loading="lazy" width="960" height="1280" /><figcaption>№ 01 / ВОКРУГ</figcaption></figure>
+        <figure class="dima-photo-polaroid rotate-right"><img src="/assets/dima/moto.jpg" alt="Мотоциклист у моря на закате — фотография Димы" loading="lazy" width="960" height="1280" /><figcaption>№ 02 / ТЕХНИКА</figcaption></figure>
+        <figure class="dima-photo-polaroid rotate-light"><img src="/assets/dima/details.jpg" alt="Божья коровка у кнопок лифта — фотография Димы" loading="lazy" width="960" height="1280" /><figcaption>№ 03 / ДЕТАЛИ</figcaption></figure>
+      </div>
+      <div class="dima-gallery-nav"><span>Выборка из фотосерии Димы</span><a href="https://dima-ne-na-zakaz.npcoduvan.chatgpt.site/#archive" target="_blank" rel="noopener noreferrer">ВСЯ ГАЛЕРЕЯ ↗</a></div>
+    </section>
+
+    <section class="dima-section dima-mobile" aria-labelledby="mobile-site">
+      <div class="dima-section-index"><span>05</span><h2 id="mobile-site">МОБИЛЬНАЯ ВЕРСИЯ</h2></div>
+      <div class="dima-mobile-grid">
+        <div><h3>Тот же характер.<br />Меньше экран.</h3><p>На телефоне сохраняются крупная типографика, характер подписей и приоритет фотографий. Интерфейс не конкурирует с кадрами, а помогает их листать.</p><a href={live} target="_blank" rel="noopener noreferrer">ОТКРЫТЬ МОБИЛЬНЫЙ САЙТ ↗</a></div>
+        <div class="dima-device"><div class="dima-device-island"></div><iframe src={live} loading="lazy" title="Сайт Димы в узком мобильном окне"></iframe></div>
+      </div>
+    </section>
+
+    <section class="dima-end" aria-labelledby="end-heading">
+      <p>НЕ НА ЗАКАЗ / 2026</p>
+      <h2 id="end-heading">Просто<br />смотрите<span>.</span></h2>
+      <div><a href={live} target="_blank" rel="noopener noreferrer">ПОСМОТРЕТЬ САЙТ ↗</a><a href="/#projects">← ВСЕ ПРОЕКТЫ</a></div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>© 2026 NPC Dandelion</span><a href="#top" aria-label="Наверх">↑</a><span>Идеи · Люди · Пространства</span></footer>
+</div>
+</body>
+</html>
