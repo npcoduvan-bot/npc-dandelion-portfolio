@@ -100,3 +100,10 @@
   height: 100%;
   filter: none;
 }
+
+/* The Maria card uses the captured published page rather than a recreated mockup. */
+.project-card.maria .cover-maria { background: #091b16; }
+.project-card.maria .cover-photo {
+  object-fit: cover;
+  object-position: left center;
+}

@@ -1,0 +1,145 @@
+---
+import '../../styles/global.css';
+import '../../styles/maria-case.css';
+import SiteHeader from '../../components/SiteHeader.astro';
+
+const albums = [
+  { name: 'Растения', number: '04', image: '/assets/maria/meadow.jpg', alt: 'Ночной луг с травами — фотография Марии Зориной' },
+  { name: 'Объекты', number: '05', image: '/assets/maria/objects.webp', alt: 'Чёрно-белая архитектурная фотография из альбома «Объекты»' },
+  { name: 'Творчество', number: '06', image: '/assets/maria/creative.webp', alt: 'Свет на воде — фотография из творческого альбома' },
+  { name: 'Животные', number: '07', image: '/assets/maria/animals.webp', alt: 'Чёрно-белый портрет кошки из альбома «Животные»' }
+];
+---
+
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1a15" />
+  <meta name="description" content="Мария Зорина / ZMS — кейс сайта фотографа: визуальная концепция, интерактивный объектив, тематические альбомы и адаптивный интерфейс. NPC Dandelion." />
+  <link rel="canonical" href="https://npc-dandelion-portfolio.pages.dev/projects/maria-zorina/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Мария Зорина / ZMS — сайт фотографа · NPC Dandelion" />
+  <meta property="og:description" content="Ночной луг, интерактивный объектив и фотографии Марии Зориной в персональном сайте фотографа." />
+  <meta property="og:image" content="https://npc-dandelion-portfolio.pages.dev/assets/maria/site-desktop.png" />
+  <title>Мария Зорина / ZMS — сайт фотографа · NPC Dandelion</title>
+</head>
+<body class="maria-case">
+  <a class="skip-link" href="#main">К содержимому</a>
+  <div class="site-shell">
+    <SiteHeader />
+    <main id="main">
+      <nav class="maria-case-nav" aria-label="Навигация по кейсу">
+        <a href="/#projects">← ВСЕ ПРОЕКТЫ</a>
+        <span>WEB DESIGN / 2026</span>
+      </nav>
+
+      <section class="maria-case-hero" aria-labelledby="maria-title">
+        <div class="maria-hero-copy">
+          <p class="maria-kicker">ПЕРСОНАЛЬНЫЙ САЙТ ФОТОГРАФА</p>
+          <h1 id="maria-title">Мария<br /><span>Зорина.</span></h1>
+          <div class="maria-hero-aside">
+            <span>ZMS / PHOTOGRAPHER</span>
+            <p>Сайт, в котором фотографии задают ритм, а каждый раздел продолжает историю автора.</p>
+          </div>
+        </div>
+        <figure class="maria-desktop-capture">
+          <div class="maria-browser-bar" aria-hidden="true"><span>● ● ●</span><span>САЙТ МАРИИ ЗОРИНОЙ</span><span>↗</span></div>
+          <div class="maria-desktop-window">
+            <img src="/assets/maria/site-desktop.png" width="1265" height="712" alt="Реальный скриншот опубликованного сайта: ночной луг, имя Марии и интерактивный объектив на первом экране" fetchpriority="high" />
+          </div>
+          <figcaption>01 / ПЕРВЫЙ ЭКРАН ОПУБЛИКОВАННОГО САЙТА</figcaption>
+        </figure>
+      </section>
+
+      <section class="maria-section maria-intro" aria-labelledby="maria-about-project">
+        <div class="maria-section-label"><span>01</span><h2 id="maria-about-project">О ПРОЕКТЕ</h2></div>
+        <div class="maria-intro-grid">
+          <p class="maria-display">Каждый кадр —<br />свой взгляд.</p>
+          <div class="maria-intro-copy">
+            <p>Мария снимает людей, природу, праздники и детали вокруг. Для её сайта нужна была композиция, которая помогает рассмотреть фотографии и почувствовать характер автора ещё до знакомства с услугами.</p>
+            <p>Мы построили путь от выразительного первого экрана к тематическим альбомам, рассказу о Марии и форматам съёмок. Визуальная система меняет настроение по мере прокрутки: ночной луг сменяется спокойными светлыми секциями.</p>
+            <dl class="maria-facts">
+              <div><dt>ФОРМАТ</dt><dd>Персональный сайт фотографа</dd></div>
+              <div><dt>В РАБОТЕ</dt><dd>Концепция · структура · интерфейс · адаптация</dd></div>
+              <div><dt>ФОТОГРАФИИ</dt><dd>Мария Зорина</dd></div>
+              <div><dt>ГОД</dt><dd>2026</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="maria-section maria-lens-section" aria-labelledby="maria-lens-title">
+        <div class="maria-section-label"><span>02</span><h2 id="maria-lens-title">ПЕРВЫЙ ЭКРАН</h2></div>
+        <div class="maria-lens-grid">
+          <div>
+            <p class="maria-kicker">ВИЗУАЛЬНАЯ ИДЕЯ</p>
+            <h3>Войти через<br />объектив.</h3>
+            <p>В шапке ночной кадр Марии становится фоном для имени и знака ZMS. Круг объектива отсылает к камере: при наведении диафрагма раскрывается, а по нажатию ведёт к работам.</p>
+            <p>Тонкие линии, крупная антиква и разреженные подписи поддерживают фотографию, не споря с ней.</p>
+          </div>
+          <div class="maria-lens-visual" role="img" aria-label="Фрагмент визуальной системы: тёмный луг, концентрические линии объектива и надпись «Смотреть работы»">
+            <span class="maria-lens-ring"><span>СМОТРЕТЬ<br />РАБОТЫ <b>↗</b></span></span>
+            <small>НОЧНОЙ КАДР · ОБЪЕКТИВ · ZMS</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="maria-section maria-albums-section" aria-labelledby="maria-albums-title">
+        <div class="maria-section-label"><span>03</span><h2 id="maria-albums-title">ПОРТФОЛИО</h2></div>
+        <div class="maria-albums-heading">
+          <h3>Не лента кадров.<br />Восемь историй.</h3>
+          <p>Работы разделены по темам: семья, праздники, природа, растения, объекты, творчество, животные и люди. Обложка сразу задаёт настроение альбома; внутри фотография остаётся главным элементом.</p>
+        </div>
+        <div class="maria-album-grid">
+          {albums.map((album) => (
+            <figure>
+              <div class="maria-album-photo"><img src={album.image} alt={album.alt} loading="lazy" /></div>
+              <figcaption><span>{album.number} / {album.name.toUpperCase()}</span><span>МАРИЯ ЗОРИНА</span></figcaption>
+            </figure>
+          ))}
+        </div>
+        <p class="maria-photo-credit">Фотографии и обложки альбомов — работы Марии Зориной, использованные на её сайте.</p>
+      </section>
+
+      <section class="maria-section maria-about-section" aria-labelledby="maria-about-title">
+        <div class="maria-section-label"><span>04</span><h2 id="maria-about-title">ЗНАКОМСТВО И УСЛУГИ</h2></div>
+        <div class="maria-about-grid">
+          <figure><img src="/assets/maria/maria-portrait.jpg" width="1097" height="1536" alt="Чёрно-белый портрет Марии Зориной" loading="lazy" /><figcaption>МАРИЯ ЗОРИНА / ФОТОГРАФ</figcaption></figure>
+          <div>
+            <h3>После фотографий —<br />человек за камерой.</h3>
+            <p>Светлая секция даёт паузу после насыщенной галереи. Здесь Мария рассказывает о себе; ниже посетитель может выбрать формат съёмки и перейти к разговору.</p>
+            <ul class="maria-service-list" aria-label="Форматы съёмок на сайте">
+              <li><span>01</span> Портретная съёмка</li>
+              <li><span>02</span> Семейная тематическая съёмка</li>
+              <li><span>03</span> Праздники и мероприятия</li>
+            </ul>
+            <p class="maria-small-note">Задача этих блоков — сохранить ту же ясность и внимание к деталям, что и в фотогалерее.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="maria-section maria-mobile-section" aria-labelledby="maria-mobile-title">
+        <div class="maria-section-label"><span>05</span><h2 id="maria-mobile-title">МОБИЛЬНАЯ ВЕРСИЯ</h2></div>
+        <div class="maria-mobile-grid">
+          <div>
+            <p class="maria-kicker">ТОТ ЖЕ ХАРАКТЕР / ДРУГОЙ МАСШТАБ</p>
+            <h3>Кадры всегда<br />в центре.</h3>
+            <p>На телефоне объектив, типографика и сетка альбомов собираются в более плотную композицию. Фотографии остаются крупными, а путь к разделам и контактам — коротким.</p>
+            <p class="maria-capture-note">Справа — реальный снимок мобильной версии опубликованного сайта.</p>
+          </div>
+          <figure class="maria-phone"><div class="maria-phone-screen"><img src="/assets/maria/site-mobile.png" width="375" height="811" alt="Мобильный первый экран сайта Марии Зориной: объектив, имя фотографа и переход в портфолио" loading="lazy" /></div><figcaption>02 / МОБИЛЬНЫЙ ЭКРАН · 375 PX</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="maria-case-end" aria-labelledby="maria-end-title">
+        <p>ZMS / МАРИЯ ЗОРИНА / 2026</p>
+        <h2 id="maria-end-title">Сайт с её<br /><span>взглядом.</span></h2>
+        <div><span>КОНЦЕПЦИЯ · ДИЗАЙН · ФОТОГРАФИИ</span><a href="/#projects">← ВСЕ ПРОЕКТЫ</a></div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>© 2026 NPC Dandelion</span><a href="#top" aria-label="Наверх">↑</a><span>Идеи · Люди · Пространства</span></footer>
+  </div>
+</body>
+</html>
