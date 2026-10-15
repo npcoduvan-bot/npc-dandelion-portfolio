@@ -450,3 +450,6 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* Square crop around the eye; preserve the original photograph. */
+.dima-mobile-originals figure:last-child img{aspect-ratio:1;object-fit:cover;object-position:50% 43%}

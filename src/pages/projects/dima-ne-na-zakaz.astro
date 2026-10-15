@@ -1,6 +1,7 @@
 ---
 import '../../styles/global.css';
 import '../../styles/dima-case.css';
+import LiveProject from '../../components/LiveProject.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 const live = 'https://dima-ne-na-zakaz.pages.dev/';
 const archive = `${live}#archive`;
@@ -13,6 +14,7 @@ const archive = `${live}#archive`;
   <meta name="theme-color" content="#090909" />
   <meta name="description" content="НЕ НА ЗАКАЗ — веб-дизайн авторского фотопортфолио Димы. Концепция арт-проекта, типографика, галерея, мобильная адаптация. Кейс NPC Dandelion." />
   <link rel="canonical" href="https://npc-dandelion-portfolio.pages.dev/projects/dima-ne-na-zakaz/" />
+  <meta property="og:url" content="https://npc-dandelion-portfolio.pages.dev/projects/dima-ne-na-zakaz/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="НЕ НА ЗАКАЗ — сайт-фотоархив Димы · NPC Dandelion" />
   <meta property="og:description" content="Личный фотоархив вместо коммерческого портфолио: ирония, фотографии, типографика и адаптивный дизайн." />
@@ -28,7 +30,7 @@ const archive = `${live}#archive`;
 
     <section class="dima-hero" aria-labelledby="case-title">
       <div class="dima-hero-top"><span>WEB DESIGN / 2026</span><span>ЛИЧНЫЙ ФОТОАРХИВ</span></div>
-      <h1 id="case-title" class="dima-sr-only">НЕ НА ЗАКАЗ — сайт Димы</h1>
+      <h1 id="case-title" class="dima-sr-only">Дима — не на заказ</h1>
       <figure class="dima-approved-hero">
         <img src="/assets/dima/dima-approved-cover.jpg" width="1536" height="1152" alt="Утверждённая обложка кейса НЕ НА ЗАКАЗ: морской пейзаж с яхтой, оранжевый заголовок, квадратная карточка кота с бирюзовым глазом и подпись «этот тоже не заказывал»" fetchpriority="high" />
       </figure>
@@ -68,8 +70,14 @@ const archive = `${live}#archive`;
       </figure>
     </section>
 
+    <section class="dima-section" aria-labelledby="dima-live-title">
+      <div class="dima-section-index"><span>03</span><h2 id="dima-live-title">САЙТ В ДЕЙСТВИИ</h2></div>
+      <p>На большом экране фотографии и типографика складываются в свободную композицию. В галерее можно выбрать тему или довериться кнопке «Мне повезёт». Полароидные рамки объединяют разные сюжеты, не выстраивая их в строгий каталог.</p>
+      <LiveProject url={live} title="Опубликованный сайт Димы — главная и фотогалерея" />
+    </section>
+
     <section class="dima-section dima-gallery-screens" aria-labelledby="gallery-screens-title">
-      <div class="dima-section-index"><span>03</span><h2 id="gallery-screens-title">ФОТОАРХИВ / ГАЛЕРЕЯ</h2></div>
+      <div class="dima-section-index"><span>04</span><h2 id="gallery-screens-title">ФОТОАРХИВ / ГАЛЕРЕЯ</h2></div>
       <div class="dima-real-screens-intro">
         <h3>Ну, вот<br />фотки.</h3>
         <p>У галереи нет единой темы. Тут и водопад, и мотоциклы, и божья коровка. Зато есть фильтры, полароидные карточки и кнопка «Мне повезёт» — если хочется выбрать кадр наугад.</p>
@@ -88,7 +96,7 @@ const archive = `${live}#archive`;
     </section>
 
     <section class="dima-section dima-about-screen" aria-labelledby="about-screen-title">
-      <div class="dima-section-index"><span>04</span><h2 id="about-screen-title">ЕЩЁ НЕМНОГО О ДИМЕ</h2></div>
+      <div class="dima-section-index"><span>05</span><h2 id="about-screen-title">ЕЩЁ НЕМНОГО О ДИМЕ</h2></div>
       <div class="dima-real-screens-intro">
         <h3>И да, он не<br />берёт заказы.</h3>
         <p>Вместо серьёзного рассказа о себе — переписка с короткими ответами. Вместо формы записи — Telegram и честное «Но фотографировать вас я не буду».</p>
@@ -100,7 +108,7 @@ const archive = `${live}#archive`;
     </section>
 
     <section class="dima-section dima-visual" aria-labelledby="visual-system">
-      <div class="dima-section-index"><span>04</span><h2 id="visual-system">ВИЗУАЛЬНЫЙ ЯЗЫК</h2></div>
+      <div class="dima-section-index"><span>06</span><h2 id="visual-system">ВИЗУАЛЬНЫЙ ЯЗЫК</h2></div>
       <div class="dima-visual-grid">
         <div class="dima-visual-statement"><span>УСЛУГ<br />НЕТ<span class="dima-accent">.</span></span><small>Лучше посмотрите фотографии.</small></div>
         <div class="dima-visual-copy">
@@ -112,7 +120,7 @@ const archive = `${live}#archive`;
     </section>
 
     <section class="dima-section dima-photos" aria-labelledby="photo-archive">
-      <div class="dima-section-index"><span>05</span><h2 id="photo-archive">ФОТОАРХИВ</h2></div>
+      <div class="dima-section-index"><span>07</span><h2 id="photo-archive">ФОТОАРХИВ</h2></div>
       <div class="dima-photo-heading"><h3>Всё подряд.<br />И это хорошо.</h3><p>Здесь рядом живут горы, мотоциклы, насекомые и море. У каждой фотографии — молочная рамка, номер, категория и своё место в немного беспорядочной ленте.</p></div>
       <div class="dima-photo-grid">
         <figure class="dima-photo-polaroid rotate-left"><img src="/assets/dima/mountains.jpg" alt="Снежные вершины под облаками — фотография Димы" loading="lazy" width="960" height="1280" /><figcaption>№ 01 / ВОКРУГ</figcaption></figure>
@@ -123,7 +131,7 @@ const archive = `${live}#archive`;
     </section>
 
     <section class="dima-section dima-mobile" aria-labelledby="mobile-site">
-      <div class="dima-section-index"><span>07</span><h2 id="mobile-site">МОБИЛЬНАЯ ВЕРСИЯ</h2></div>
+      <div class="dima-section-index"><span>08</span><h2 id="mobile-site">МОБИЛЬНАЯ ВЕРСИЯ</h2></div>
       <div class="dima-mobile-grid">
         <div>
           <h3>На телефоне<br />тоже работает.</h3>

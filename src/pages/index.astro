@@ -1,14 +1,15 @@
 ---
 import '../styles/global.css';
 import '../styles/project-covers.css';
+import '../styles/web-direction.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import HomeHero from '../components/HomeHero.astro';
 import ProjectCover from '../components/ProjectCover.astro';
 
 const cases = [
   { number: '01', title: 'NOIR COFFEE', kind: 'Брендинг · визуальная система', className: 'noir', image: '/assets/covers/noir-coffee-v2-700.webp', srcSet: '/assets/covers/noir-coffee-v2-700.webp 700w, /assets/covers/noir-coffee-v2-1400.webp 1374w', alt: 'Чёрный фирменный фартук NOIR COFFEE, визитки и эспрессо на камне — ИИ-мокап по исходной айдентике', href: '/projects/noir-coffee/' },
-  { number: '02', title: 'Мария Зорина / ZMS', kind: 'Веб-дизайн · сайт фотографа', className: 'maria', image: '/assets/maria/creative.webp', alt: 'Свет на воде — авторская фотография Марии Зориной', href: '/projects/maria-zorina/' },
-  { number: '03', title: 'НЕ НА ЗАКАЗ', kind: 'Веб-дизайн · фотопортфолио', className: 'dima', image: '/assets/dima/dima-approved-cover.jpg', alt: 'Утверждённая обложка НЕ НА ЗАКАЗ: море, яхта, оранжевая квадратная рамка с котом и надпись «Этот тоже не заказывал»', href: '/projects/dima-ne-na-zakaz/' },
+  { number: '02', title: 'Мария Зорина / ZMS', kind: 'Веб-дизайн · анимация · 2026', description: 'Персональный сайт, в котором фотографии остаются главными, а типографика, цвет и анимация помогают выстроить вокруг них цельную визуальную систему.', className: 'maria', image: '/assets/maria/creative.webp', alt: 'Свет на воде — авторская фотография Марии Зориной', href: '/projects/maria-zorina/' },
+  { number: '03', title: 'Дима — не на заказ', kind: 'Веб-дизайн · арт-проект · 2026', description: 'Сайт фотографа, который не собирается никому продавать свои услуги. Вместо стандартного портфолио — фотографии, немного иронии и собственные правила.', className: 'dima', image: '/assets/dima/dima-approved-cover.jpg', alt: 'Утверждённая обложка НЕ НА ЗАКАЗ: море, яхта, оранжевая квадратная рамка с котом и надпись «Этот тоже не заказывал»', href: '/projects/dima-ne-na-zakaz/' },
   { number: '04', title: 'Levi’s Sochi', kind: 'Реклама · соцсети · графика', className: 'levis', image: '/assets/covers/levis-sochi-v2-700.webp', srcSet: '/assets/covers/levis-sochi-v2-700.webp 700w, /assets/covers/levis-sochi-v2-1400.webp 1374w', alt: 'Три рекламных макета Levi’s и сложенный деним на светлом камне — ИИ-мокап по материалам кейса', href: '/projects/levis-sochi/' },
   { number: '05', title: 'Причина счастья', kind: 'НКО · айдентика · иллюстрация', className: 'nko', image: '/assets/covers/prichina-schastya-v2-700.webp', srcSet: '/assets/covers/prichina-schastya-v2-700.webp 700w, /assets/covers/prichina-schastya-v2-1400.webp 1374w', alt: 'Иллюстративные карточки «Счастье», «Вдохновение» и «Дружба» с бирюзовой коробкой — ИИ-мокап по материалам «Причины счастья»', href: '/projects/prichina-schastya/' },
   { number: '06', title: 'Розовая кофейня', kind: 'Интерьер · графика · печать', className: 'pink', image: '/assets/covers/pink-cafe-v3-700.webp', srcSet: '/assets/covers/pink-cafe-v3-700.webp 700w, /assets/covers/pink-cafe-v3-1400.webp 1374w', alt: 'Два флаера «Вкус кофе» одного размера, лицевая сторона со скидкой 10% и оборотная с фламинго — мокап с розовым камнем, кофе и тенью листьев', href: '/projects/pink-cafe/' },
@@ -28,9 +29,9 @@ const illustrations = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#090909" />
-    <meta name="description" content="NPC Dandelion — графический дизайн, айдентика, полиграфия, иллюстрация и оформление пространств." />
+    <meta name="description" content="NPC Dandelion — графический и веб-дизайн: айдентика, визуальные системы, авторские сайты-портфолио и интерактивные проекты." />
     <link rel="preload" href="/fonts/portfolio/Bodoni-Moda-Regular.ttf" as="font" type="font/ttf" crossorigin />
-    <title>NPC Dandelion — графический дизайнер</title>
+    <title>NPC Dandelion — графический и веб-дизайнер</title>
   </head>
   <body class="home-page">
     <a class="skip-link" href="#main">К содержимому</a>
@@ -41,12 +42,18 @@ const illustrations = [
         <HomeHero />
 
         <section class="section projects" id="projects" aria-labelledby="projects-title">
-          <div class="section-heading"><h2 id="projects-title">ВЫБРАННЫЕ РАБОТЫ</h2><span>Графический дизайн / 2026</span></div>
+          <div class="section-heading"><h2 id="projects-title">ВЫБРАННЫЕ РАБОТЫ</h2><span>Графический и веб-дизайн / 2026</span></div>
+          <div class="project-filters" role="group" aria-label="Направление дизайна" hidden>
+            <button type="button" data-filter="all" aria-pressed="true">Все проекты</button>
+            <button type="button" data-filter="graphic" aria-pressed="false">Графический дизайн</button>
+            <button type="button" data-filter="web" aria-pressed="false">Веб-дизайн</button>
+          </div>
+          <p class="filter-status" role="status" aria-live="polite"></p>
           <div class="project-grid">
             {cases.map((item) => (
-              <article class={`project-card ${item.className}`}>
+              <article class={`project-card ${item.className}`} data-category={['maria', 'dima'].includes(item.className) ? 'web' : 'graphic'}>
                 <ProjectCover variant={item.className} image={item.image} srcSet={item.srcSet} alt={item.alt} />
-                <div class="project-info"><div><h3>{item.href ? <a class="project-case-link" href={item.href}>{item.title}<span class="case-link-arrow" aria-hidden="true"> ↗</span></a> : item.title}</h3><p>{item.kind}</p></div><span class="project-number">{item.number}</span></div>
+                <div class="project-info"><div><h3>{item.href ? <a class="project-case-link" href={item.href}>{item.title}<span class="case-link-arrow" aria-hidden="true"> ↗</span></a> : item.title}</h3><p>{item.kind}</p>{'description' in item && <p class="project-description">{item.description}</p>}</div><span class="project-number">{item.number}</span></div>
               </article>
             ))}
           </div>
@@ -60,6 +67,22 @@ const illustrations = [
           </div>
         </section>
 
+        <section class="section work-together" id="work" aria-labelledby="work-title">
+          <div class="section-heading"><h2 id="work-title">РАБОТА СО МНОЙ</h2><span>Веб-дизайн</span></div>
+          <div class="work-intro">
+            <h3>Сайты с характером.</h3>
+            <div><p>Не каждый проект должен выглядеть как сайт компании.</p>
+            <p>Иногда достаточно хороших фотографий и правильной типографики. Иногда нужна необычная анимация, собственная навигация или другой способ показать работы.</p>
+            <p>Я разрабатываю сайты с индивидуальной визуальной концепцией — от первого экрана до мобильной версии. С учётом того, как сайт будет выглядеть, работать и меняться после публикации.</p></div>
+          </div>
+          <dl class="work-formats">
+            <div><dt>Авторское портфолио <span>от 45 000 ₽</span></dt><dd>Индивидуальная концепция, адаптивный дизайн, галерея проектов и публикация сайта.</dd></div>
+            <div><dt>Сайт с интерактивом <span>от 60 000 ₽</span></dt><dd>Авторский дизайн, нестандартная навигация, анимация и интерактивные элементы.</dd></div>
+            <div><dt>Сайт с редактором <span>от 75 000 ₽</span></dt><dd>Индивидуальный сайт с возможностью самостоятельно обновлять фотографии, проекты и текстовое содержание.</dd></div>
+          </dl>
+          <div class="work-footer"><p>Итоговая стоимость зависит от объёма проекта и сложности функционала. Домен, сторонние платные сервисы и дополнительное сопровождение обсуждаются отдельно.</p><a class="outline-button" href="https://t.me/npc_dandelion" target="_blank" rel="noopener noreferrer">Обсудить проект ↗</a></div>
+        </section>
+
         <section class="section about-contact" id="about" aria-labelledby="about-title">
           <div class="about-block"><h2 id="about-title">ОБО МНЕ</h2><p>Я создаю визуальные решения, которые помогают брендам, проектам и людям говорить о важном. В моих работах сочетаются эстетика, смысл и внимание к деталям.</p><a class="text-link" href="https://www.behance.net/npcoduvan" target="_blank" rel="noopener noreferrer">Больше работ на Behance <span aria-hidden="true">→</span></a></div>
           <blockquote>«Дизайн — это способ<br />делать мир немного яснее»</blockquote>
@@ -69,6 +92,22 @@ const illustrations = [
       <footer class="site-footer"><span>© 2026 NPC Dandelion</span><a href="#top" aria-label="Наверх">↑</a><span>Идеи · Люди · Пространства</span></footer>
     </div>
     <script>
+      const filters = document.querySelector<HTMLElement>('.project-filters');
+      const cards = [...document.querySelectorAll<HTMLElement>('.project-card')];
+      const status = document.querySelector<HTMLElement>('.filter-status');
+      if (filters) {
+        filters.hidden = false;
+        filters.querySelectorAll<HTMLButtonElement>('button').forEach((button) => {
+          button.addEventListener('click', () => {
+            filters.querySelectorAll('button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+            cards.forEach((card) => {
+              card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter;
+              if (!card.hidden) card.classList.add('is-visible');
+            });
+            if (status) status.textContent = `Показано проектов: ${cards.filter((card) => !card.hidden).length}`;
+          });
+        });
+      }
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!reduceMotion && 'IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {

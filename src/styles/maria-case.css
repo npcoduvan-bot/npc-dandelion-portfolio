@@ -139,3 +139,13 @@
  .maria-section-label{letter-spacing:.12em}
  .maria-service-list li{font-size:13px}
 }
+
+.maria-palette{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;list-style:none;padding:0;margin:36px 0 0}
+.maria-palette li{font:400 11px/1.7 Montserrat,Arial,sans-serif;min-width:0}
+.maria-palette li::before{content:"";display:block;background:var(--swatch);height:90px;border:1px solid #788c7266;margin-bottom:12px}
+.maria-palette span{display:block;color:#a0b0a0;font-size:10px}
+.maria-album-detail{margin-top:45px;border-top:1px solid #a2afa4;padding-top:30px}
+.maria-album-detail h3{font:400 clamp(38px,4vw,60px)/1.12 'Cormorant Garamond',Georgia,serif;letter-spacing:-.012em;margin-bottom:20px}
+.maria-album-detail>p{font:300 14px/1.85 Montserrat,Arial,sans-serif;max-width:70ch}
+.maria-phone-screen{height:auto;aspect-ratio:375/811}
+@media(max-width:700px){.maria-palette{grid-template-columns:repeat(2,minmax(0,1fr))}}

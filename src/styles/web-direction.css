@@ -1,0 +1,23 @@
+/* Scoped additions: the approved header and hero remain unchanged. */
+.project-filters{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0 0 24px}
+.project-filters[hidden],.project-card[hidden]{display:none}
+.project-filters button{font:400 12px/1.5 Montserrat,Arial,sans-serif;color:var(--muted);background:none;border:0;border-bottom:1px solid transparent;padding:10px 0;min-height:44px;cursor:pointer}
+.project-filters button[aria-pressed="true"]{color:var(--ink);border-color:#c797ad}
+.project-filters button:focus-visible{outline:2px solid #d4a7b7;outline-offset:5px}
+.filter-status{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.project-info .project-description{margin-top:10px;line-height:1.65;font-size:11px;color:#b1aaad;max-width:44ch}
+.home-page .projects .section-heading{flex-wrap:wrap}
+.home-page .projects .section-heading span{font-size:12px;line-height:1.6}
+.work-intro{display:grid;grid-template-columns:1fr 1.2fr;gap:8%;margin:32px 0}
+.work-intro h3{font:300 clamp(26px,3vw,42px)/1.2 Montserrat,Arial,sans-serif;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.work-intro p{font-size:13px;line-height:1.8;color:#b1aaad;margin:0 0 14px;max-width:65ch}
+.work-formats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin:30px 0}
+.work-formats>div{border-top:1px solid var(--line);padding-top:19px;min-width:0}
+.work-formats dt{font-size:14px;line-height:1.6}
+.work-formats dt span{display:block;color:#d6a5b9;margin-top:10px;font-size:13px;white-space:nowrap}
+.work-formats dd{margin:14px 0 0;color:#b1aaad;font-size:12px;line-height:1.8}
+.work-footer{display:flex;justify-content:space-between;align-items:center;gap:30px}
+.work-footer p{font-size:11px;line-height:1.8;color:var(--muted);max-width:70ch}
+.work-footer a{flex:none;min-height:44px}
+@media(hover:none),(pointer:coarse){.project-card .project-visual{filter:none}.project-card:hover .cover-photo{transform:none}}
+@media(max-width:700px){.work-intro{grid-template-columns:1fr;gap:24px}.work-formats{grid-template-columns:1fr;gap:22px}.work-footer{align-items:flex-start;flex-direction:column;gap:12px}.project-filters{gap:8px 18px}.project-filters button{font-size:11px}}

@@ -2,8 +2,10 @@
 import '../../styles/global.css';
 import '../../styles/maria-case.css';
 import SiteHeader from '../../components/SiteHeader.astro';
+import LiveProject from '../../components/LiveProject.astro';
 import MariaLens from '../../components/MariaLens.astro';
 
+const live = 'https://zms-maria-portfolio.npcoduvan.chatgpt.site/';
 const albums = [
   { name: 'Растения', number: '04', image: '/assets/maria/meadow.jpg', alt: 'Ночной луг с травами — фотография Марии Зориной' },
   { name: 'Объекты', number: '05', image: '/assets/maria/objects.webp', alt: 'Чёрно-белая архитектурная фотография из альбома «Объекты»' },
@@ -21,9 +23,10 @@ const albums = [
   <meta name="theme-color" content="#0b1a15" />
   <meta name="description" content="Мария Зорина / ZMS — кейс сайта фотографа: визуальная концепция, интерактивный объектив, тематические альбомы и адаптивный интерфейс. NPC Dandelion." />
   <link rel="canonical" href="https://npc-dandelion-portfolio.pages.dev/projects/maria-zorina/" />
+  <meta property="og:url" content="https://npc-dandelion-portfolio.pages.dev/projects/maria-zorina/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Мария Зорина / ZMS — сайт фотографа · NPC Dandelion" />
-  <meta property="og:description" content="Ночной луг, интерактивный объектив и фотографии Марии Зориной в персональном сайте фотографа." />
+  <meta property="og:description" content="Фотографии Марии Зориной, интерактивный объектив, тематические альбомы и адаптивная визуальная система." />
   <meta property="og:image" content="https://npc-dandelion-portfolio.pages.dev/assets/maria/site-desktop.png" />
   <title>Мария Зорина / ZMS — сайт фотографа · NPC Dandelion</title>
 </head>
@@ -34,7 +37,7 @@ const albums = [
     <main id="main">
       <nav class="maria-case-nav" aria-label="Навигация по кейсу">
         <a href="/#projects">← ВСЕ ПРОЕКТЫ</a>
-        <span>WEB DESIGN / 2026</span>
+        <a href={live} target="_blank" rel="noopener noreferrer">ПОСМОТРЕТЬ САЙТ ↗</a>
       </nav>
 
       <section class="maria-case-hero" aria-labelledby="maria-title">
@@ -85,8 +88,14 @@ const albums = [
         </div>
       </section>
 
+      <section class="maria-section maria-system" aria-labelledby="maria-system-title">
+        <div class="maria-section-label"><span>03</span><h2 id="maria-system-title">ЦВЕТ И ТИПОГРАФИКА</h2></div>
+        <div class="maria-intro-grid"><p class="maria-display">Свет.<br />Пауза. Кадр.</p><div class="maria-intro-copy"><p>Тёмный зелёный собирает первый экран вокруг фотографии и объектива. Светлые фоны дают глазу отдохнуть и отделяют серии от рассказа об авторе.</p><p>На сайте Bodoni Moda задаёт характер первого экрана, Cormorant Garamond — заголовков разделов, а Manrope помогает спокойно читать подписи и навигацию. Все начертания прямые.</p></div></div>
+        <ul class="maria-palette" aria-label="Палитра сайта"><li style="--swatch:#0a1914">Тёмный зелёный <span>#0A1914</span></li><li style="--swatch:#14241e">Глубокий серо-зелёный <span>#14241E</span></li><li style="--swatch:#eceae4">Тёплый светлый <span>#ECEAE4</span></li><li style="--swatch:#dce3dc">Шалфейный <span>#DCE3DC</span></li></ul>
+      </section>
+
       <section class="maria-section maria-albums-section" aria-labelledby="maria-albums-title">
-        <div class="maria-section-label"><span>03</span><h2 id="maria-albums-title">ПОРТФОЛИО</h2></div>
+        <div class="maria-section-label"><span>04</span><h2 id="maria-albums-title">ПОРТФОЛИО</h2></div>
         <div class="maria-albums-heading">
           <h3>Не лента кадров.<br />Восемь историй.</h3>
           <p>Работы разделены по темам: семья, праздники, природа, растения, объекты, творчество, животные и люди. Обложка сразу задаёт настроение альбома; внутри фотография остаётся главным элементом.</p>
@@ -99,11 +108,12 @@ const albums = [
             </figure>
           ))}
         </div>
+        <div class="maria-album-detail"><h3>Внутри одной истории.</h3><p>При открытии альбома остаются название серии и её фотографии. Кадр можно увеличить, листать соседние снимки и вернуться к альбомам. Так посетитель рассматривает одну тему, не теряя путь назад.</p><LiveProject url={`${live}#album=plants`} title="Альбом «Растения» на опубликованном сайте Марии Зориной" /></div>
         <p class="maria-photo-credit">Фотографии и обложки альбомов — работы Марии Зориной, использованные на её сайте.</p>
       </section>
 
       <section class="maria-section maria-about-section" aria-labelledby="maria-about-title">
-        <div class="maria-section-label"><span>04</span><h2 id="maria-about-title">ЗНАКОМСТВО И УСЛУГИ</h2></div>
+        <div class="maria-section-label"><span>05</span><h2 id="maria-about-title">ЗНАКОМСТВО И УСЛУГИ</h2></div>
         <div class="maria-about-grid">
           <figure><img src="/assets/maria/maria-portrait.jpg" width="1097" height="1536" alt="Чёрно-белый портрет Марии Зориной" loading="lazy" /><figcaption>МАРИЯ ЗОРИНА / ФОТОГРАФ</figcaption></figure>
           <div>
@@ -120,7 +130,7 @@ const albums = [
       </section>
 
       <section class="maria-section maria-mobile-section" aria-labelledby="maria-mobile-title">
-        <div class="maria-section-label"><span>05</span><h2 id="maria-mobile-title">МОБИЛЬНАЯ ВЕРСИЯ</h2></div>
+        <div class="maria-section-label"><span>06</span><h2 id="maria-mobile-title">МОБИЛЬНАЯ ВЕРСИЯ</h2></div>
         <div class="maria-mobile-grid">
           <div>
             <p class="maria-kicker">ТОТ ЖЕ ХАРАКТЕР / ДРУГОЙ МАСШТАБ</p>
@@ -135,7 +145,7 @@ const albums = [
       <section class="maria-case-end" aria-labelledby="maria-end-title">
         <p>ZMS / МАРИЯ ЗОРИНА / 2026</p>
         <h2 id="maria-end-title">Сайт с её<br /><span>взглядом.</span></h2>
-        <div><span>КОНЦЕПЦИЯ · ДИЗАЙН · ФОТОГРАФИИ</span><a href="/#projects">← ВСЕ ПРОЕКТЫ</a></div>
+        <div><a href={live} target="_blank" rel="noopener noreferrer">ПОСМОТРЕТЬ САЙТ ↗</a><a href="/#projects">← ВСЕ ПРОЕКТЫ</a></div>
       </section>
     </main>
     <footer class="site-footer"><span>© 2026 NPC Dandelion</span><a href="#top" aria-label="Наверх">↑</a><span>Идеи · Люди · Пространства</span></footer>

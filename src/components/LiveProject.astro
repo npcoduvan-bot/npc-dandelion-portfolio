@@ -1,0 +1,52 @@
+---
+interface Props { url: string; title: string; }
+const { url, title } = Astro.props;
+---
+<div class="live-project">
+  <details data-live-project>
+    <summary>Посмотреть работающий сайт здесь ↗</summary>
+    <div class="live-project-controls">
+      <label>Экран <select aria-label="Ширина демонстрации"><option value="1440">Компьютер · 1440 px</option><option value="390">Телефон · 390 px</option></select></label>
+      <a href={url} target="_blank" rel="noopener noreferrer">В отдельной вкладке ↗</a>
+    </div>
+    <noscript><p>Откройте сайт в отдельной вкладке по ссылке выше.</p></noscript>
+    <div class="live-project-window"><iframe data-src={url} title={title} loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    <p>Это опубликованный сайт: можно прокручивать страницу и пользоваться навигацией. Если он не открылся внутри кейса, используйте ссылку выше.</p>
+  </details>
+</div>
+<script>
+  document.querySelectorAll<HTMLDetailsElement>('[data-live-project]').forEach((details) => {
+    const frame = details.querySelector<HTMLIFrameElement>('iframe')!;
+    const stage = details.querySelector<HTMLElement>('.live-project-window')!;
+    const select = details.querySelector<HTMLSelectElement>('select')!;
+    select.value = window.innerWidth < 700 ? '390' : '1440';
+    const fit = () => {
+      const width = Number(select.value);
+      const height = width === 390 ? 844 : 900;
+      const scale = Math.min(1, stage.clientWidth / width);
+      frame.style.width = `${width}px`;
+      frame.style.height = `${height}px`;
+      frame.style.transform = `scale(${scale})`;
+      stage.style.height = `${height * scale}px`;
+    };
+    details.addEventListener('toggle', () => {
+      if (details.open) {
+        if (!frame.getAttribute('src')) frame.src = frame.dataset.src!;
+        fit();
+      } else frame.removeAttribute('src');
+    });
+    select.addEventListener('change', fit);
+    new ResizeObserver(() => { if (details.open) fit(); }).observe(stage);
+  });
+</script>
+<style>
+.live-project{margin:32px 0;min-width:0;font:400 12px/1.7 Montserrat,Arial,sans-serif;letter-spacing:0}
+summary{cursor:pointer;padding:16px 0;border-block:1px solid currentColor;min-height:44px}
+summary:focus-visible,select:focus-visible{outline:2px solid #c797ad;outline-offset:5px}
+.live-project-controls{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;padding:18px 0;align-items:center}
+select{max-width:100%;font:inherit;padding:8px;border:1px solid currentColor;color:inherit;background:transparent;border-radius:0}
+option{background:#14241e;color:#fff}
+.live-project-window{width:100%;overflow:hidden;position:relative;background:#101613}
+iframe{display:block;border:0;max-width:none;transform-origin:top left}
+p{font-size:11px;opacity:.75;line-height:1.7;margin:12px 0}
+</style>

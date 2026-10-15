@@ -4,10 +4,11 @@ on:
     branches: [main]
     paths:
       - .github/workflows/verify-portfolio-build.yml
-      - src/pages/projects/dima-ne-na-zakaz.astro
-      - src/styles/dima-case.css
-      - src/components/ProjectCover.astro
-      - src/styles/project-covers.css
+      - 'src/**'
+      - 'public/**'
+      - package.json
+      - pnpm-lock.yaml
+      - astro.config.mjs
   workflow_dispatch:
 permissions:
   contents: read
