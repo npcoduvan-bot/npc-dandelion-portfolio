@@ -6,7 +6,7 @@
 .maria-kicker,.maria-section-label,.maria-facts dt,.maria-desktop-capture figcaption,.maria-album-grid figcaption,.maria-photo-credit,.maria-about-grid figcaption,.maria-phone figcaption,.maria-case-end>p{font:400 10px/1.5 Montserrat,Arial,sans-serif;letter-spacing:.17em}
 .maria-kicker{color:#c9d3c3}
 .maria-hero-copy{display:flex;justify-content:space-between;align-items:end;gap:30px;padding-bottom:40px}
-.maria-hero-copy h1{font:400 clamp(82px,11vw,165px)/.84 'Bodoni Moda',Georgia,serif;letter-spacing:-.075em;margin:30px 0 0}
+.maria-hero-copy h1{font:400 clamp(82px,11vw,165px)/1.02 'Cormorant Garamond',Georgia,serif;letter-spacing:-.022em;margin:30px 0 0}
 .maria-hero-copy h1 span{padding-left:.52em}
 .maria-hero-aside{width:265px;flex:none;padding-bottom:7px}
 .maria-hero-aside span{display:block;color:#aec0ae;font-size:10px;letter-spacing:.15em;border-top:1px solid #a4ae9d;padding-top:15px}
@@ -26,24 +26,18 @@
 .maria-intro .maria-section-label{color:#374e40}
 .maria-intro .maria-section-label span{color:#5d7566}
 .maria-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:8%}
-.maria-display{font:400 clamp(54px,6.5vw,90px)/1.06 'Bodoni Moda',Georgia,serif;letter-spacing:-.045em}
+.maria-display{font:400 clamp(54px,6.5vw,90px)/1.06 'Cormorant Garamond',Georgia,serif;letter-spacing:-.012em}
 .maria-intro-copy>p{font:300 15px/1.85 Montserrat,Arial,sans-serif;max-width:580px;margin-bottom:22px}
 .maria-facts{display:grid;grid-template-columns:1fr 1fr;gap:29px 25px;margin:46px 0 0}
 .maria-facts dt{color:#63766a;margin-bottom:9px}
 .maria-facts dd{font:400 12px/1.6 Montserrat,Arial,sans-serif;margin:0}
-.maria-lens-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:8%;align-items:center}
-.maria-lens-grid h3,.maria-albums-heading h3,.maria-about-grid h3,.maria-mobile-grid h3{font:400 clamp(56px,6.4vw,88px)/1.05 'Bodoni Moda',Georgia,serif;letter-spacing:-.045em;margin:18px 0 29px}
+.maria-lens-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:8%;align-items:center}
+.maria-lens-grid h3,.maria-albums-heading h3,.maria-about-grid h3,.maria-mobile-grid h3{font:400 clamp(56px,6.4vw,88px)/1.05 'Cormorant Garamond',Georgia,serif;letter-spacing:-.012em;margin:18px 0 29px}
 .maria-lens-grid p:not(.maria-kicker){font:300 15px/1.85 Montserrat,Arial,sans-serif;color:#d0d8cf;max-width:460px;margin-bottom:19px}
-.maria-lens-visual{min-height:590px;position:relative;background:linear-gradient(#07171180,#0717117a),url('/assets/maria/meadow.jpg') center/cover;display:grid;place-items:center;overflow:hidden}
-.maria-lens-visual::before{content:'';position:absolute;width:88%;aspect-ratio:1;border:1px solid #d5dfc880;border-radius:50%;box-shadow:0 0 0 24px #c6d3bd13,0 0 0 96px #c6d3bd0d}
-.maria-lens-ring{width:min(53%,310px);aspect-ratio:1;border:1.5px solid #e4e8d3;border-radius:50%;display:grid;place-items:center;position:relative;text-align:center;box-shadow:0 0 0 11px #d9e4d711,0 0 0 15px #d9e4d788}
-.maria-lens-ring span{font:400 clamp(23px,3vw,43px)/1.04 'Bodoni Moda',Georgia,serif}
-.maria-lens-ring b{font:300 .75em/1 Montserrat,Arial,sans-serif}
-.maria-lens-visual small{position:absolute;bottom:27px;left:26px;color:#d9e1d0;font:400 9px/1.3 Montserrat,Arial,sans-serif;letter-spacing:.18em}
 .maria-albums-section{background:var(--maria-cream);color:var(--maria-ink);padding:28px 5.2% 105px;margin:0;border-color:#a2afa4}
 .maria-albums-section .maria-section-label{color:#314638}
 .maria-albums-section .maria-section-label span{color:#617963}
-.maria-albums-heading{display:grid;grid-template-columns:1fr .75fr;gap:8%;align-items:end;margin-bottom:44px}
+.maria-albums-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.75fr);gap:8%;align-items:end;margin-bottom:44px}
 .maria-albums-heading h3{margin:0}
 .maria-albums-heading p{font:300 14px/1.8 Montserrat,Arial,sans-serif;margin:0 0 4px}
 .maria-album-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
@@ -58,14 +52,14 @@
 .maria-about-section{background:var(--maria-paper);color:var(--maria-ink);padding:28px 5.2% 110px;margin:0;border-color:#a2afa4}
 .maria-about-section .maria-section-label{color:#314638}
 .maria-about-section .maria-section-label span{color:#617963}
-.maria-about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:10%;align-items:center}
+.maria-about-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:10%;align-items:center}
 .maria-about-grid figure{max-width:470px}
 .maria-about-grid figure img{width:100%;height:auto}
 .maria-about-grid figcaption{margin-top:13px;color:#627565}
 .maria-about-grid h3{font-size:clamp(50px,5.8vw,80px)}
 .maria-about-grid p{font:300 14px/1.85 Montserrat,Arial,sans-serif;max-width:600px}
 .maria-service-list{list-style:none;padding:0;margin:37px 0 20px;max-width:600px;border-top:1px solid #9caa9c}
-.maria-service-list li{display:flex;align-items:baseline;gap:25px;border-bottom:1px solid #9caa9c;padding:15px 0;font:400 clamp(18px,2vw,28px)/1.3 'Bodoni Moda',Georgia,serif}
+.maria-service-list li{display:flex;align-items:baseline;gap:25px;border-bottom:1px solid #9caa9c;padding:15px 0;font:400 clamp(18px,2vw,28px)/1.3 'Cormorant Garamond',Georgia,serif}
 .maria-service-list span{font:400 10px/1 Montserrat,Arial,sans-serif;color:#627664;letter-spacing:.13em}
 .maria-about-grid .maria-small-note{color:#617061;font-size:12px}
 .maria-mobile-section{padding-bottom:110px}
@@ -78,7 +72,7 @@
 .maria-phone figcaption{text-align:center;margin-top:18px;color:#b4c6b4;font-size:8px;letter-spacing:.1em}
 .maria-case-end{border-top:1px solid #6a7c6e;padding:30px 0 85px}
 .maria-case-end>p{color:#9cb09e}
-.maria-case-end h2{font:400 clamp(84px,12vw,165px)/.88 'Bodoni Moda',Georgia,serif;letter-spacing:-.07em;margin:55px 0 80px}
+.maria-case-end h2{font:400 clamp(84px,12vw,165px)/1.02 'Cormorant Garamond',Georgia,serif;letter-spacing:-.022em;margin:55px 0 80px}
 .maria-case-end h2 span{padding-left:.57em;color:#c5d4be}
 .maria-case-end>div{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #6a7c6e;padding-top:18px;font:400 10px/1.5 Montserrat,Arial,sans-serif;letter-spacing:.13em;color:#bfccbd}
 .maria-case .site-footer{border-top:1px solid #28392c}
@@ -86,7 +80,6 @@
   .maria-case .site-shell{width:min(calc(100% - 50px),900px)}
   .maria-hero-copy h1{font-size:clamp(75px,11vw,120px)}
   .maria-hero-aside{width:210px}
-  .maria-lens-visual{min-height:460px}
   .maria-album-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 15px}
   .maria-album-photo{height:330px}
 }
@@ -105,7 +98,6 @@
   .maria-intro-grid,.maria-lens-grid,.maria-albums-heading,.maria-about-grid,.maria-mobile-grid{grid-template-columns:1fr;gap:30px}
   .maria-display,.maria-lens-grid h3,.maria-albums-heading h3,.maria-about-grid h3,.maria-mobile-grid h3{font-size:clamp(51px,11vw,72px)}
   .maria-lens-grid h3,.maria-about-grid h3,.maria-mobile-grid h3{margin:15px 0 22px}
-  .maria-lens-visual{min-height:480px}
   .maria-albums-heading{margin-bottom:30px}
   .maria-album-photo{height:clamp(210px,48vw,330px)}
   .maria-about-grid figure{max-width:440px}
@@ -120,7 +112,6 @@
   .maria-intro-copy>p,.maria-lens-grid p:not(.maria-kicker),.maria-mobile-grid>div>p:not(.maria-kicker){font-size:13px}
   .maria-facts{gap:23px 15px}
   .maria-facts dd{font-size:11px}
-  .maria-lens-visual{min-height:380px}
   .maria-album-grid{gap:18px 9px}
   .maria-album-photo{height:230px}
   .maria-album-grid figcaption{font-size:8px}
@@ -130,4 +121,21 @@
   .maria-case-end h2{font-size:clamp(66px,16vw,80px)}
   .maria-case-end h2 span{padding-left:.22em}
   .maria-case-end>div{flex-direction:column}
+}
+
+/* Cyrillic display typography: optical kerning, upright forms and comfortable leading. */
+.maria-case h1,.maria-case h3,.maria-display,.maria-case-end h2{font-kerning:normal;font-variant-ligatures:common-ligatures;font-style:normal;font-synthesis:none;text-wrap:balance}
+.maria-hero-title{min-width:0}
+.maria-hero-copy{gap:6%;align-items:center;padding-top:12px}
+.maria-hero-copy h1{margin-top:28px;font-size:clamp(80px,10.5vw,152px)}
+.maria-hero-copy h1 span{padding-left:.38em}
+.maria-lens-grid h3,.maria-albums-heading h3,.maria-about-grid h3,.maria-mobile-grid h3{font-size:clamp(44px,4.8vw,68px);line-height:1.1}
+.maria-service-list li{font:400 14px/1.65 Montserrat,Arial,sans-serif}
+.maria-case-end h2{line-height:1.05}
+@media(max-width:700px){
+ .maria-hero-copy h1{font-size:clamp(78px,18vw,118px);margin:22px 0 32px}
+ .maria-hero-copy h1 span{padding-left:.25em}
+ .maria-display,.maria-lens-grid h3,.maria-albums-heading h3,.maria-about-grid h3,.maria-mobile-grid h3{font-size:clamp(42px,10.5vw,66px);line-height:1.12;letter-spacing:-.008em}
+ .maria-section-label{letter-spacing:.12em}
+ .maria-service-list li{font-size:13px}
 }

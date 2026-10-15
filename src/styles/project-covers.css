@@ -101,9 +101,13 @@
   filter: none;
 }
 
-/* The Maria card uses the captured published page rather than a recreated mockup. */
-.project-card.maria .cover-maria { background: #091b16; }
-.project-card.maria .cover-photo {
-  object-fit: cover;
-  object-position: left center;
-}
+/* Maria: a quiet editorial cover built around the author's water photograph. */
+.project-card.maria .cover-maria{background:#e9e9df;container-type:inline-size;color:#182e25;display:block}
+.project-card.maria .cover-maria::after{display:none}
+.project-card.maria .cover-photo{position:absolute;inset:6% 5% 6% auto;width:47%;height:88%;object-fit:cover;object-position:50% 50%}
+.cover-maria-copy{position:absolute;inset:0;pointer-events:none}
+.cover-maria-mark{position:absolute;top:9%;left:7%;font:400 10cqw/.9 'Cormorant Garamond',Georgia,serif;letter-spacing:.02em}
+.cover-maria-mark span{display:block;margin-top:9px;font:400 clamp(7px,1.7cqw,10px)/1.4 Montserrat,Arial,sans-serif;letter-spacing:.21em}
+.cover-maria-copy strong{position:absolute;left:7%;top:39%;font:400 11.4cqw/1.06 'Cormorant Garamond',Georgia,serif;letter-spacing:-.018em;font-kerning:normal}
+.cover-maria-caption{position:absolute;left:7%;top:72%;font:400 clamp(7px,1.85cqw,10px)/1.8 Montserrat,Arial,sans-serif;letter-spacing:.12em}
+.cover-maria-year{position:absolute;left:7%;bottom:7%;font:400 clamp(7px,1.6cqw,9px)/1.5 Montserrat,Arial,sans-serif;letter-spacing:.1em;opacity:.65}

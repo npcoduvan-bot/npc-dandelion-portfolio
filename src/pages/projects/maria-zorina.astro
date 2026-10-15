@@ -2,6 +2,7 @@
 import '../../styles/global.css';
 import '../../styles/maria-case.css';
 import SiteHeader from '../../components/SiteHeader.astro';
+import MariaLens from '../../components/MariaLens.astro';
 
 const albums = [
   { name: 'Растения', number: '04', image: '/assets/maria/meadow.jpg', alt: 'Ночной луг с травами — фотография Марии Зориной' },
@@ -16,6 +17,7 @@ const albums = [
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="/fonts/portfolio/Cormorant-Garamond-Regular.ttf" as="font" type="font/ttf" crossorigin />
   <meta name="theme-color" content="#0b1a15" />
   <meta name="description" content="Мария Зорина / ZMS — кейс сайта фотографа: визуальная концепция, интерактивный объектив, тематические альбомы и адаптивный интерфейс. NPC Dandelion." />
   <link rel="canonical" href="https://npc-dandelion-portfolio.pages.dev/projects/maria-zorina/" />
@@ -37,8 +39,8 @@ const albums = [
 
       <section class="maria-case-hero" aria-labelledby="maria-title">
         <div class="maria-hero-copy">
-          <p class="maria-kicker">ПЕРСОНАЛЬНЫЙ САЙТ ФОТОГРАФА</p>
-          <h1 id="maria-title">Мария<br /><span>Зорина.</span></h1>
+          <div class="maria-hero-title"><p class="maria-kicker">ПЕРСОНАЛЬНЫЙ САЙТ ФОТОГРАФА</p>
+          <h1 id="maria-title">Мария<br /><span>Зорина</span></h1></div>
           <div class="maria-hero-aside">
             <span>ZMS / PHOTOGRAPHER</span>
             <p>Сайт, в котором фотографии задают ритм, а каждый раздел продолжает историю автора.</p>
@@ -71,18 +73,15 @@ const albums = [
       </section>
 
       <section class="maria-section maria-lens-section" aria-labelledby="maria-lens-title">
-        <div class="maria-section-label"><span>02</span><h2 id="maria-lens-title">ПЕРВЫЙ ЭКРАН</h2></div>
+        <div class="maria-section-label"><span>02</span><h2 id="maria-lens-title">ЗНАК В ДВИЖЕНИИ</h2></div>
         <div class="maria-lens-grid">
           <div>
             <p class="maria-kicker">ВИЗУАЛЬНАЯ ИДЕЯ</p>
             <h3>Войти через<br />объектив.</h3>
             <p>В шапке ночной кадр Марии становится фоном для имени и знака ZMS. Круг объектива отсылает к камере: при наведении диафрагма раскрывается, а по нажатию ведёт к работам.</p>
-            <p>Тонкие линии, крупная антиква и разреженные подписи поддерживают фотографию, не споря с ней.</p>
+            <p>Тонкие линии и спокойные подписи поддерживают фотографию. Кольца поворачиваются вместе с раскрытием диафрагмы — движение становится частью знака.</p>
           </div>
-          <div class="maria-lens-visual" role="img" aria-label="Фрагмент визуальной системы: тёмный луг, концентрические линии объектива и надпись «Смотреть работы»">
-            <span class="maria-lens-ring"><span>СМОТРЕТЬ<br />РАБОТЫ <b>↗</b></span></span>
-            <small>НОЧНОЙ КАДР · ОБЪЕКТИВ · ZMS</small>
-          </div>
+          <MariaLens />
         </div>
       </section>
 
