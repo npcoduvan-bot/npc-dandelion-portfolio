@@ -102,6 +102,13 @@
 }
 
 /* Maria: a quiet editorial cover built around the author's water photograph. */
+.project-card.podcast .cover-photo,
+.project-card.mask .cover-photo { object-fit: contain; }
+.project-card.podcast .cover-podcast { background: #20152a; }
+.project-card.mask .cover-mask { background: #10202b; }
+.project-card.podcast:hover .cover-photo,
+.project-card.mask:hover .cover-photo { transform: none; }
+
 .project-card.maria .cover-maria{background:#e9e9df;container-type:inline-size;color:#182e25;display:block}
 .project-card.maria .cover-maria::after{display:none}
 .project-card.maria .cover-photo{position:absolute;inset:6% 5% 6% auto;width:47%;height:88%;object-fit:cover;object-position:50% 50%}

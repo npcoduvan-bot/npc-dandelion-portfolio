@@ -1,5 +1,7 @@
 # NPC Dandelion — портфолио
 
+Добавлены кейсы авторской иллюстрации: [«За пределами»](https://npc-dandelion-portfolio.pages.dev/projects/za-predelami/) со сравнением эскиза и обложки и [«Девушка с маской»](https://npc-dandelion-portfolio.pages.dev/projects/devushka-s-maskoy/) с раскрытием цвета при прокрутке. Все оригиналы и SHA256 сохранены в `reference/illustration-cases/`, оптимизированные изображения — в `public/assets/illustration-cases/`. Результаты проверок: `docs/illustration-cases-qa.md`.
+
 Адаптивная главная страница на Astro, CSS и небольшом количестве JavaScript. Визуальная основа — утверждённый макет «Визуал версия 1».
 
 ## Локально

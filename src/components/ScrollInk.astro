@@ -1,0 +1,80 @@
+---
+import ArtImage from './ArtImage.astro';
+---
+<div class="ink-scroll" data-scroll-ink>
+  <figure class="ink-sticky">
+    <div class="ink-stage">
+      <div class="ink-static"><ArtImage name="mask-final" alt="Финальная иллюстрация: девушка держит у лица кошачью маску в синем и розовом неоновом свете" /></div>
+      <svg class="ink-art" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="ink-art-title ink-art-description" hidden>
+        <title id="ink-art-title">Линейный эскиз / финальная иллюстрация</title>
+        <desc id="ink-art-description">При прокрутке цвет раскрывается сверху вниз мягкими асимметричными потёками. Обратная прокрутка возвращает чистый авторский эскиз.</desc>
+        <defs><clipPath id="mask-ink-clip" clipPathUnits="userSpaceOnUse"><path data-ink-path d="M0 -400 H1000 V-400 H0 Z" /></clipPath></defs>
+        <image data-ink-sketch x="0" y="0" width="1000" height="1000" preserveAspectRatio="xMidYMid meet" />
+        <image data-ink-final x="0" y="0" width="1000" height="1000" preserveAspectRatio="xMidYMid meet" clip-path="url(#mask-ink-clip)" />
+      </svg>
+    </div>
+    <figcaption><span>ЛИНЕЙНЫЙ ЭСКИЗ / ФИНАЛЬНАЯ ИЛЛЮСТРАЦИЯ</span><span class="ink-scroll-hint" hidden>ПРОКРУТИТЕ ВНИЗ ↓</span></figcaption>
+  </figure>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-scroll-ink]').forEach((section) => {
+    const art = section.querySelector<SVGSVGElement>('.ink-art');
+    const path = section.querySelector<SVGPathElement>('[data-ink-path]');
+    const sketch = section.querySelector<SVGImageElement>('[data-ink-sketch]');
+    const final = section.querySelector<SVGImageElement>('[data-ink-final]');
+    const still = section.querySelector<HTMLElement>('.ink-static');
+    const hint = section.querySelector<HTMLElement>('.ink-scroll-hint');
+    const sticky = section.querySelector<HTMLElement>('.ink-sticky');
+    if (!art || !path || !sketch || !final || !still || !hint || !sticky) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let frame = 0;
+    let active = false;
+    let imageSize = '';
+    const update = () => {
+      frame = 0;
+      if (!active) return;
+      const rect = section.getBoundingClientRect();
+      const travel = Math.max(1, rect.height - sticky.getBoundingClientRect().height);
+      const progress = Math.max(0, Math.min(1, -rect.top / travel));
+      // Fixed cubic curves translate together: five calm, unequal drips, no random motion.
+      // The complete edge starts above the image and ends below it.
+      const y = -290 + progress * 1330;
+      path.setAttribute('d', `M0 -400 H1000 V${y + 25}
+        C975 ${y + 25} 982 ${y + 160} 944 ${y + 160}
+        C906 ${y + 160} 932 ${y - 18} 865 ${y + 2}
+        C830 ${y + 18} 839 ${y + 240} 793 ${y + 240}
+        C748 ${y + 240} 780 ${y + 25} 698 ${y + 15}
+        C636 ${y} 644 ${y + 117} 604 ${y + 117}
+        C560 ${y + 117} 594 ${y - 5} 514 ${y + 12}
+        C435 ${y + 30} 462 ${y + 270} 406 ${y + 270}
+        C346 ${y + 270} 387 ${y + 10} 282 ${y + 4}
+        C204 ${y - 3} 241 ${y + 194} 186 ${y + 194}
+        C134 ${y + 194} 166 ${y + 18} 91 ${y + 6}
+        C45 ${y - 4} 35 ${y + 30} 0 ${y + 18} Z`);
+      section.dataset.progress = progress.toFixed(3);
+      const size = innerWidth < 700 ? '800' : '1600';
+      if (size !== imageSize) {
+        sketch.setAttribute('href', `/assets/illustration-cases/mask-sketch-${size}.webp`);
+        final.setAttribute('href', `/assets/illustration-cases/mask-final-${size}.webp`);
+        imageSize = size;
+      }
+    };
+    const schedule = () => { if (active && !frame) frame = requestAnimationFrame(update); };
+    const configure = () => {
+      active = !reducedMotion.matches;
+      section.classList.toggle('is-active', active);
+      art.toggleAttribute('hidden', !active);
+      still.hidden = active;
+      hint.hidden = !active;
+      if (active) schedule();
+      else if (frame) { cancelAnimationFrame(frame); frame = 0; }
+    };
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule, { passive: true });
+    window.addEventListener('orientationchange', schedule, { passive: true });
+    window.addEventListener('pageshow', schedule);
+    new ResizeObserver(schedule).observe(section);
+    reducedMotion.addEventListener('change', configure);
+    configure();
+  });
+</script>

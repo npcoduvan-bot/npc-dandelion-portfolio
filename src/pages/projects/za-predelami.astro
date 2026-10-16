@@ -1,0 +1,26 @@
+---
+import IllustrationCase from '../../layouts/IllustrationCase.astro';
+import ArtImage from '../../components/ArtImage.astro';
+import ArtComparison from '../../components/ArtComparison.astro';
+---
+<IllustrationCase title="За пределами" slug="za-predelami" theme="podcast" image="/assets/illustration-cases/podcast-final-1200.webp" description="Авторская иллюстрация для подкаста «За пределами»: космос, подводный мир и путешествие в подсознание. От линейного эскиза до обложки.">
+  <section class="art-hero" aria-labelledby="art-title">
+    <div class="art-hero-copy"><p class="art-kicker">ИЛЛЮСТРАЦИЯ ДЛЯ ПОДКАСТА</p><h1 id="art-title">За<br />пределами</h1><p class="art-hero-caption">Путешествие<br /> во внутренний мир.</p><p class="art-credit">АВТОРСКАЯ ИЛЛЮСТРАЦИЯ / NPC DANDELION</p></div>
+    <figure class="art-hero-image"><ArtImage name="podcast-final" hero sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1440px) 52vw, 720px" alt="Полная обложка «За пределами»: девушка с закрытыми глазами среди планет, рыб и розовых облаков; авторский леттеринг вверху" /><figcaption>01 / ЧИСТОВАЯ ОБЛОЖКА</figcaption></figure>
+  </section>
+  <section class="art-section art-about" aria-labelledby="art-about-title">
+    <div class="art-section-label"><span>01</span><h2 id="art-about-title">О ПРОЕКТЕ</h2></div>
+    <div class="art-copy-grid"><p class="art-statement">Космос снаружи.<br />Глубина внутри.</p><div class="art-copy"><p>«За пределами» — обложка подкаста о загадках и внутреннем мире человека. В одной композиции встретились космос и подводное пространство: планеты, рыбы, облака и героиня с закрытыми глазами.</p><p>Детали можно рассматривать отдельно, но вместе они создают ощущение погружения в собственные мысли.</p><dl class="art-facts"><div><dt>ФОРМАТ</dt><dd>Обложка подкаста</dd></div><div><dt>В РАБОТЕ</dt><dd>Иллюстрация · леттеринг</dd></div></dl></div></div>
+  </section>
+  <section class="art-section" aria-labelledby="art-process-title">
+    <div class="art-section-label"><span>02</span><h2 id="art-process-title">ОТ НАБРОСКА К ИЛЛЮСТРАЦИИ</h2></div>
+    <div class="art-section-intro"><p>Линия, которая<br />обретает цвет.</p><span>Одна композиция — два состояния.<br />Рассмотрите, как меняются свет и детали.</span></div>
+    <ArtComparison />
+  </section>
+  <section class="art-section" aria-labelledby="art-application-title">
+    <div class="art-section-label"><span>03</span><h2 id="art-application-title">ПРИМЕНЕНИЕ</h2></div>
+    <figure class="art-application"><ArtImage name="podcast-application" width={1600} height={985} sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1440px) 90vw, 1294px" alt="Авторский монтаж: обложка «За пределами» в интерфейсе приложения подкастов и отдельно крупным планом" /><figcaption>Обложка в интерфейсе подкаста. Монтаж показывает применение иллюстрации; дизайн приложения не входит в эту работу.</figcaption></figure>
+  </section>
+  <div class="art-fish" aria-hidden="true"><ArtImage name="podcast-fish" width={1600} height={186} alt="" sizes="(max-width: 1440px) 90vw, 1294px" /></div>
+  <nav class="art-next" aria-label="Другие проекты"><a href="/#projects">← ВСЕ ПРОЕКТЫ</a><a href="/projects/devushka-s-maskoy/"><span>СЛЕДУЮЩИЙ КЕЙС ↗</span><strong>Девушка с маской</strong></a></nav>
+</IllustrationCase>

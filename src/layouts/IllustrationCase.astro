@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import '../styles/illustration-case.css';
+import SiteHeader from '../components/SiteHeader.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  image: string;
+  theme: 'podcast' | 'mask';
+}
+const { title, description, slug, image, theme } = Astro.props;
+const origin = 'https://npc-dandelion-portfolio.pages.dev';
+const url = `${origin}/projects/${slug}/`;
+---
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#090909" />
+    <meta name="description" content={description} />
+    <link rel="preload" href="/fonts/portfolio/Cormorant-Garamond-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="canonical" href={url} />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="NPC Dandelion" />
+    <meta property="og:title" content={`${title} — NPC Dandelion`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={`${origin}${image}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content={`Авторская иллюстрация «${title}»`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{title} — иллюстрация · NPC Dandelion</title>
+  </head>
+  <body class={`illustration-case illustration-case--${theme}`}>
+    <a class="skip-link" href="#main">К содержимому</a>
+    <div class="site-shell">
+      <SiteHeader />
+      <main id="main">
+        <nav class="art-case-nav" aria-label="Навигация по кейсу"><a href="/#projects">← ВСЕ ПРОЕКТЫ</a><a href="/#illustrations">ИЛЛЮСТРАЦИИ ↗</a></nav>
+        <slot />
+      </main>
+      <footer class="site-footer"><span>© 2026 NPC Dandelion</span><a href="#top" aria-label="Наверх">↑</a><span>Идеи · Люди · Пространства</span></footer>
+    </div>
+  </body>
+</html>

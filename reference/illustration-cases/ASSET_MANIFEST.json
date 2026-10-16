@@ -1,0 +1,119 @@
+[
+  {
+    "path": "assets/podcast/04_process_comparison_layout.jpg",
+    "origin": "подкаст(1).zip / подкаст 3.jpg",
+    "description": "Монтаж: эскиз → готовая обложка; не для интерактивного слайдера",
+    "width": 3001,
+    "height": 1150,
+    "bytes": 1437774,
+    "sha256": "a46b9a9c51c4b5d78e54fdcecedb40fc2172998fe7098e8697f00d521479062c"
+  },
+  {
+    "path": "assets/podcast/06_fish_footer_strip.jpg",
+    "origin": "подкаст(1).zip / подкаст 5.jpg",
+    "description": "Декоративная полоса с рыбами, использовать только если полезно",
+    "width": 3001,
+    "height": 349,
+    "bytes": 130612,
+    "sha256": "55dd3032864420292fcf12516b77ab664dff36a6a010dfcf82bd18cbe5511ba9"
+  },
+  {
+    "path": "assets/podcast/05_podcast_app_long_screenshot.jpg",
+    "origin": "подкаст(1).zip / скрин копия.jpg",
+    "description": "Длинный скрин приложения; возможно лучше использовать монтаж",
+    "width": 4961,
+    "height": 9313,
+    "bytes": 7932528,
+    "sha256": "413da8a84c32ff9a774e6073b79b890ee41e9e832751cd4b396e276a7f83d5cd"
+  },
+  {
+    "path": "assets/podcast/03_podcast_app_layout.jpg",
+    "origin": "подкаст(1).zip / подкаст 4.jpg",
+    "description": "Утверждённый монтаж обложки в интерфейсе подкаста",
+    "width": 3001,
+    "height": 1847,
+    "bytes": 2506254,
+    "sha256": "ab56de354c9b4f524a3a8ff6bcac7d7bd228ea19eb41aaf84170bf585b28b361"
+  },
+  {
+    "path": "assets/podcast/01_final_cover_2500.jpg",
+    "origin": "подкаст(1).zip / »«ñ¬áßΓ ¬«»¿∩.jpg",
+    "description": "Чистовая обложка 2500×2500 — правая/финальная сторона слайдера",
+    "width": 2500,
+    "height": 2500,
+    "bytes": 2931461,
+    "sha256": "343f8982b7c1c61c15acd2b8b782953188d607583730952c1af6c61cc923bed0"
+  },
+  {
+    "path": "assets/podcast/02_line_sketch_2500.jpg",
+    "origin": "подкаст(1).zip / »«ñ¬áßΓ ¬«»¿∩1.jpg",
+    "description": "Чистый линейный эскиз 2500×2500 — левая/эскизная сторона слайдера",
+    "width": 2500,
+    "height": 2500,
+    "bytes": 1237397,
+    "sha256": "25509a86d0c3a193fd4a2b5f7ffaaec3de8d7f8bd9c6d0467e75bb9239c40c7f"
+  },
+  {
+    "path": "assets/mask/05_palette_presentation.jpg",
+    "origin": "иллюстрация.zip / 2.jpg",
+    "description": "Презентация палитры с уменьшенной иллюстрацией — опционально",
+    "width": 2000,
+    "height": 2000,
+    "bytes": 1548223,
+    "sha256": "5790e955fb019352f951ee3a43135e6150895dc839313c36a05df5b865a2f8f7"
+  },
+  {
+    "path": "assets/mask/03_full_colour_alt_2666.jpg",
+    "origin": "иллюстрация.zip / кп 1 копия.jpg",
+    "description": "Ранний финал 2666×2666 — резервный исходник",
+    "width": 2666,
+    "height": 2666,
+    "bytes": 4368981,
+    "sha256": "3971621864ae8714fd0ea5896de9459c041540f1bdb4338518c7642513548717"
+  },
+  {
+    "path": "assets/mask/04_full_colour_alt2_2666.jpg",
+    "origin": "иллюстрация.zip / кп 1 копия 2.jpg",
+    "description": "Ранний альтернативный финал 2666×2666 — резервный исходник",
+    "width": 2666,
+    "height": 2666,
+    "bytes": 5056921,
+    "sha256": "84ba63d760885f28158ea1f11aada6c3c77697e66d3094ee3b785194feeb704b"
+  },
+  {
+    "path": "assets/mask/02_ink_drift_wip_old.jpg",
+    "origin": "иллюстрация.zip / 1.jpg",
+    "description": "Первоначальная композиция потёков, раннее состояние",
+    "width": 2000,
+    "height": 2000,
+    "bytes": 1782143,
+    "sha256": "ef8975dc990e853de9bec4527f2439c54ee86624a6e69f7de0dc51388a843e77"
+  },
+  {
+    "path": "assets/mask/01_final_approved_2048.jpg",
+    "origin": "кп 4.jpg (добавлено 16.10)",
+    "description": "Новый согласованный высококачественный финал для анимации и обложки",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 917647,
+    "sha256": "798ba9268e5d7d93f0a12ace538f4b489b200a5475116706a1c6757a3d1c053c"
+  },
+  {
+    "path": "assets/mask/02_ink_drift_wip_reference_2000.jpg",
+    "origin": "1.jpg (потёки, предыдущее сообщение)",
+    "description": "Авторская композиция с потёками: ТОЛЬКО референс формы края, не начальный слой анимации",
+    "width": 2000,
+    "height": 2000,
+    "bytes": 567253,
+    "sha256": "a0d928e27834a88283345b29e355ff86c94a82e27dd3ad520051757e647d55c4"
+  },
+  {
+    "path": "assets/mask/00_clean_line_sketch_2048.png",
+    "origin": "кп 1.png (прислано автором в последнем сообщении)",
+    "description": "Чистый линейный эскиз на розовом фоне, основной нижний слой анимации потёков при скролле",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 923681,
+    "sha256": "d096dbeb11201a2b8a6b04309e5a40a2bb0c57ce9008cb5614e2a3953d8d31f4"
+  }
+]

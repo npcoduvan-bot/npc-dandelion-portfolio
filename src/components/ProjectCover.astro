@@ -1,16 +1,17 @@
 ---
 interface Props {
-  variant: 'noir' | 'pink' | 'levis' | 'nko' | 'signage' | 'green' | 'more' | 'dima' | 'maria';
+  variant: 'noir' | 'pink' | 'levis' | 'nko' | 'signage' | 'green' | 'more' | 'dima' | 'maria' | 'podcast' | 'mask';
   image?: string;
   srcSet?: string;
   alt?: string;
 }
 
 const { variant, image, srcSet, alt = '' } = Astro.props;
+const squareArtwork = variant === 'podcast' || variant === 'mask';
 ---
 
 <div class={`project-visual cover-${variant}`}>
-  {image && <img class="cover-photo" src={image} srcset={srcSet} sizes="(max-width: 560px) calc(100vw - 48px), (max-width: 1050px) 331px, 420px" alt={alt} loading="lazy" width={1374} height={1145} />}
+  {image && <img class="cover-photo" src={image} srcset={srcSet} sizes="(max-width: 560px) calc(100vw - 48px), (max-width: 1050px) 331px, 420px" alt={alt} loading="lazy" width={squareArtwork ? 800 : 1374} height={squareArtwork ? 800 : 1145} />}
 
   {variant === 'maria' && <div class="cover-maria-copy" aria-hidden="true">
     <span class="cover-maria-mark">ZMS<span>PHOTOGRAPHER</span></span>
@@ -37,7 +38,7 @@ const { variant, image, srcSet, alt = '' } = Astro.props;
   </div>}
 
   {variant === 'more' && <div class="cover-more-copy" aria-hidden="true">
-    <span class="cover-kicker">07 / ПОДБОРКА РАБОТ</span>
+    <span class="cover-kicker">09 / ПОДБОРКА РАБОТ</span>
     <span class="cover-more-sun"></span>
     <span class="cover-more-lines"></span>
     <strong>ЕЩЁ<span>↗</span></strong>

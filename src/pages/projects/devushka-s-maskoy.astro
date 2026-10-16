@@ -1,0 +1,28 @@
+---
+import IllustrationCase from '../../layouts/IllustrationCase.astro';
+import ArtImage from '../../components/ArtImage.astro';
+import ScrollInk from '../../components/ScrollInk.astro';
+---
+<IllustrationCase title="Девушка с маской" slug="devushka-s-maskoy" theme="mask" image="/assets/illustration-cases/mask-final-1200.webp" description="Девушка с маской — авторская цифровая иллюстрация NPC Dandelion. Синий и розовый свет, открытый взгляд и цвет, проступающий поверх линейного эскиза.">
+  <section class="art-hero" aria-labelledby="art-title">
+    <div class="art-hero-copy"><p class="art-kicker">АВТОРСКАЯ ЦИФРОВАЯ ИЛЛЮСТРАЦИЯ</p><h1 id="art-title">Девушка<br />с маской</h1><p class="art-hero-caption">Линия.<br /> Свет. Цвет.</p><p class="art-credit">АВТОРСКАЯ ИЛЛЮСТРАЦИЯ / NPC DANDELION</p></div>
+    <figure class="art-hero-image"><ArtImage name="mask-final" hero sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1440px) 52vw, 720px" alt="Утверждённая иллюстрация целиком: девушка с синими волосами держит кошачью маску у лица, рука и взгляд освещены розовым и голубым неоном" /><figcaption>01 / ФИНАЛЬНАЯ ИЛЛЮСТРАЦИЯ</figcaption></figure>
+  </section>
+  <section class="art-section art-about" aria-labelledby="art-about-title">
+    <div class="art-section-label"><span>01</span><h2 id="art-about-title">ЛИНИЯ, СВЕТ, ЦВЕТ</h2></div>
+    <div class="art-copy-grid"><p class="art-statement">Между взглядом<br />и маской.</p><div class="art-copy"><p>Портрет, построенный на контрасте синего и розового света. Маска повторяет часть лица, но взгляд остаётся открытым.</p><p>Здесь цвет работает не только как освещение, а как часть характера изображения.</p><dl class="art-facts"><div><dt>ФОРМАТ</dt><dd>Цифровая иллюстрация</dd></div><div><dt>В ФОКУСЕ</dt><dd>Холодно-тёплый контраст · неоновый свет</dd></div></dl></div></div>
+  </section>
+  <section class="art-section art-ink-section" aria-labelledby="art-ink-title">
+    <div class="art-section-label"><span>02</span><h2 id="art-ink-title">ЦВЕТ ПРОСТУПАЕТ ПОСТЕПЕННО</h2></div>
+    <p class="art-ink-intro">От чистой линии к неоновому свету.</p>
+    <ScrollInk />
+  </section>
+  <section class="art-section" aria-labelledby="art-details-title">
+    <div class="art-section-label"><span>03</span><h2 id="art-details-title">БЛИЖЕ К ДЕТАЛЯМ</h2></div>
+    <div class="art-details">
+      <figure><img src="/assets/illustration-cases/mask-gaze-800.webp" width="800" height="621" alt="Фрагмент утверждённого оригинала: взгляд девушки, кошачья маска и розовый свет на пальцах" loading="lazy" decoding="async" /><figcaption>01 / ВЗГЛЯД И МАСКА</figcaption></figure>
+      <figure><img src="/assets/illustration-cases/mask-light-800.webp" width="800" height="884" alt="Фрагмент утверждённого оригинала: голубые пряди волос и отражённый неоновый свет" loading="lazy" decoding="async" /><figcaption>02 / НЕОНОВЫЙ СВЕТ</figcaption></figure>
+    </div>
+  </section>
+  <nav class="art-next" aria-label="Другие проекты"><a href="/#projects">← ВСЕ ПРОЕКТЫ</a><a href="/projects/za-predelami/"><span>ЕЩЁ ОДНА ИЛЛЮСТРАЦИЯ ↗</span><strong>За пределами</strong></a></nav>
+</IllustrationCase>

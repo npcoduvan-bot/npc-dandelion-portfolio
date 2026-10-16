@@ -1,0 +1,32 @@
+---
+import ArtImage from './ArtImage.astro';
+---
+<div class="art-comparison" data-art-comparison>
+  <div class="comparison-images">
+    <figure class="comparison-sketch"><ArtImage name="podcast-sketch" alt="Линейный эскиз обложки «За пределами»: героиня, рыбы, планеты и авторский леттеринг" /><figcaption>Эскиз</figcaption></figure>
+    <figure class="comparison-final"><ArtImage name="podcast-final" alt="Финальная обложка «За пределами» в розовых, фиолетовых и синих тонах" /><figcaption>Финал</figcaption></figure>
+    <div class="comparison-divider" aria-hidden="true" hidden><span>‹ ›</span></div>
+    <div class="comparison-labels" aria-hidden="true" hidden><span>ЭСКИЗ</span><span>ФИНАЛ</span></div>
+  </div>
+  <div class="comparison-controls" hidden>
+    <label for="podcast-comparison">Сравнение эскиза и финальной обложки</label>
+    <input id="podcast-comparison" type="range" min="0" max="100" step="1" value="50" aria-label="Сравнение эскиза и финальной обложки" aria-describedby="comparison-hint" aria-valuetext="Эскиз 50%, финал 50%" />
+    <div class="comparison-endpoints" aria-hidden="true"><span>0 — ФИНАЛ</span><span>100 — ЭСКИЗ</span></div>
+    <p id="comparison-hint">Передвиньте ползунок пальцем, мышью или стрелками клавиатуры.</p>
+  </div>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-art-comparison]').forEach((comparison) => {
+    const range = comparison.querySelector<HTMLInputElement>('input[type="range"]');
+    if (!range) return;
+    const update = () => {
+      const sketch = Number(range.value);
+      comparison.style.setProperty('--split', `${sketch}%`);
+      range.setAttribute('aria-valuetext', `Эскиз ${sketch}%, финал ${100 - sketch}%`);
+    };
+    update();
+    comparison.classList.add('is-ready');
+    comparison.querySelectorAll<HTMLElement>('[hidden]').forEach((element) => { element.hidden = false; });
+    range.addEventListener('input', update);
+  });
+</script>
