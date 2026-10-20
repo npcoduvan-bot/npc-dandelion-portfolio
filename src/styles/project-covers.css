@@ -78,6 +78,9 @@
 .project-visual .cover-photo { object-fit: cover; object-position: center; filter: none; }
 .project-card.green .cover-photo { object-fit: contain; }
 .project-card:hover .cover-photo { filter: none; transform: scale(1.025); }
+/* The base hover rule in global.css must not leave covers partially desaturated. */
+.project-card:hover .project-visual .cover-photo,
+.project-card:focus-within .project-visual .cover-photo { filter: none; }
 
 /* Every case cover starts in monochrome, including editorial covers. */
 .project-card .project-visual { filter: grayscale(1); transition: filter .45s ease; }
