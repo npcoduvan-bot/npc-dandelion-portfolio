@@ -19,5 +19,6 @@
 .work-footer{display:flex;justify-content:space-between;align-items:center;gap:30px}
 .work-footer p{font-size:11px;line-height:1.8;color:var(--muted);max-width:70ch}
 .work-footer a{flex:none;min-height:44px}
-@media(hover:none),(pointer:coarse){.project-card .project-visual{filter:none}.project-card:hover .cover-photo{transform:none}}
+/* Touch devices must keep the same monochrome default as desktop. */
+@media(hover:none),(pointer:coarse){.project-card:hover .cover-photo{transform:none}}
 @media(max-width:700px){.work-intro{grid-template-columns:1fr;gap:24px}.work-formats{grid-template-columns:1fr;gap:22px}.work-footer{align-items:flex-start;flex-direction:column;gap:12px}.project-filters{gap:8px 18px}.project-filters button{font-size:11px}}
