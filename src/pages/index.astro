@@ -5,6 +5,7 @@ import '../styles/web-direction.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import HomeHero from '../components/HomeHero.astro';
 import ProjectCover from '../components/ProjectCover.astro';
+import IllustrationGallery from '../components/IllustrationGallery.astro';
 
 const cases = [
   { number: '01', title: 'NOIR COFFEE', kind: 'Брендинг · визуальная система', className: 'noir', image: '/assets/covers/noir-coffee-v2-700.webp', srcSet: '/assets/covers/noir-coffee-v2-700.webp 700w, /assets/covers/noir-coffee-v2-1400.webp 1374w', alt: 'Чёрный фирменный фартук NOIR COFFEE, визитки и эспрессо на камне — ИИ-мокап по исходной айдентике', href: '/projects/noir-coffee/' },
@@ -18,11 +19,7 @@ const cases = [
   { number: '09', title: 'Другие проекты', kind: 'Подборка работ', className: 'more' }
 ];
 
-const illustrations = [
-  { image: '/assets/illustration-deer.png', alt: 'Авторская иллюстрация: олень в горящем лесу', title: 'Олень в горящем лесу' },
-  { image: '/assets/illustration-angel.png', alt: 'Авторская иллюстрация: ангел в белом платье', title: 'Ангел' },
-  { image: '/assets/illustration-city.jpg', alt: 'Авторская иллюстрация: девушка с телефоном на фоне города', title: 'Город' }
-];
+
 ---
 
 <!doctype html>
@@ -62,12 +59,7 @@ const illustrations = [
           <p class="project-footnote">Открыты кейсы NOIR COFFEE, «Розовая кофейня», «НЕ НА ЗАКАЗ», Levi’s Sochi, «Причина счастья», сайта Марии Зориной, «За пределами» и «Девушка с маской». Остальные работы готовятся к публикации.</p>
         </section>
 
-        <section class="section illustrations" id="illustrations" aria-labelledby="illustrations-title">
-          <div class="section-heading"><h2 id="illustrations-title">ИЛЛЮСТРАЦИИ</h2><span>Авторские работы</span></div>
-          <div class="illustration-grid">
-            {illustrations.map((item) => <figure><img src={item.image} alt={item.alt} loading="lazy" /><figcaption>{item.title}</figcaption></figure>)}
-          </div>
-        </section>
+        <IllustrationGallery />
 
         <section class="section work-together" id="work" aria-labelledby="work-title">
           <div class="section-heading"><h2 id="work-title">РАБОТА СО МНОЙ</h2><span>Веб-дизайн</span></div>
@@ -120,7 +112,7 @@ const illustrations = [
             }
           });
         }, { threshold: 0.08 });
-        document.querySelectorAll('.project-card, .illustration-grid figure').forEach((item) => observer.observe(item));
+        document.querySelectorAll('.project-card').forEach((item) => observer.observe(item));
       }
     </script>
   </body>
