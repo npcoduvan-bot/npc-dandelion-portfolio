@@ -36,20 +36,20 @@
 .cover-green-copy strong span { font-weight: 400; }
 .cover-green-footer { left: 21px; bottom: 46px; }
 
-.project-card.more .cover-more { background: #e7e1d8; color: #19161b; }
-.cover-more-copy::before { content: ""; position: absolute; inset: 14px; border: 1px solid #332d333d; }
-.cover-more-sun { position: absolute; width: 46%; aspect-ratio: 1; right: -6%; top: -15%; border-radius: 50%; background: #a87e91; box-shadow: 0 0 0 34px #a87e912e; }
-.cover-more-lines { position: absolute; left: 0; right: 0; top: 36%; height: 42%; background: repeating-linear-gradient(0deg, transparent 0 16px, #302b3145 16px 17px); transform: skewY(-15deg); opacity: .75; }
-.cover-more-copy strong { position: absolute; left: 11%; top: 34%; font-family: 'Bodoni Moda', Georgia, serif; font-size: clamp(105px, 10vw, 145px); line-height: 1; letter-spacing: -.1em; background: #e7e1d8ed; padding: 0 .1em 0 0; }
-.cover-more-copy strong span { position: absolute; font-family: Montserrat, Arial, sans-serif; font-size: .22em; font-weight: 300; top: 12%; right: -32%; }
-.cover-more-footer { left: 22px; bottom: 45px; }
-.cover-more .cover-pending { color: #4f464a; }
+.project-card.more .cover-more { background: #0c0b0d; color: #eee9e7; container-type: inline-size; }
+.cover-more-copy { overflow: hidden; }
+.cover-more-veins { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: #494348; stroke-width: 1.25; }
+.cover-more-veins path { vector-effect: non-scaling-stroke; }
+.cover-more-veins .more-accent { stroke: #a87890; }
+.cover-more-copy strong { position: absolute; left: 10%; top: 32%; font-family: 'Bodoni Moda', Georgia, serif; font-size: 34cqw; line-height: 1; letter-spacing: -.07em; }
+.cover-more .cover-kicker { color: #aaa3a7; }
+.cover-more-footer { left: 22px; bottom: 45px; color: #c393a9; }
+.cover-more .cover-pending { color: #aaa3a7; }
 
 @media (max-width: 850px) {
   .cover-signage-copy strong { font-size: clamp(48px, 8vw, 76px); }
   .cover-signage-arrow { font-size: clamp(170px, 30vw, 280px); }
   .cover-green-copy strong { font-size: clamp(48px, 7.7vw, 70px); }
-  .cover-more-copy strong { font-size: clamp(102px, 17vw, 145px); }
 }
 
 @media (max-width: 560px) {
@@ -57,7 +57,6 @@
   .cover-signage-copy strong { font-size: clamp(56px, 15vw, 78px); }
   .cover-signage-arrow { font-size: clamp(175px, 53vw, 270px); }
   .cover-green-copy strong { font-size: clamp(50px, 13.5vw, 70px); }
-  .cover-more-copy strong { font-size: clamp(104px, 30vw, 135px); }
 }
 
 @media (max-width: 360px) {

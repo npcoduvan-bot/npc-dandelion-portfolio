@@ -22,3 +22,9 @@
 /* Touch devices must keep the same monochrome default as desktop. */
 @media(hover:none),(pointer:coarse){.project-card:hover .cover-photo{transform:none}}
 @media(max-width:700px){.work-intro{grid-template-columns:1fr;gap:24px}.work-formats{grid-template-columns:1fr;gap:22px}.work-footer{align-items:flex-start;flex-direction:column;gap:12px}.project-filters{gap:8px 18px}.project-filters button{font-size:11px}}
+
+/* Short labels carry the accent; long descriptions retain their reading color. */
+.home-page .project-info .project-category,
+.home-page .project-filters button[aria-pressed="true"] { color: #c393a9; }
+.home-page .project-filters button[aria-pressed="true"] { border-color: #c393a9; }
+.home-page .project-info h3 { color: #eee9e7; }

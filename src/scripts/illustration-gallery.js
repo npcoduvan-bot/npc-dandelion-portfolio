@@ -9,6 +9,9 @@ document.querySelectorAll('[data-art-gallery]').forEach((gallery) => {
   const previous = gallery.querySelector('[data-track-prev]');
   const next = gallery.querySelector('[data-track-next]');
   const stage = gallery.querySelector('[data-art-stage]');
+  const scroller = gallery.querySelector('[data-art-scroll]');
+  const details = gallery.querySelector('[data-art-details]');
+  const more = gallery.querySelector('[data-art-more]');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   let index = 0;
   let trigger = null;
@@ -44,6 +47,10 @@ document.querySelectorAll('[data-art-gallery]').forEach((gallery) => {
   const show = (newIndex) => {
     index = (newIndex + cards.length) % cards.length;
     const card = cards[index];
+    const expanded = card.dataset.slug === 'deer';
+    details.hidden = !expanded;
+    more.hidden = !expanded;
+    scroller.scrollTop = 0;
     image.src = card.href;
     image.alt = card.dataset.alt;
     title.textContent = card.dataset.title;
@@ -52,6 +59,11 @@ document.querySelectorAll('[data-art-gallery]').forEach((gallery) => {
     if (card.dataset.project) project.setAttribute('href', card.dataset.project);
     else project.removeAttribute('href');
   };
+  more.addEventListener('click', (event) => {
+    event.preventDefault();
+    scroller.scrollTo({ top: details.offsetTop - scroller.offsetTop, behavior: reduced.matches ? 'instant' : 'smooth' });
+    scroller.focus({ preventScroll: true });
+  });
   cards.forEach((card, i) => card.addEventListener('click', (event) => {
     if (typeof dialog.showModal !== 'function' || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
@@ -98,6 +110,7 @@ document.querySelectorAll('[data-art-gallery]').forEach((gallery) => {
     if (!touch || !event.changedTouches.length) return;
     const dx = event.changedTouches[0].clientX - touch.x, dy = event.changedTouches[0].clientY - touch.y;
     touch = null;
+    if (Math.abs(dy) > 12) suppressClick = true;
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.4) { show(index + (dx < 0 ? 1 : -1)); suppressClick = true; }
   }, { passive: true });
   stage.addEventListener('touchcancel', () => { touch = null; }, { passive: true });

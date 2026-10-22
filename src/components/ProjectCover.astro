@@ -39,9 +39,13 @@ const squareArtwork = variant === 'podcast' || variant === 'mask';
 
   {variant === 'more' && <div class="cover-more-copy" aria-hidden="true">
     <span class="cover-kicker">09 / ПОДБОРКА РАБОТ</span>
-    <span class="cover-more-sun"></span>
-    <span class="cover-more-lines"></span>
-    <strong>ЕЩЁ<span>↗</span></strong>
+    <svg class="cover-more-veins" viewBox="0 0 420 350" preserveAspectRatio="none" focusable="false">
+      <path d="M 110,370 C 190,285 290,282 324,145 S 410,50 452,-20" />
+      <path d="M 324,145 C 340,80 278,46 292,-15" />
+      <path d="M 212,290 C 303,260 370,305 440,225" />
+      <path class="more-accent" d="M 324,145 C 333,108 316,81 303,54" />
+    </svg>
+    <strong>ЕЩЁ</strong>
     <span class="cover-more-footer">ИДЕИ · ЛЮДИ · ПРОСТРАНСТВА</span>
   </div>}
 

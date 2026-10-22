@@ -3,21 +3,44 @@ const illustrations = [
   { slug: 'vo-blago', title: 'Во благо', alt: 'Девушка с красной повязкой на глазах, светящимся нимбом и крестом в руке' },
   { slug: 'za-predelami', title: 'За пределами', alt: 'Обложка подкаста: героиня среди планет, рыб и розовых облаков', projectHref: '/projects/za-predelami/' },
   { slug: 'mask', title: 'Девушка с маской', alt: 'Девушка с кошачьей маской в неоновом освещении', projectHref: '/projects/devushka-s-maskoy/' },
-  { slug: 'deer', title: 'Олень в горящем лесу', alt: 'Олень среди деревьев горящего леса' },
-  { slug: 'angel', title: 'Ангел', alt: 'Ангел в белом платье' },
-  { slug: 'city', title: 'Город', alt: 'Девушка с телефоном на фоне города' }
-].map((item) => ({ ...item, src: `/assets/illustration-gallery/${item.slug}-2400.webp`, preview: `/assets/illustration-gallery/${item.slug}-560.webp` }));
+  { slug: 'deer', title: 'Меня ведёт судьба', alt: 'Лось с завязанными глазами бежит через горящий лес мимо сломанного указателя FUTURE' },
+  { hidden: true, slug: 'angel', title: 'Ангел', alt: 'Ангел в белом платье' },
+  { hidden: true, slug: 'city', title: 'Город', alt: 'Девушка с телефоном на фоне города' }
+].filter((item) => !('hidden' in item && item.hidden)).map((item) => ({ ...item, src: `/assets/illustration-gallery/${item.slug}-2400.webp`, preview: `/assets/illustration-gallery/${item.slug}-560.webp` }));
 ---
 <section class="section art-gallery" id="illustrations" aria-labelledby="illustrations-title" data-art-gallery>
   <div class="section-heading"><h2 id="illustrations-title">ИЛЛЮСТРАЦИИ</h2><span>Авторские работы</span></div>
   <div class="art-gallery-toolbar"><p id="art-gallery-help">Листайте и открывайте работы целиком</p><div class="art-track-controls" hidden><button type="button" data-track-prev aria-label="Прокрутить иллюстрации влево" aria-controls="art-track">←</button><button type="button" data-track-next aria-label="Прокрутить иллюстрации вправо" aria-controls="art-track">→</button></div></div>
   <ul class="art-track" id="art-track" aria-label="Авторские иллюстрации" aria-describedby="art-gallery-help" tabindex="0">
-    {illustrations.map((item) => <li><a class="art-card" href={item.src} data-art-open data-title={item.title} data-alt={item.alt} data-project={item.projectHref} aria-label={`Открыть иллюстрацию «${item.title}»`}><span class="art-thumbnail"><img src={item.preview} alt={item.alt} width="560" height="560" loading="lazy" decoding="async" /></span><span class="art-caption">{item.title}</span></a></li>)}
+    {illustrations.map((item) => <li><a class="art-card" href={item.src} data-art-open data-slug={item.slug} data-title={item.title} data-alt={item.alt} data-project={item.projectHref} aria-label={`Открыть иллюстрацию «${item.title}»`}><span class="art-thumbnail"><img src={item.preview} alt={item.alt} width="560" height="560" loading="lazy" decoding="async" /></span><span class="art-caption">{item.title}</span></a></li>)}
   </ul>
   <dialog class="art-dialog" aria-labelledby="art-dialog-title" data-art-dialog>
     <div class="art-dialog-bar"><p id="art-dialog-title" data-art-title></p><button type="button" data-art-close aria-label="Закрыть просмотр" autofocus>×</button></div>
-    <div class="art-stage" data-art-stage><button class="art-prev" type="button" data-art-prev aria-label="Предыдущая иллюстрация">←</button><img data-art-image alt="" draggable="false" /><button class="art-next" type="button" data-art-next aria-label="Следующая иллюстрация">→</button></div>
-    <div class="art-dialog-footer"><span data-art-counter role="status" aria-live="polite"></span><a data-art-project hidden>Смотреть кейс ↗</a><span class="art-key-hint">← → / ESC</span></div>
+    <div class="art-scroll" data-art-scroll tabindex="0" aria-label="Иллюстрация и описание">
+      <div class="art-first">
+        <div class="art-stage" data-art-stage><img data-art-image alt="" draggable="false" /></div>
+        <a class="art-scroll-hint" href="#art-details" data-art-more hidden>Листайте вниз ↓</a>
+      </div>
+      <div class="art-details" id="art-details" data-art-details hidden>
+        <h2>Детали</h2>
+        <div class="art-detail-grid">
+          <figure><img src="/assets/illustration-gallery/fate-blindfold.webp" width="430" height="380" alt="Голова лося: повязка закрывает глаза" loading="lazy" /><figcaption>Доверие вместо взгляда</figcaption></figure>
+          <figure><img src="/assets/illustration-gallery/fate-future.webp" width="280" height="360" alt="Сломанный указатель со словом FUTURE" loading="lazy" /><figcaption>Направление неизвестно</figcaption></figure>
+          <figure><img src="/assets/illustration-gallery/fate-wind.webp" width="570" height="380" alt="Светлячки над тропой и мягкие линии ветра" loading="lazy" /><figcaption>Невидимый маршрут</figcaption></figure>
+        </div>
+        <section class="art-story" aria-labelledby="art-story-title">
+          <h2 id="art-story-title">История иллюстрации</h2>
+          <p>Иллюстрация по необычному заказу: лось с завязанными глазами бежит через горящий лес, доверяя свою дорогу судьбе.</p>
+          <p>Линии ветра передают движение, светлячки будто складываются в невидимый маршрут, а сломанный указатель FUTURE больше не может подсказать направление.</p>
+          <p>Здесь нет карты, правильного пути и уверенности в том, что ждёт впереди. Только движение и доверие тому, что ведёт.</p>
+        </section>
+      </div>
+    </div>
+    <div class="art-dialog-footer">
+      <span data-art-counter role="status" aria-live="polite"></span>
+      <a data-art-project hidden>Смотреть кейс ↗</a>
+      <div class="art-viewer-controls"><button type="button" data-art-prev aria-label="Предыдущая иллюстрация">←</button><button type="button" data-art-next aria-label="Следующая иллюстрация">→</button></div>
+    </div>
   </dialog>
 </section>
 <script>
@@ -34,7 +57,7 @@ const illustrations = [
 .art-gallery button:disabled{opacity:.3;cursor:default}
 .art-gallery :is(button,a,select):focus-visible,.art-track:focus-visible{outline:2px solid #d4a7b7;outline-offset:4px}
 .art-track{list-style:none;display:flex;gap:18px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:5px;scrollbar-width:thin;scrollbar-color:#786571 #161316;padding:5px 5px 18px;margin:0 -5px;max-width:calc(100% + 10px)}
-.art-track li{flex:0 0 calc((100% - 72px)/4.5);min-width:0;scroll-snap-align:start}
+.art-track li{flex:0 0 calc((100% - 54px)/4);min-width:0;scroll-snap-align:start}
 .art-card{display:block}
 .art-thumbnail{display:block;aspect-ratio:1;background:#101011;border:1px solid #302b2e;overflow:hidden}
 .art-thumbnail img{display:block;width:100%;height:100%;object-fit:contain;filter:grayscale(1);transition:filter .25s ease}
@@ -46,12 +69,25 @@ const illustrations = [
 .art-dialog-bar,.art-dialog-footer{display:flex;align-items:center;justify-content:space-between;gap:18px}
 .art-dialog-bar p{margin:0;font:400 clamp(13px,2vw,19px)/1.5 Montserrat,Arial,sans-serif}
 .art-dialog-bar button{font-size:30px}
-.art-stage{min-height:0;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:24px;touch-action:pan-y pinch-zoom}
+.art-scroll{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#786571 #161316;touch-action:pan-y pinch-zoom}
+.art-scroll:focus-visible{outline:1px solid #a87890;outline-offset:3px}
+.art-first{height:100%;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:12px}
+.art-stage{min-height:0;display:grid;place-items:center;touch-action:pan-y pinch-zoom}
+.art-scroll-hint{justify-self:center;padding:8px 12px;font:400 11px/1.6 Montserrat,Arial,sans-serif;color:#c393a9}
+.art-viewer-controls{display:flex;gap:10px;flex-shrink:0}
+.art-details{max-width:1160px;margin:0 auto;padding:64px 24px 32px}
+.art-details h2{font:400 30px/1.2 'Cormorant Garamond',Georgia,serif;margin:0 0 28px}
+.art-detail-grid{display:grid;grid-template-columns:1.15fr .75fr 1.3fr;gap:32px;align-items:start}
+.art-detail-grid figure{margin:0;min-width:0}
+.art-detail-grid img{width:auto;max-width:100%;height:auto;margin:auto}
+.art-detail-grid figcaption{margin-top:14px;color:#c393a9;font:400 11px/1.7 Montserrat,Arial,sans-serif}
+.art-story{max-width:680px;margin:64px auto 0}
+.art-story p{font:400 14px/1.85 Montserrat,Arial,sans-serif;color:#bdb3b8;margin:0 0 20px}
 .art-stage img{display:block;width:100%;height:100%;min-height:0;object-fit:contain;filter:none;user-select:none}
 .art-dialog-footer{font:400 11px/1.6 Montserrat,Arial,sans-serif;min-height:40px;color:#bdb3b8}
 .art-dialog-footer a{padding:12px 0;text-decoration:underline;text-underline-offset:5px}
-.art-key-hint{letter-spacing:.16em}
+
 @media(max-width:850px){.art-track li{flex-basis:calc((100% - 36px)/2.7)}}
-@media(max-width:560px){.art-track{gap:12px}.art-track li{flex-basis:62%}.art-dialog{padding:12px 12px max(12px,env(safe-area-inset-bottom))}.art-stage{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) 44px;gap:12px}.art-stage img{grid-column:1/-1;grid-row:1}.art-prev{grid-column:1;grid-row:2;justify-self:start}.art-next{grid-column:2;grid-row:2;justify-self:end}.art-key-hint{display:none}.art-dialog-footer{gap:12px}.art-dialog-bar{align-items:center}}
+@media(max-width:560px){.art-track{gap:12px}.art-track li{flex-basis:62%}.art-dialog{padding:12px 12px max(12px,env(safe-area-inset-bottom))}.art-dialog-footer{gap:12px;flex-wrap:wrap}.art-dialog-footer [data-art-counter]{flex:1;min-width:150px}.art-dialog-footer a{order:3;width:100%;padding:0 0 6px}.art-dialog-bar{align-items:center}.art-details{padding:40px 12px 16px}.art-detail-grid{grid-template-columns:1fr;gap:32px}.art-detail-grid figure{width:100%;max-width:430px;margin:auto}.art-detail-grid figcaption{text-align:center}.art-story{margin-top:44px}.art-story p{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.art-thumbnail img{transition:none}.art-track{scroll-behavior:auto}}
 </style>

@@ -1,0 +1,12 @@
+{
+  "work": "Меня ведёт судьба",
+  "source": "public/assets/illustration-deer.png",
+  "sourceDimensions": [1536, 1416],
+  "note": "Original source is unchanged. Rectangles use source pixels; WebP quality 94, no resizing or generation. CSS caps detail images at their intrinsic dimensions.",
+  "crops": [
+    {"file": "public/assets/illustration-gallery/fate-blindfold.webp", "left": 900, "top": 310, "width": 430, "height": 380},
+    {"file": "public/assets/illustration-gallery/fate-future.webp", "left": 1210, "top": 500, "width": 280, "height": 360},
+    {"file": "public/assets/illustration-gallery/fate-wind.webp", "left": 560, "top": 860, "width": 570, "height": 380}
+  ],
+  "restoreHiddenWorks": "Remove hidden: true from angel or city in src/components/IllustrationGallery.astro. Their originals and optimized images remain in the repository."
+}
