@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import '../styles/project-covers.css';
 import '../styles/web-direction.css';
+import '../styles/author.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import HomeHero from '../components/HomeHero.astro';
 import ProjectCover from '../components/ProjectCover.astro';
@@ -57,6 +58,7 @@ const cases = [
             ))}
           </div>
           <p class="project-footnote">Открыты кейсы NOIR COFFEE, «Розовая кофейня», «НЕ НА ЗАКАЗ», Levi’s Sochi, «Причина счастья», сайта Марии Зориной, «За пределами» и «Девушка с маской». Остальные работы готовятся к публикации.</p>
+          <a class="text-link project-contact-link" href="#contacts">Обсудить проект <span aria-hidden="true">↗</span></a>
         </section>
 
         <IllustrationGallery />
@@ -64,10 +66,10 @@ const cases = [
         <section class="section work-together" id="work" aria-labelledby="work-title">
           <div class="section-heading"><h2 id="work-title">РАБОТА СО МНОЙ</h2><span>Веб-дизайн</span></div>
           <div class="work-intro">
-            <h3>Сайты с характером.</h3>
-            <div><p>Не каждый проект должен выглядеть как сайт компании.</p>
-            <p>Иногда достаточно хороших фотографий и правильной типографики. Иногда нужна необычная анимация, собственная навигация или другой способ показать работы.</p>
-            <p>Я разрабатываю сайты с индивидуальной визуальной концепцией — от первого экрана до мобильной версии. С учётом того, как сайт будет выглядеть, работать и меняться после публикации.</p></div>
+            <h3>Красиво — только начало.</h3>
+            <div><p>У каждого проекта свои задачи. Где-то главное — фотографии, где-то — типографика, графика или необычный способ взаимодействия со страницей.</p>
+            <p>Я разрабатываю сайты от визуальной концепции до работающей версии: продумываю композицию, адаптивность, анимации и то, как проект будет жить после публикации.</p>
+            <p>Без универсального оформления на все случаи жизни. Но с вниманием к тому, как всё выглядит и работает.</p></div>
           </div>
           <dl class="work-formats">
             <div><dt>Авторское портфолио <span>от 45 000 ₽</span></dt><dd>Индивидуальная концепция, адаптивный дизайн, галерея проектов и публикация сайта.</dd></div>
@@ -77,10 +79,22 @@ const cases = [
           <div class="work-footer"><p>Итоговая стоимость зависит от объёма проекта и сложности функционала. Домен, сторонние платные сервисы и дополнительное сопровождение обсуждаются отдельно.</p><a class="outline-button" href="https://t.me/npc_dandelion" target="_blank" rel="noopener noreferrer">Обсудить проект ↗</a></div>
         </section>
 
-        <section class="section about-contact" id="about" aria-labelledby="about-title">
-          <div class="about-block"><h2 id="about-title">ОБО МНЕ</h2><p>Я создаю визуальные решения, которые помогают брендам, проектам и людям говорить о важном. В моих работах сочетаются эстетика, смысл и внимание к деталям.</p><a class="text-link" href="https://www.behance.net/npcoduvan" target="_blank" rel="noopener noreferrer">Больше работ на Behance <span aria-hidden="true">→</span></a></div>
-          <blockquote>«Дизайн — это способ<br />делать мир немного яснее»</blockquote>
-          <div class="contact-block" id="contacts"><h2>КОНТАКТЫ</h2><a class="contact-link" href="https://t.me/npc_dandelion" target="_blank" rel="noopener noreferrer" aria-label="Написать @npc_dandelion в Telegram">Telegram <span aria-hidden="true">↗</span></a><p>@npc_dandelion</p><p>Буду рада новым проектам!</p></div>
+        <section class="section about-contact about-with-portrait" id="about" aria-labelledby="about-title">
+          <div class="author-intro">
+            <figure class="author-portrait"><img src="/assets/author/npc-dandelion-portrait.webp" srcset="/assets/author/npc-dandelion-portrait-640.webp 640w, /assets/author/npc-dandelion-portrait.webp 1254w" sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1050px) 240px, 480px" width="1254" height="1254" alt="NPC Dandelion — графический и веб-дизайнер" loading="lazy" decoding="async" /></figure>
+            <div class="about-block author-copy">
+              <h2 id="about-title">ОБО МНЕ</h2>
+              <p>Я занимаюсь графическим и веб-дизайном, создаю айдентику, иллюстрации и авторские сайты.</p>
+              <p>За плечами — художественная школа, среднее профессиональное образование по дизайну, преподавание в арт-студии, работа в компании по производству наружной рекламы и множество фриланс-проектов.</p>
+              <p>Этот опыт научил меня смотреть на дизайн с разных сторон: не только как на красивую картинку, но и как на систему, которая должна работать в реальных условиях.</p>
+              <p>Мне интересны проекты, в которых можно соединить выразительную графику, внимание к деталям и нестандартные решения. Для меня важно не просто придумать визуальную идею, а довести её до результата.</p>
+              <a class="text-link" href="https://www.behance.net/npcoduvan" target="_blank" rel="noopener noreferrer">Больше работ на Behance <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <div class="author-contact-row">
+            <blockquote>«Дизайн — это способ<br />делать мир немного яснее»</blockquote>
+            <div class="contact-block" id="contacts"><h2>КОНТАКТЫ</h2><a class="contact-link" href="https://t.me/npc_dandelion" target="_blank" rel="noopener noreferrer" aria-label="Написать @npc_dandelion в Telegram">Telegram <span aria-hidden="true">↗</span></a><p>@npc_dandelion</p><p>Буду рада новым проектам!</p></div>
+          </div>
         </section>
       </main>
       <footer class="site-footer"><span>© 2026 NPC Dandelion</span><a href="#top" aria-label="Наверх">↑</a><span>Идеи · Люди · Пространства</span></footer>

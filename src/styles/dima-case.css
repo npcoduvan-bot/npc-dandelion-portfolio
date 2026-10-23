@@ -453,3 +453,4 @@
 
 /* Square crop around the eye; preserve the original photograph. */
 .dima-mobile-originals figure:last-child img{aspect-ratio:1;object-fit:cover;object-position:50% 43%}
+.dima-case .dima-end>.dima-result{max-width:65ch;margin:0 0 36px;font:400 14px/1.85 Montserrat,Arial,sans-serif;letter-spacing:0;color:#c8bfb5}

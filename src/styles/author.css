@@ -1,0 +1,53 @@
+/* Additions for the author's biography; approved project and hero styles stay scoped. */
+.home-page .project-contact-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 14px;
+}
+.home-page .about-with-portrait { display: block; padding-block: 60px; }
+.author-intro {
+  display: grid;
+  grid-template-columns: minmax(0, .38fr) minmax(0, .62fr);
+  align-items: start;
+  gap: 7%;
+}
+.author-portrait { min-width: 0; margin: 0; }
+.author-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: grayscale(1);
+}
+.home-page .author-copy p {
+  max-width: 65ch;
+  margin: 22px 0;
+  font: 400 14px/1.85 Montserrat, Arial, sans-serif;
+  color: #bbb5b8;
+  text-wrap: pretty;
+}
+.author-copy .text-link { display: inline-flex; align-items: center; min-height: 44px; }
+.author-contact-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 48px;
+  margin-top: 60px;
+  padding-top: 38px;
+  border-top: 1px solid var(--line);
+}
+.home-page .author-contact-row blockquote { margin: 0; padding: 0; border: 0; max-width: 32ch; }
+.author-contact-row .contact-block { min-width: 0; scroll-margin-top: 32px; }
+@media (max-width: 1050px) and (min-width: 701px) {
+  .author-intro { grid-template-columns: minmax(0, .38fr) minmax(0, .62fr); gap: 6%; }
+  .home-page .author-copy p { font-size: 13px; }
+}
+@media (max-width: 700px) {
+  .home-page .about-with-portrait { padding-block: 38px; }
+  .author-intro { grid-template-columns: minmax(0, 1fr); gap: 34px; }
+  .author-portrait { width: 100%; max-width: 480px; }
+  .home-page .author-copy p { font-size: 14px; margin-block: 20px; }
+  .author-contact-row { grid-template-columns: minmax(0, 1fr); gap: 32px; margin-top: 38px; padding-top: 32px; }
+  .author-contact-row .contact-block { justify-self: start; }
+  .home-page .author-contact-row blockquote { font-size: 20px; line-height: 1.5; }
+}

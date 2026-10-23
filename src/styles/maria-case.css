@@ -132,6 +132,7 @@
 .maria-lens-grid h3,.maria-albums-heading h3,.maria-about-grid h3,.maria-mobile-grid h3{font-size:clamp(44px,4.8vw,68px);line-height:1.1}
 .maria-service-list li{font:400 14px/1.65 Montserrat,Arial,sans-serif}
 .maria-case-end h2{line-height:1.05}
+.maria-case-end>.maria-result{max-width:65ch;margin:0 0 36px;font:300 14px/1.85 Montserrat,Arial,sans-serif;letter-spacing:0;color:#c5d4be}
 @media(max-width:700px){
  .maria-hero-copy h1{font-size:clamp(78px,18vw,118px);margin:22px 0 32px}
  .maria-hero-copy h1 span{padding-left:.25em}
