@@ -1,6 +1,18 @@
 <section class="home-hero" aria-labelledby="hero-title">
   <div class="hero-stage">
     <div class="hero-art" aria-hidden="true">
+    <div class="hero-art-canvas">
+    <svg class="hero-color-filter" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="hero-plum-grade" color-interpolation-filters="sRGB">
+          <!-- Keep luminance and alpha. Remove the warm cast; only the stronger
+               red chroma receives plum, so the middle leaf remains neutral gray. -->
+          <feColorMatrix type="matrix" values="1 -1 0 0 0  .2126 .7152 .0722 0 0  0 0 0 0 0  0 0 0 1 0" />
+          <feComponentTransfer><feFuncR type="linear" slope="1" intercept="-.055" /></feComponentTransfer>
+          <feColorMatrix type="matrix" values=".85 1 0 0 0  -.45 1 0 0 0  .3 1 0 0 0  0 0 0 1 0" />
+        </filter>
+      </defs>
+    </svg>
     <svg class="hero-veins" viewBox="0 0 1536 1152" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
       <!-- Subtle moving accents over veins already drawn in the approved raster. No duplicate base paths. -->
       <g class="vein-color">
@@ -10,7 +22,8 @@
       </g>
     </svg>
     <div class="hero-leaves" aria-hidden="true">
-      <img src="/assets/hero/npc-dandelion-botanical-approved.webp" alt="" width="1536" height="1152" fetchpriority="high" decoding="async" />
+      <img src="/assets/hero/npc-dandelion-botanical-from-master.webp" alt="" width="1536" height="1152" fetchpriority="high" decoding="async" />
+    </div>
     </div>
     </div>
     <div class="hero-content">
@@ -21,7 +34,7 @@
       <p class="directions"><span>Айдентика · Иллюстрация · Веб-дизайн</span></p>
       <a class="view-work" href="#projects"><span>СМОТРЕТЬ РАБОТЫ</span><img src="/assets/figma/arrow.svg" alt="" width="21.0938" height="12.6562" /></a>
     </div>
-    <p class="hero-manifest"><span>ИДЕИ</span><span class="manifest-separator"> · </span><span>ЛЮДИ</span><span class="manifest-separator"> · </span><span>ПРОСТРАНСТВА</span></p>
+    <p class="hero-manifest"><span class="hero-text-shade" aria-hidden="true"></span><span>ИДЕИ</span><span class="manifest-separator"> · </span><span>ЛЮДИ</span><span class="manifest-separator"> · </span><span>ПРОСТРАНСТВА</span></p>
   </div>
 </section>
 
@@ -29,7 +42,9 @@
   .home-hero { container-type: inline-size; width: calc(100% + 2 * var(--home-gutter)); margin-inline: calc(-1 * var(--home-gutter)); background: #090909; }
   .hero-stage { position: relative; height: 38.96484375cqw; }
   /* Only the decorative layer extends into the project introduction. */
-  .hero-art { position: absolute; top: -101.25px; right: 0; bottom: -150px; left: 0; z-index: 0; pointer-events: none; overflow: clip; mask-image: linear-gradient(to bottom, #000 0%, #000 64%, #000b 80%, transparent 100%); }
+  .hero-art { position: absolute; top: -101.25px; right: min(0px, calc((100cqw - 100vw) / 2)); bottom: -150px; left: min(0px, calc((100cqw - 100vw) / 2)); z-index: 0; pointer-events: none; overflow: clip; mask-image: linear-gradient(to bottom, #000 0%, #000 64%, #000b 80%, transparent 100%); }
+  .hero-art-canvas { position: absolute; top: 0; bottom: 0; left: max(0px, calc((100vw - 100cqw) / 2)); width: 100cqw; }
+  .hero-color-filter { position: absolute; }
   .home-hero + :global(.projects) { position: relative; z-index: 1; }
   .hero-veins { position: absolute; left: 12%; top: -80px; width: 94%; height: auto; aspect-ratio: 4 / 3; z-index: 1; overflow: visible; pointer-events: none; fill: none; }
   .hero-veins path { stroke-width: 1.25; vector-effect: non-scaling-stroke; }
@@ -37,7 +52,7 @@
   .vein-color path { stroke-dasharray: 9 101; stroke-dashoffset: 9; stroke-linecap: round; }
   @media (prefers-reduced-motion: reduce) { .vein-color { display: none; } }
   .hero-leaves { position: absolute; left: 12%; top: -80px; width: 94%; aspect-ratio: 4 / 3; z-index: 0; pointer-events: none; }
-  .hero-leaves img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+  .hero-leaves img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; filter: url(#hero-plum-grade); }
   .hero-content { position: relative; z-index: 1; padding-top: 6.44097cqw; margin-left: 5.34722%; width: 49.51389%; }
   h1 { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 400; font-synthesis: none; font-optical-sizing: none; font-size: 8.0078125cqw; line-height: 7.6171875cqw; color: #efedeb; margin: 0; }
   h1 > span { display: block; height: 7.77778cqw; white-space: nowrap; position: relative; }
@@ -51,7 +66,8 @@
   .view-work img { max-width: none; flex-shrink: 0; }
   .view-work > * { transform: translateY(-1.6875px); }
   .view-work:hover { background: #ffffff0d; }
-  .hero-manifest { position: absolute; z-index: 1; right: 5%; top: 27.899306cqw; margin: 0; width: 9.16667%; font-size: .878906cqw; line-height: 1.7578125cqw; text-align: right; letter-spacing: .078125cqw; color: #b0afad; }
+  .hero-manifest { position: absolute; z-index: 1; isolation: isolate; right: 5%; top: 27.899306cqw; margin: 0; width: 9.16667%; font-size: .878906cqw; line-height: 1.7578125cqw; text-align: right; letter-spacing: .078125cqw; color: #b0afad; }
+  .hero-manifest > .hero-text-shade { position: absolute; z-index: -1; inset: -28px -36px; border-radius: 50%; background: #090909; opacity: .9; filter: blur(20px); pointer-events: none; }
   .hero-manifest > span { display: block; }
   .hero-manifest .manifest-separator { display: none; }
   .hero-manifest::before { content: ''; position: absolute; height: 8.984375cqw; width: .984375px; background: #efedeb; right: 0; bottom: calc(100% + 1.43403cqw); }
@@ -70,11 +86,14 @@
     .dot-mobile { display: block; position: absolute; left: 307px; top: 67px; max-width: none; }
     .directions { margin-top: 283px; padding: 0; font-size: 14px; line-height: 23px; white-space: normal; }
     .directions > span { display: block; }
+    .directions, .view-work { position: relative; isolation: isolate; }
+    .directions::after, .view-work::before { content: ''; position: absolute; z-index: -1; inset: -18px -16px; background: radial-gradient(ellipse, #090909f5 30%, #090909d9 55%, transparent 80%); filter: blur(8px); pointer-events: none; }
     .directions .directions-separator, .directions::before { display: none; }
     .view-work { width: 100%; height: 50px; margin: 30px 0 0; justify-content: flex-start; gap: 30px; padding: 0 34px; font-size: 11px; line-height: 16px; letter-spacing: .84375px; }
     .view-work > * { transform: translateY(-3.5px); }
     .hero-manifest { left: var(--home-gutter); right: var(--home-gutter); top: 626px; width: auto; font-size: 10px; line-height: 16px; letter-spacing: 1.2px; text-align: left; }
     .hero-manifest > span, .hero-manifest .manifest-separator { display: inline; }
+    .hero-manifest > .hero-text-shade { display: block; inset: -20px -12px; opacity: .75; }
     .hero-manifest .manifest-separator { white-space: pre; }
     .hero-manifest::before, .hero-manifest::after { display: none; }
   }
