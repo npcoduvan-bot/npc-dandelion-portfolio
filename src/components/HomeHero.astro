@@ -42,8 +42,8 @@
   .home-hero { container-type: inline-size; width: calc(100% + 2 * var(--home-gutter)); margin-inline: calc(-1 * var(--home-gutter)); background: #090909; }
   .hero-stage { position: relative; height: 38.96484375cqw; }
   /* Only the decorative layer extends into the project introduction. */
-  .hero-art { position: absolute; top: -101.25px; right: min(0px, calc((100cqw - 100vw) / 2)); bottom: -150px; left: min(0px, calc((100cqw - 100vw) / 2)); z-index: 0; pointer-events: none; overflow: clip; mask-image: linear-gradient(to bottom, #000 0%, #000 64%, #000b 80%, transparent 100%); }
-  .hero-art-canvas { position: absolute; top: 0; bottom: 0; left: max(0px, calc((100vw - 100cqw) / 2)); width: 100cqw; }
+  .hero-art { position: absolute; top: -101.25px; right: min(0px, calc((100cqw - var(--hero-viewport, 100cqw)) / 2)); bottom: -150px; left: min(0px, calc((100cqw - var(--hero-viewport, 100cqw)) / 2)); z-index: 0; pointer-events: none; overflow: clip; mask-image: linear-gradient(to bottom, #000 0%, #000 64%, #000b 80%, transparent 100%); }
+  .hero-art-canvas { position: absolute; top: 0; bottom: 0; left: max(0px, calc((var(--hero-viewport, 100cqw) - 100cqw) / 2)); width: 100cqw; }
   .hero-color-filter { position: absolute; }
   .home-hero + :global(.projects) { position: relative; z-index: 1; }
   .hero-veins { position: absolute; left: 12%; top: -80px; width: 94%; height: auto; aspect-ratio: 4 / 3; z-index: 1; overflow: visible; pointer-events: none; fill: none; }
@@ -150,6 +150,8 @@
       if (!frame) frame = requestAnimationFrame(tick);
     };
     const measure = () => {
+      // Use the available page width: 100vw also includes classic scrollbars.
+      stage.style.setProperty('--hero-viewport', `${document.documentElement.clientWidth}px`);
       const bounds = stage.getBoundingClientRect();
       stageTop = bounds.top + window.scrollY;
       travel = Math.max(bounds.height * 1.4, window.innerHeight * .9);
