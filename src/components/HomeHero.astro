@@ -13,14 +13,6 @@
         </filter>
       </defs>
     </svg>
-    <svg class="hero-veins" viewBox="0 0 1536 1152" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-      <!-- Subtle moving accents over veins already drawn in the approved raster. No duplicate base paths. -->
-      <g class="vein-color">
-        <path pathLength="100" d="M 430,130 C 590,125 755,280 822,445 S 860,680 794,835" />
-        <path pathLength="100" d="M 0,1030 C 300,995 500,900 740,755 S 1190,498 1536,505" />
-        <path pathLength="100" d="M 500,956 C 780,875 820,722 1050,728 S 1360,720 1536,840" />
-      </g>
-    </svg>
     <div class="hero-leaves" aria-hidden="true">
       <img src="/assets/hero/npc-dandelion-botanical-from-master.webp" alt="" width="1536" height="1152" fetchpriority="high" decoding="async" />
     </div>
@@ -46,11 +38,6 @@
   .hero-art-canvas { position: absolute; top: 0; bottom: 0; left: max(0px, calc((var(--hero-viewport, 100cqw) - 100cqw) / 2)); width: 100cqw; }
   .hero-color-filter { position: absolute; }
   .home-hero + :global(.projects) { position: relative; z-index: 1; }
-  .hero-veins { position: absolute; left: 12%; top: -80px; width: 94%; height: auto; aspect-ratio: 4 / 3; z-index: 1; overflow: visible; pointer-events: none; fill: none; }
-  .hero-veins path { stroke-width: 1.25; vector-effect: non-scaling-stroke; }
-  .vein-color { stroke: #a87890; opacity: 0; }
-  .vein-color path { stroke-dasharray: 9 101; stroke-dashoffset: 9; stroke-linecap: round; }
-  @media (prefers-reduced-motion: reduce) { .vein-color { display: none; } }
   .hero-leaves { position: absolute; left: 12%; top: -80px; width: 94%; aspect-ratio: 4 / 3; z-index: 0; pointer-events: none; }
   .hero-leaves img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; filter: url(#hero-plum-grade); }
   .hero-content { position: relative; z-index: 1; padding-top: 6.44097cqw; margin-left: 5.34722%; width: 49.51389%; }
@@ -73,12 +60,12 @@
   .hero-manifest::before { content: ''; position: absolute; height: 8.984375cqw; width: .984375px; background: #efedeb; right: 0; bottom: calc(100% + 1.43403cqw); }
   .hero-manifest::after { content: ''; position: absolute; width: 2.5390625cqw; height: .984375px; background: #efedeb; right: 0; top: calc(100% + 1.46267cqw); }
   @media (min-width: 1051px) {
-    .hero-leaves, .hero-veins {
+    .hero-leaves {
       left: 1.5%;
       top: -90px;
       width: 101.52%;
       /* Attenuate the entire right leaf in artwork coordinates, with a broad
-         feathered edge. Keep raster and moving accents on the same mask. */
+         feathered edge. */
       mask-image: radial-gradient(ellipse 31% 28% at 84% 68%, #0006 0%, #0007 55%, #000 100%);
     }
     .hero-manifest > .hero-text-shade { display: none; }
@@ -87,8 +74,6 @@
     .hero-stage { height: 670px; }
     .hero-leaves { left: -28%; top: 230px; width: 180%; max-width: none; height: auto; }
     .hero-art { top: -132px; bottom: -120px; mask-image: linear-gradient(to bottom, #000 0%, #000 66%, #000b 82%, transparent 100%); }
-    .hero-veins { left: -28%; top: 230px; width: 180%; height: auto; }
-    .hero-veins path { stroke-width: 1; }
     .hero-content { padding-top: 22px; margin-inline: var(--home-gutter); width: auto; }
     h1 { font-size: 83px; line-height: 83px; }
     h1 > span { height: 83px; letter-spacing: 0; }
@@ -111,7 +96,6 @@
   @media (min-width: 561px) and (max-width: 1050px) {
     .hero-leaves { left: 18%; top: 10px; width: 105%; max-width: none; height: auto; }
     .hero-art { mask-image: linear-gradient(to bottom, #000 0%, #000 62%, #000b 80%, transparent 100%); }
-    .hero-veins { left: 18%; top: 10px; width: 105%; height: auto; }
     .view-work { max-width: 342px; }
   }
   @media (max-width: 389px) {
@@ -125,23 +109,16 @@
 
 <script>
   const stage = document.querySelector<HTMLElement>('.home-hero .hero-stage');
-  const accent = stage?.querySelector<SVGGElement>('.vein-color');
-  const veins = stage?.querySelector<SVGElement>('.hero-veins');
   const leaves = stage?.querySelector<HTMLElement>('.hero-leaves');
-  if (stage && accent && veins && leaves) {
-    const paths = [...accent.querySelectorAll('path')];
+  if (stage && leaves) {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const clamp = (n: number) => Math.max(0, Math.min(1, n));
     const ease = (n: number) => { const t = clamp(n); return t * t * (3 - 2 * t); };
-    let stageTop = 0, travel = 1, fadeStart = 0, fadeDistance = 1;
+    let fadeStart = 0, fadeDistance = 1;
     let current = window.scrollY, target = current, frame = 0, lastTime = 0;
     const paint = () => {
-      const progress = ease((current - stageTop) / travel);
       const fade = (current - fadeStart) / fadeDistance;
-      veins.style.opacity = String(reduced.matches ? 1 : 1 - ease(fade));
       leaves.style.opacity = String(reduced.matches ? 1 : 1 - ease(fade - .22));
-      accent.style.opacity = String(reduced.matches ? 0 : ease(progress / .3));
-      paths.forEach((path, i) => path.style.strokeDashoffset = String(9 - progress * (84 - i * 10)));
     };
     // Time-based damping gives wheel jumps and reverse scrolling the same
     // soft response at different refresh rates. Stop requesting frames at rest.
@@ -164,8 +141,7 @@
       // Use the available page width: 100vw also includes classic scrollbars.
       stage.style.setProperty('--hero-viewport', `${document.documentElement.clientWidth}px`);
       const bounds = stage.getBoundingClientRect();
-      stageTop = bounds.top + window.scrollY;
-      travel = Math.max(bounds.height * 1.4, window.innerHeight * .9);
+      const stageTop = bounds.top + window.scrollY;
       fadeStart = stageTop + bounds.height * .16;
       fadeDistance = window.innerHeight * .55;
       schedule();
