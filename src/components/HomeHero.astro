@@ -40,6 +40,11 @@
   .home-hero + :global(.projects) { position: relative; z-index: 1; }
   .hero-leaves { position: absolute; left: 12%; top: -80px; width: 94%; aspect-ratio: 4 / 3; z-index: 0; pointer-events: none; }
   .hero-leaves img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; filter: url(#hero-plum-grade); }
+  .hero-leaves :global(.hero-leaves-motion) { position: absolute; inset: 0; display: none; width: 100%; height: 100%; filter: url(#hero-plum-grade); pointer-events: none; }
+  @media (min-width: 1051px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .hero-leaves.is-swaying img { visibility: hidden; }
+    .hero-leaves.is-swaying :global(.hero-leaves-motion) { display: block; }
+  }
   .hero-content { position: relative; z-index: 1; padding-top: 6.44097cqw; margin-left: 5.34722%; width: 49.51389%; }
   h1 { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 400; font-synthesis: none; font-optical-sizing: none; font-size: 8.0078125cqw; line-height: 7.6171875cqw; color: #efedeb; margin: 0; }
   h1 > span { display: block; height: 7.77778cqw; white-space: nowrap; position: relative; }
@@ -108,9 +113,11 @@
 </style>
 
 <script>
+  import { initHeroLeaves } from '../scripts/hero-leaves.js';
   const stage = document.querySelector<HTMLElement>('.home-hero .hero-stage');
   const leaves = stage?.querySelector<HTMLElement>('.hero-leaves');
   if (stage && leaves) {
+    initHeroLeaves(stage, leaves);
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const clamp = (n: number) => Math.max(0, Math.min(1, n));
     const ease = (n: number) => { const t = clamp(n); return t * t * (3 - 2 * t); };
