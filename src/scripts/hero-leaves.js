@@ -6,6 +6,7 @@ let nextFilterId = 0;
 export function initHeroLeaves(stage, host) {
   const original = host.querySelector('img');
   if (!original) return;
+  const artwork = host.closest('.hero-art') || stage;
   const desktop = matchMedia('(min-width: 1051px) and (hover: hover) and (pointer: fine)');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let renderer, loading, frame = 0, lastTime = 0, idleTimer = 0, inView = true, disposed = false;
@@ -62,6 +63,10 @@ export function initHeroLeaves(stage, host) {
   const schedule = () => { if (!frame && renderer && enabled()) frame = requestAnimationFrame(tick); };
   const move = async (event) => {
     if (event.pointerType !== 'mouse' || !enabled()) return;
+    // The artwork reaches above and below the text stage. Use its visible area
+    // so leaf tips under the header can respond without capturing any clicks.
+    const area = artwork.getBoundingClientRect();
+    if (event.clientX < area.left || event.clientX > area.right || event.clientY < Math.max(0, area.top) || event.clientY > area.bottom) { leave(); return; }
     const rect = host.getBoundingClientRect();
     const x = (event.clientX - rect.left) * ART_WIDTH / rect.width;
     const y = (event.clientY - rect.top) * ART_HEIGHT / rect.height;
@@ -72,7 +77,7 @@ export function initHeroLeaves(stage, host) {
       targets[i][1] = Math.max(-1, Math.min(1, dy / 250)) * influence * leaf.amplitude[1];
     });
     clearTimeout(idleTimer);
-    idleTimer = window.setTimeout(leave, 180);
+    idleTimer = window.setTimeout(leave, 650);
     await create(); schedule();
   };
   const leave = () => { clearTimeout(idleTimer); targets.forEach(pair => pair.fill(0)); schedule(); };
@@ -80,9 +85,9 @@ export function initHeroLeaves(stage, host) {
   const visibilityChange = () => { if (document.hidden) reset(); };
   const observer = new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; if (!inView) reset(); });
   observer.observe(stage);
-  stage.addEventListener('pointermove', move, { passive: true });
-  stage.addEventListener('pointerleave', leave, { passive: true });
-  stage.addEventListener('pointercancel', leave, { passive: true });
+  document.addEventListener('pointermove', move, { passive: true });
+  document.addEventListener('pointerleave', leave, { passive: true });
+  document.addEventListener('pointercancel', leave, { passive: true });
   window.addEventListener('blur', reset);
   window.addEventListener('resize', reset, { passive: true });
   document.addEventListener('visibilitychange', visibilityChange);
@@ -90,9 +95,9 @@ export function initHeroLeaves(stage, host) {
   reduced.addEventListener('change', mediaChange);
   document.addEventListener('astro:before-swap', () => {
     disposed = true; reset(); observer.disconnect(); renderer?.destroy();
-    stage.removeEventListener('pointermove', move);
-    stage.removeEventListener('pointerleave', leave);
-    stage.removeEventListener('pointercancel', leave);
+    document.removeEventListener('pointermove', move);
+    document.removeEventListener('pointerleave', leave);
+    document.removeEventListener('pointercancel', leave);
     window.removeEventListener('blur', reset);
     window.removeEventListener('resize', reset);
     document.removeEventListener('visibilitychange', visibilityChange);
@@ -111,10 +116,10 @@ function createRenderer(source, maskUrl) {
   // The coloured rig is deformation data, never artwork. One displacement of
   // the original texture preserves translucent overlaps and leaves no cut seams.
   const filterId = `leaf-bend-${nextFilterId++}`;
-  svg.innerHTML = `<defs><filter id="${filterId}" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" x="-12" y="-12" width="1560" height="1176" color-interpolation-filters="sRGB">
+  svg.innerHTML = `<defs><filter id="${filterId}" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" x="-24" y="-24" width="1584" height="1200" color-interpolation-filters="sRGB">
     <feImage x="0" y="0" width="1536" height="1152" preserveAspectRatio="none" href="${maskUrl}" result="weights"/>
     <feColorMatrix in="weights" type="matrix" result="offset"/>
-    <feDisplacementMap in="SourceGraphic" in2="offset" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+    <feDisplacementMap in="SourceGraphic" in2="offset" scale="48" xChannelSelector="R" yChannelSelector="G"/>
   </filter></defs>`;
   const art = document.createElementNS(ns, 'image');
   art.setAttribute('href', source.currentSrc || source.src);
@@ -127,8 +132,8 @@ function createRenderer(source, maskUrl) {
     element: svg,
     destroy() { svg.remove(); },
     draw(values) {
-      const x = values.map(value => -value[0] / 16).join(' ');
-      const y = values.map(value => -value[1] / 16).join(' ');
+      const x = values.map(value => -value[0] / 48).join(' ');
+      const y = values.map(value => -value[1] / 48).join(' ');
       matrix.setAttribute('values', `${x} 0 .5 ${y} 0 .5 0 0 0 0 .5 0 0 0 0 1`);
     },
   };

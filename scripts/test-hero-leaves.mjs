@@ -14,12 +14,12 @@ for (const scenario of [
     const handlers = new Map();
     let decodes = 0, paints = 0;
     const image = { decode: async () => { decodes++; } };
-    const host = { querySelector: () => image, classList: { remove() {} } };
+    const host = { querySelector: () => image, closest: () => null, classList: { remove() {} } };
     const stage = { addEventListener: (type, fn) => handlers.set(type, fn) };
     const originals = new Map();
     const replace = (key, value) => { originals.set(key, Object.getOwnPropertyDescriptor(globalThis, key)); Object.defineProperty(globalThis, key, { value, configurable: true, writable: true }); };
     replace('window', { addEventListener() {} });
-    replace('document', { hidden: !!scenario.hidden, addEventListener() {} });
+    replace('document', { hidden: !!scenario.hidden, addEventListener: (type, fn) => handlers.set(type, fn) });
     replace('matchMedia', query => ({ matches: query.includes('reduced-motion') ? scenario.reduced : scenario.desktop, addEventListener() {} }));
     replace('IntersectionObserver', class { observe() {} });
     replace('requestAnimationFrame', () => { paints++; });
