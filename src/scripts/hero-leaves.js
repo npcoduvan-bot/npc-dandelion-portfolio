@@ -7,7 +7,9 @@ export function initHeroLeaves(stage, host) {
   const original = host.querySelector('img');
   if (!original) return;
   const artwork = host.closest('.hero-art') || stage;
-  const desktop = matchMedia('(min-width: 1051px) and (hover: hover) and (pointer: fine)');
+  // A narrow desktop window and a laptop whose primary pointer is touch can
+  // still have a mouse or trackpad. Actual touch/pen events remain ignored.
+  const desktop = matchMedia('(any-hover: hover) and (any-pointer: fine)');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let renderer, loading, frame = 0, lastTime = 0, idleTimer = 0, inView = true, disposed = false;
   const positions = LEAVES.map(() => [0, 0]);
