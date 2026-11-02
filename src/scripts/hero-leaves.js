@@ -1,8 +1,11 @@
 import { ART_WIDTH, ART_HEIGHT, LEAVES, rigSvg } from '../assets/hero/leaf-rig.js';
 let nextFilterId = 0;
+const LEAF_MASK = '/assets/hero/npc-dandelion-leaf-isolation.png';
+const BACKGROUND_MASK = '/assets/hero/npc-dandelion-background-mask.png';
 
 // Progressive enhancement: the original <img> is always the rest/mobile/error
-// state. One continuous texture avoids cutout seams and double alpha at stems.
+// state. Complementary masks separate stationary pixels from the foliage only
+// while it is moving; both layers continue to use the same original texture.
 export function initHeroLeaves(stage, host) {
   const original = host.querySelector('img');
   if (!original) return;
@@ -29,7 +32,11 @@ export function initHeroLeaves(stage, host) {
         await original.decode();
         const mask = new Image();
         mask.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(rigSvg())}`;
-        await mask.decode();
+        const leafMask = new Image();
+        leafMask.src = LEAF_MASK;
+        const backgroundMask = new Image();
+        backgroundMask.src = BACKGROUND_MASK;
+        await Promise.all([mask.decode(), leafMask.decode(), backgroundMask.decode()]);
         if (!enabled()) return;
         renderer = createRenderer(original, mask.src);
         host.append(renderer.element);
@@ -121,11 +128,19 @@ function createRenderer(source, maskUrl) {
   const lineMaskId = `${filterId}-line`;
   const cutMaskId = `${filterId}-line-cut`;
   const repairId = `${filterId}-line-underlay`;
+  const leafMaskId = `${filterId}-foliage`;
+  const backgroundMaskId = `${filterId}-background`;
   svg.innerHTML = `<defs><filter id="${filterId}" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" x="-24" y="-24" width="1584" height="1200" color-interpolation-filters="sRGB">
     <feImage x="0" y="0" width="1536" height="1152" preserveAspectRatio="none" href="${maskUrl}" result="weights"/>
     <feColorMatrix in="weights" type="matrix" result="offset"/>
     <feDisplacementMap in="SourceGraphic" in2="offset" scale="48" xChannelSelector="R" yChannelSelector="G"/>
   </filter>
+  <mask id="${leafMaskId}" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="1536" height="1152" style="mask-type:luminance">
+    <image href="${LEAF_MASK}" width="1536" height="1152"/>
+  </mask>
+  <mask id="${backgroundMaskId}" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="1536" height="1152" style="mask-type:luminance">
+    <image href="${BACKGROUND_MASK}" width="1536" height="1152"/>
+  </mask>
   <mask id="${lineMaskId}" maskUnits="userSpaceOnUse" x="0" y="0" width="1536" height="1152">
     <rect width="1536" height="1152" fill="black"/>
     <path d="M1100 827 C1140 813 1187 804 1234 800 C1278 797 1324 799 1360 809 C1380 814 1390 817 1400 821" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"/>
@@ -150,17 +165,29 @@ function createRenderer(source, maskUrl) {
   // original pixels on a stationary layer; fill the tiny gap underneath from
   // neighbouring original pixels before bending the leaf. At rest the untouched
   // original <img> is shown, so the visible source artwork is never replaced.
+  // The displacement map operates on foliage pixels only. The complementary
+  // layer stays in place, so neighbouring decorative lines are never warped.
+  const background = makeImage();
+  background.setAttribute('mask', `url(#${backgroundMaskId})`);
   const moving = document.createElementNS(ns, 'g');
   moving.setAttribute('filter', `url(#${filterId})`);
+  const foliage = document.createElementNS(ns, 'g');
+  foliage.setAttribute('mask', `url(#${leafMaskId})`);
   const clean = makeImage();
   clean.setAttribute('filter', `url(#${repairId})`);
   clean.setAttribute('mask', `url(#${lineMaskId})`);
   const base = makeImage();
   base.setAttribute('mask', `url(#${cutMaskId})`);
-  moving.append(base, clean);
+  foliage.append(base, clean);
+  moving.append(foliage);
   const fixedLine = makeImage();
   fixedLine.setAttribute('mask', `url(#${lineMaskId})`);
-  svg.append(moving, fixedLine);
+  // Only the portion crossing foliage needs this overlay; outside it the
+  // exact original line already belongs to the stationary background layer.
+  const crossing = document.createElementNS(ns, 'g');
+  crossing.setAttribute('mask', `url(#${leafMaskId})`);
+  crossing.append(fixedLine);
+  svg.append(background, moving, crossing);
   const matrix = svg.querySelector('feColorMatrix');
   return {
     element: svg,
