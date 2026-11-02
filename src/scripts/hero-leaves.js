@@ -118,17 +118,49 @@ function createRenderer(source, maskUrl) {
   // The coloured rig is deformation data, never artwork. One displacement of
   // the original texture preserves translucent overlaps and leaves no cut seams.
   const filterId = `leaf-bend-${nextFilterId++}`;
+  const lineMaskId = `${filterId}-line`;
+  const cutMaskId = `${filterId}-line-cut`;
+  const repairId = `${filterId}-line-underlay`;
   svg.innerHTML = `<defs><filter id="${filterId}" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" x="-24" y="-24" width="1584" height="1200" color-interpolation-filters="sRGB">
     <feImage x="0" y="0" width="1536" height="1152" preserveAspectRatio="none" href="${maskUrl}" result="weights"/>
     <feColorMatrix in="weights" type="matrix" result="offset"/>
     <feDisplacementMap in="SourceGraphic" in2="offset" scale="48" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <mask id="${lineMaskId}" maskUnits="userSpaceOnUse" x="0" y="0" width="1536" height="1152">
+    <rect width="1536" height="1152" fill="black"/>
+    <path d="M1100 827 C1140 813 1187 804 1234 800 C1278 797 1324 799 1360 809 C1380 814 1390 817 1400 821" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  </mask>
+  <mask id="${cutMaskId}" maskUnits="userSpaceOnUse" x="0" y="0" width="1536" height="1152">
+    <rect width="1536" height="1152" fill="white"/>
+    <path d="M1100 827 C1140 813 1187 804 1234 800 C1278 797 1324 799 1360 809 C1380 814 1390 817 1400 821" fill="none" stroke="black" stroke-width="6" stroke-linecap="round"/>
+  </mask>
+  <filter id="${repairId}" filterUnits="userSpaceOnUse" x="0" y="0" width="1536" height="1152" color-interpolation-filters="sRGB">
+    <feOffset in="SourceGraphic" dy="-6" result="above"/>
+    <feOffset in="SourceGraphic" dy="6" result="below"/>
+    <feComposite in="above" in2="below" operator="arithmetic" k2=".5" k3=".5"/>
   </filter></defs>`;
-  const art = document.createElementNS(ns, 'image');
-  art.setAttribute('href', source.currentSrc || source.src);
-  art.setAttribute('width', String(ART_WIDTH));
-  art.setAttribute('height', String(ART_HEIGHT));
-  art.setAttribute('filter', `url(#${filterId})`);
-  svg.append(art);
+  const makeImage = () => {
+    const image = document.createElementNS(ns, 'image');
+    image.setAttribute('href', source.currentSrc || source.src);
+    image.setAttribute('width', String(ART_WIDTH));
+    image.setAttribute('height', String(ART_HEIGHT));
+    return image;
+  };
+  // This line crosses the right leaf in the flattened image. Keep its actual
+  // original pixels on a stationary layer; fill the tiny gap underneath from
+  // neighbouring original pixels before bending the leaf. At rest the untouched
+  // original <img> is shown, so the visible source artwork is never replaced.
+  const moving = document.createElementNS(ns, 'g');
+  moving.setAttribute('filter', `url(#${filterId})`);
+  const clean = makeImage();
+  clean.setAttribute('filter', `url(#${repairId})`);
+  clean.setAttribute('mask', `url(#${lineMaskId})`);
+  const base = makeImage();
+  base.setAttribute('mask', `url(#${cutMaskId})`);
+  moving.append(base, clean);
+  const fixedLine = makeImage();
+  fixedLine.setAttribute('mask', `url(#${lineMaskId})`);
+  svg.append(moving, fixedLine);
   const matrix = svg.querySelector('feColorMatrix');
   return {
     element: svg,
