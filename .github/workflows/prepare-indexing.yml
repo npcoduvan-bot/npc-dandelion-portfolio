@@ -1,0 +1,53 @@
+name: Prepare and verify indexing
+on:
+  push:
+    branches: [fix/indexing-20261116]
+    paths:
+      - '.github/workflows/prepare-indexing.yml'
+permissions:
+  contents: write
+jobs:
+  indexing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/indexing-20261116
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --global pnpm@11.19.0
+      - run: pnpm add '@astrojs/sitemap@^3.7.5'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - name: Verify indexing files and routes
+        shell: python
+        run: |
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          site = 'https://npc-dandelion-portfolio.pages.dev'
+          dist = Path('dist')
+          assert not Path('public/robots.txt').exists()
+          assert (dist / 'robots.txt').read_text() == f'User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap-index.xml\n'
+          ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          index = ET.parse(dist / 'sitemap-index.xml')
+          maps = [n.text for n in index.findall('s:sitemap/s:loc', ns)]
+          assert maps and all(u.startswith(site + '/sitemap-') for u in maps)
+          urls = []
+          for u in maps:
+              urls += [n.text for n in ET.parse(dist / u.rsplit('/', 1)[1]).findall('s:url/s:loc', ns)]
+          expected = {site + '/' + str(p.relative_to(dist)).replace('index.html', '') for p in dist.rglob('index.html')}
+          assert set(urls) == expected, (urls, expected)
+          assert site + '/' in urls and len(urls) == 9
+          assert all(u.startswith(site + '/') for u in urls)
+          assert not any('localhost' in u or 'more' in u for u in urls)
+          print('Verified robots, sitemap index and all 9 published routes:')
+          print('\n'.join(sorted(urls)))
+      - name: Save dependency and lockfile
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json pnpm-lock.yaml
+          git diff --cached --quiet || git commit -m "Install official Astro sitemap integration"
+          git push origin HEAD:fix/indexing-20261116
